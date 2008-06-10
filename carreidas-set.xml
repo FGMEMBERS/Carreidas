@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!-- <PropertyList include="carreidas-jsbsim-set.xml"> -->
+<PropertyList include="carreidas-yasim-set.xml">
+
+  <sim>
+    <description>Carreidas 160</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

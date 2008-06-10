@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList include="carreidas-base.xml">
+
+  <sim>
+
+    <description>Carreidas 160 Jet (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>carreidas-yasim</aero>
+
+  </sim>
+
+</PropertyList>

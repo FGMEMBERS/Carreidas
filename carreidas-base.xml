@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim  include="Nasal/views.xml">
+
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <status>development</status>
+  
+    <fuel-fraction>1.0</fuel-fraction>
+  
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/Carreidas/Sounds/carreidas-sound.xml</path>
+    </sound>
+
+    <model>
+     <path>Aircraft/Carreidas/Models/carreidas.xml</path>
+     <carreidas>
+      <klu type="bool">false</klu>
+      <us type="bool">true</us>
+     </carreidas>
+    </model>
+
+    <startup>
+     <splash-texture>Aircraft/Carreidas/carreidas-splash.png</splash-texture>
+    </startup>
+
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+    <help>
+      <title>Carreidas 160 (c) Herge</title>
+      <line>______________________________________________</line>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew doors</desc>
+      </key>
+    </help>
+
+    <flaps>
+      <setting>0.000</setting> <!-- cruise   -->
+      <setting>0.314</setting> <!-- take-off -->
+      <setting>1.000</setting> <!-- landing  -->
+    </flaps>
+
+  </sim>
+
+  <engines>
+   <engine n="0">
+    <running>true</running>
+   </engine>
+   <engine n="1">
+    <running>true</running>
+   </engine>
+   <engine n="2">
+    <running>true</running>
+   </engine>
+  </engines>
+
+  <consumables>
+   <fuel>
+    <tank n="0">
+     <level-gal_us archive="y">150</level-gal_us>
+    </tank>
+    <tank n="1">
+     <level-gal_us archive="y">50</level-gal_us>
+    </tank>
+    <tank n="3">
+     <level-gal_us archive="y">50</level-gal_us>
+    </tank>
+   </fuel>
+  </consumables>
+
+  <input>
+    <keyboard include="Nasal/carreidas-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <carreidas>
+      <file>Aircraft/Carreidas/Nasal/doors.nas</file>
+      <file>Aircraft/dhc3/Nasal/light.nas</file>
+    </carreidas>
+  </nasal>
+
+</PropertyList>
