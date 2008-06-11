@@ -26,8 +26,11 @@
     <object-name>bolD</object-name>
     <object-name>echappes</object-name>
     <object-name>axeA</object-name>
+    <object-name>axeA0</object-name>
     <object-name>axeG</object-name>
-    <object-name>axeG</object-name>
+    <object-name>axeG0</object-name>
+    <object-name>axeD</object-name>
+    <object-name>axeD0</object-name>
     <object-name>portebaieA</object-name>
     <object-name>portebaieG</object-name>
     <object-name>portebaieD</object-name>
@@ -72,6 +75,7 @@
   <animation>
     <type>select</type>
     <object-name>rayon1</object-name>
+    <object-name>rayon2</object-name>
     <condition>
       <equals>
         <property>sim/current-view/view-number</property>
@@ -79,7 +83,7 @@
       </equals>
     </condition>
   </animation>
-
+<!-- 
   <animation>
     <type>select</type>
     <object-name>rayon2</object-name>
@@ -124,6 +128,7 @@
       <z>0</z>
     </axis>
   </animation>
+-->
 
   <!-- Intérieur -->
   <model>
@@ -446,8 +451,15 @@
 
   <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
   <animation>
-    <type>rotate</type>
+    <name>TrainAvant</name>
     <object-name>roueA</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeA0</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainAvant</object-name>
     <property>/controls/flight/rudder</property>
     <factor> 30.0 </factor>
     <center>
@@ -533,8 +545,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>roueA</object-name>
-    <object-name>axeA</object-name>
+    <object-name>TrainAvant</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
       <entry>
@@ -636,10 +647,16 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <name>TrainGauche</name>
     <object-name>roueG1</object-name>
     <object-name>roueG2</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeG0</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainGauche</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry>
@@ -740,10 +757,16 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <name>TrainDroit</name>
     <object-name>roueD1</object-name>
     <object-name>roueD2</object-name>
     <object-name>axeD</object-name>
+    <object-name>axeD0</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainDroit</object-name>
     <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry>
@@ -806,6 +829,78 @@
       <x> 1.00 </x>
       <y> 0.00 </y>
       <z> 0.00 </z>
+    </axis>
+  </animation>
+
+  <!-- Compression -->
+  <animation>
+    <name>RoueAvant</name>
+    <object-name>roueA</object-name>
+    <object-name>axeA0</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>RoueAvant</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <factor>0.3</factor>
+    <center>
+      <x-m> -8.933 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -2.852 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>RoueGauche</name>
+    <object-name>roueG1</object-name>
+    <object-name>roueG2</object-name>
+    <object-name>axeG0</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>RoueGauche</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <factor>0.3</factor>
+    <center>
+      <x-m>  1.743 </x-m>
+      <y-m> -2.516 </y-m>
+      <z-m> -2.822 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>RoueDroite</name>
+    <object-name>roueD1</object-name>
+    <object-name>roueD2</object-name>
+    <object-name>axeD0</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>RoueDroite</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <factor>0.3</factor>
+    <center>
+      <x-m>  1.743 </x-m>
+      <y-m>  2.516 </y-m>
+      <z-m> -2.822 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
     </axis>
   </animation>
 
