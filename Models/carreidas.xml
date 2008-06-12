@@ -45,6 +45,8 @@
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>direction</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -237,6 +239,7 @@
     <object-name>voletG</object-name>
     <object-name>lampeG</object-name>
     <object-name>LeftLight</object-name>
+    <object-name>slatG</object-name>
   </animation>
 
   <animation>
@@ -292,6 +295,7 @@
     <object-name>voletD</object-name>
     <object-name>lampeD</object-name>
     <object-name>RightLight</object-name>
+    <object-name>slatD</object-name>
   </animation>
 
   <animation>
@@ -399,6 +403,108 @@
       <x2-m>  3.084 </x2-m>
       <y2-m>  4.777 </y2-m>
       <z2-m> -1.962 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>slatG</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> -15.0</factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m> -7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x> -2.656081 </x>
+      <y>  7.599232 </y>
+      <z>  0.000000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>slatD</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> -15.0</factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m>  7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x> -2.656081 </x>
+      <y> -7.599232 </y>
+      <z>  0.000000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>slatG</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> -0.05 </factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m> -7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x> 1.000 </x>
+      <y> 0.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>slatD</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 0.05 </factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m>  7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x> -1.000 </x>
+      <y>  0.000 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>slatG</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> 0.1 </factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m> -7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x>  0.000 </x>
+      <y> -1.000 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>slatD</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor> -0.1 </factor>
+    <center>
+      <x-m>  1.943692 </x-m>
+      <y-m>  7.499246 </y-m>
+      <z-m> -1.908935 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
     </axis>
   </animation>
 
@@ -995,7 +1101,7 @@
     <type>rotate</type>
     <object-name>porte</object-name>
     <property>/instrumentation/doors/crew/position-norm</property>
-    <factor>120</factor>
+    <factor>130</factor>
     <center>
       <x-m> -7.042 </x-m>
       <y-m> -0.884 </y-m>

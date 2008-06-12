@@ -7,77 +7,235 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>panel</object-name>
+    <object-name>manette1G</object-name>
+    <object-name>manette2G</object-name>
+    <object-name>manette3G</object-name>
+    <object-name>manette1D</object-name>
+    <object-name>manette2D</object-name>
+    <object-name>manette3D</object-name>
 
     <!-- Objets transparents -->
   </animation>
 
-  <!-- PFD -->
+  <!-- KFC 200 -->
+  <!-- ki256 -->
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/primus1000-pfd.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m> -0.510 </y-m>
-      <z-m>  0.015 </z-m>
+      <y-m> -0.550 </y-m>
+      <z-m>  0.104 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/primus1000-pfd.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m>  0.510 </y-m>
-      <z-m>  0.015 </z-m>
+      <y-m>  0.550 </y-m>
+      <z-m>  0.104 </z-m>
     </offsets>
   </model>
 
-  <!-- MFD -->
+  <!-- ki252a -->
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/primus1000-mfd.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m> -0.315 </y-m>
-      <z-m>  0.015 </z-m>
+      <y-m> -0.550 </y-m>
+      <z-m>  0.000 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/primus1000-mfd.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m>  0.315 </y-m>
-      <z-m>  0.015 </z-m>
+      <y-m>  0.550 </y-m>
+      <z-m>  0.000 </z-m>
     </offsets>
   </model>
 
-  <!-- EICAS -->
+  <!-- kas297 -->
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/primus2000-eicas.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/kas297.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.015 </z-m>
+      <y-m> -0.490 </y-m>
+      <z-m>  0.230 </z-m>
     </offsets>
   </model>
 
-  <!-- AP Control -->
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/AP-control.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/kas297.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m> -0.510 </y-m>
-      <z-m> -0.158 </z-m>
+      <y-m>  0.490 </y-m>
+      <z-m>  0.230 </z-m>
     </offsets>
   </model>
 
-  <!-- DC 550 -->
+  <!-- fd-control -->
   <model>
-    <path>Aircraft/Instruments-3d/primus-1000/dc550.xml</path>
+    <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
     <offsets>
       <x-m>  0.740 </x-m>
-      <y-m> -0.315 </y-m>
-      <z-m>  0.172 </z-m>
+      <y-m> -0.680 </y-m>
+      <z-m>  0.070 </z-m>
     </offsets>
   </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
+    <offsets>
+      <x-m>  0.740 </x-m>
+      <y-m>  0.680 </y-m>
+      <z-m>  0.070 </z-m>
+    </offsets>
+  </model>
+
+  <!-- fd-annun -->
+  <model>
+    <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
+    <offsets>
+      <x-m>  0.740 </x-m>
+      <y-m> -0.470 </y-m>
+      <z-m>  0.190 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
+    <offsets>
+      <x-m>  0.740 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m>  0.190 </z-m>
+    </offsets>
+  </model>
+
+  <!-- altitude -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/alt-2/alt2.xml</path>
+    <offsets>
+      <x-m>  0.740 </x-m>
+      <y-m> -0.440 </y-m>
+      <z-m>  0.101 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/alt-2/alt2.xml</path>
+    <offsets>
+      <x-m>  0.740 </x-m>
+      <y-m>  0.440 </y-m>
+      <z-m>  0.101 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.440 </y-m>
+      <z-m>  0.000 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.440 </y-m>
+      <z-m>  0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MACH -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mach/mach.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.333 </y-m>
+      <z-m>  0.170 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mach/mach.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.333 </y-m>
+      <z-m>  0.170 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Throttle -->
+  <animation>
+    <type>translate</type>
+    <object-name>manette1G</object-name>
+    <object-name>manette1D</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+    <interpolation>
+      <entry>
+        <ind> 0.00 </ind>
+        <dep> 0.00 </dep>
+      </entry>
+      <entry>
+        <ind>  1.00 </ind>
+        <dep> 0.155 </dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>manette2G</object-name>
+    <object-name>manette2D</object-name>
+    <property>controls/engines/engine[1]/throttle</property>
+    <interpolation>
+      <entry>
+        <ind> 0.00 </ind>
+        <dep> 0.00 </dep>
+      </entry>
+      <entry>
+        <ind>  1.00 </ind>
+        <dep> 0.155 </dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>manette3G</object-name>
+    <object-name>manette3D</object-name>
+    <property>controls/engines/engine[2]/throttle</property>
+    <interpolation>
+      <entry>
+        <ind> 0.00 </ind>
+        <dep> 0.00 </dep>
+      </entry>
+      <entry>
+        <ind>  1.00 </ind>
+        <dep> 0.155 </dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
 
 </PropertyList>
 

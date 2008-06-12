@@ -38,10 +38,31 @@
     </help>
 
     <flaps>
-      <setting>0.000</setting> <!-- cruise   -->
-      <setting>0.314</setting> <!-- take-off -->
-      <setting>1.000</setting> <!-- landing  -->
+      <setting>0.00</setting> <!-- UP -->
+      <setting>0.25</setting> <!-- 10 -->
+      <setting>0.50</setting> <!-- 20 -->
+      <setting>0.75</setting> <!-- 30 -->
+      <setting>1.00</setting> <!-- FULL -->
     </flaps>
+
+<!--
+    <systems>
+      <autopilot>
+        <locks>
+          <auto-take-off type="string">Disabled</auto-take-off>
+          <rudder-control type="string">Initialised</rudder-control>
+          <auto-flap-control type="string">Manual</auto-flap-control>
+          <speed type="string">0</speed>
+          <heading type="string">0</heading>
+          <altitude type="string">0</altitude>
+          <passive-mode type="bool">0</passive-mode>
+        </locks>
+      </autopilot>
+      <electrical>
+        <path></path>
+      </electrical>
+    </systems>
+-->
 
   </sim>
 
@@ -80,6 +101,12 @@
       <file>Aircraft/Carreidas/Nasal/doors.nas</file>
       <file>Aircraft/dhc3/Nasal/light.nas</file>
     </carreidas>
+<!--
+    <kfc200>
+      <file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
+    </kfc200>
+-->
   </nasal>
 
 </PropertyList>
+
