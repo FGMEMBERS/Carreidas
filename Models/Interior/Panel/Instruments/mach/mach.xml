@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- Mach -->
+
+<PropertyList>
+
+ <path>mach.ac</path>
+
+<!-- Mach -->
+ <animation>
+  <type>rotate</type>
+  <object-name>mach-Needle1</object-name>
+  <property>velocities/mach</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>180</dep></entry>
+   <entry><ind>0.7</ind><dep>200</dep></entry>
+   <entry><ind>0.8</ind><dep>220</dep></entry>
+   <entry><ind>0.9</ind><dep>240</dep></entry>
+   <entry><ind>1.0</ind><dep>260</dep></entry>
+   <entry><ind>1.1</ind><dep>300</dep></entry>
+   <entry><ind>1.2</ind><dep>320</dep></entry>
+   <entry><ind>1.3</ind><dep>340</dep></entry>
+   <entry><ind>1.4</ind><dep>360</dep></entry>
+   <entry><ind>1.6</ind><dep>400</dep></entry>
+   <entry><ind>1.8</ind><dep>440</dep></entry>
+   <entry><ind>2.0</ind><dep>480</dep></entry>
+   <entry><ind>2.1</ind><dep>500</dep></entry>
+   <entry><ind>2.2</ind><dep>520</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center> 
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <!-- Panel Lighting -->
+ <animation> 
+  <type>material</type>
+  <emission> 
+   <factor-prop>systems/electrical/outputs/instr-lights-port</factor-prop>
+   <red>0.03125</red>
+   <green>0.0089</green>
+   <blue>0.0089</blue>
+  </emission>
+ </animation>
+
+ <!-- Noshadow -->
+ <animation>
+  <type>noshadow</type>
+ </animation>
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation> 
+
+</PropertyList>
