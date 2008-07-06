@@ -4,6 +4,15 @@
 
   <path>carreidas.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Carreidas/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
@@ -73,6 +82,65 @@
     <object-name>rayon1</object-name>
     <object-name>rayon2</object-name>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>porte</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueG1</object-name>
+    <object-name>roueG2</object-name>
+    <object-name>roueD1</object-name>
+    <object-name>roueD2</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
+    <object-name>derive</object-name>
+    <object-name>derive2</object-name>
+    <object-name>centreailes</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>moteursint</object-name>
+    <object-name>heliceG</object-name>
+    <object-name>bolG</object-name>
+    <object-name>heliceD</object-name>
+    <object-name>bolD</object-name>
+    <object-name>echappes</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeA0</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeG0</object-name>
+    <object-name>axeD</object-name>
+    <object-name>axeD0</object-name>
+    <object-name>portebaieA</object-name>
+    <object-name>portebaieG</object-name>
+    <object-name>portebaieD</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>direction</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+  </animation>
+
+  <!-- Immatriculation -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Immat/immat.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
 
   <animation>
     <type>select</type>

@@ -16,6 +16,9 @@
 
     <model>
      <path>Aircraft/Carreidas/Models/carreidas.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
      <carreidas>
       <klu type="bool">false</klu>
       <us type="bool">true</us>
@@ -28,8 +31,20 @@
 
     <virtual-cockpit archive="y">true</virtual-cockpit>
 
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
     <help>
-      <title>Carreidas 160 (c) Herge</title>
+      <title>Carreidas 160</title>
       <line>______________________________________________</line>
       <key>
         <name>d</name>
@@ -63,6 +78,8 @@
       </electrical>
     </systems>
 -->
+
+    <menubar include="Gui/carreidas-menu.xml"/>
 
   </sim>
 
@@ -99,7 +116,9 @@
   <nasal>
     <carreidas>
       <file>Aircraft/Carreidas/Nasal/doors.nas</file>
-      <file>Aircraft/dhc3/Nasal/light.nas</file>
+      <file>Aircraft/Carreidas/Nasal/light.nas</file>
+      <file>Aircraft/Carreidas/Nasal/liveries.nas</file>
+      <file>Aircraft/Carreidas/Nasal/immat.nas</file>
     </carreidas>
 <!--
     <kfc200>
