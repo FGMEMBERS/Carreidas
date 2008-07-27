@@ -79,7 +79,7 @@
     </systems>
 -->
 
-    <menubar include="Gui/carreidas-menu.xml"/>
+    <menubar include="Dialogs/carreidas-menu.xml"/>
 
   </sim>
 
