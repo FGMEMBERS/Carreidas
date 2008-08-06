@@ -6,7 +6,6 @@
     <model>
       <livery>
         <name type="string">Default</name>
-        <index type="int">1</index>
         <texture>texture.png</texture>
       </livery>
     </model>

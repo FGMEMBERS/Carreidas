@@ -9,7 +9,7 @@ OBJECT poly
 name "bezeloutside"
 data 8
 Mesh.030
-texture "mach.rgb"
+texture "mach.png"
 texrep 1 1
 crease 45.000000
 numvert 128
@@ -819,7 +819,7 @@ OBJECT poly
 name "bezeloutside.001"
 data 8
 Mesh.161
-texture "mach.rgb"
+texture "mach.png"
 texrep 1 1
 crease 45.000000
 numvert 17
@@ -907,7 +907,7 @@ OBJECT poly
 name "mach-Needle1"
 data 8
 Mesh.158
-texture "mach.rgb"
+texture "mach.png"
 texrep 1 1
 crease 45.000000
 numvert 35

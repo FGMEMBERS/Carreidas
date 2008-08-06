@@ -8,7 +8,7 @@ OBJECT poly
 name "KI252A.004"
 data 8
 Mesh.018
-texture "kfc200.rgb"
+texture "kfc200.png"
 texrep 1 1
 crease 30.000000
 numvert 61
@@ -515,7 +515,7 @@ OBJECT poly
 name "face"
 data 8
 Mesh.008
-texture "asi.rgb"
+texture "asi.png"
 texrep 1 1
 crease 45.000000
 numvert 17
