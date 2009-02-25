@@ -50,6 +50,10 @@
         <name>d</name>
         <desc>Open/Close crew doors</desc>
       </key>
+      <key>
+        <name>Delete</name>
+        <desc>Toggle Reversers</desc>
+      </key>
     </help>
 
     <flaps>

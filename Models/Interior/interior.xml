@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -21,15 +21,28 @@
     <object-name>table</object-name>
 
     <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>intvitres</object-name>
   </animation>
 
   <!-- Pilote -->
   <model>
     <path>Aircraft/Carreidas/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -6.225 </x-m>
-      <y-m> -0.462 </y-m>
-      <z-m> -0.187 </z-m>
+      <x-m> -10.107 </x-m>
+      <y-m>  -0.462 </y-m>
+      <z-m>  -0.920 </z-m>
     </offsets>
   </model>
 
@@ -37,9 +50,9 @@
   <model>
     <path>Aircraft/Carreidas/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> -7.368 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.018 </z-m>
+      <x-m> -11.250 </x-m>
+      <y-m>   0.000 </y-m>
+      <z-m>  -0.715 </z-m>
     </offsets>
   </model>
 
