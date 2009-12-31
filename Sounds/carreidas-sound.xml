@@ -1,116 +1,468 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
   <fx>
 
-    <engine>
-      <name>engine</name>
+    <!-- Engines 1 -->
+    <engine-jet>
+      <name>engine-jet</name>
       <path>Sounds/jet.wav</path>
       <mode>looped</mode>
       <condition>
-        <property>/engines/engine[0]/running</property>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[0]/out-of-fuel</property>
+        </not>
       </condition>
-      <volume>
-        <property>/engines/engine[0]/prop-thrust</property>
-        <factor type="double">0.0001</factor>
-      </volume>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
       <pitch>
-        <property>/engines/engine[0]/n1</property>
-        <factor>0.2</factor>
+        <property>engines/engine[0]/n1</property>
+        <offset>0.1</offset>
+        <factor>.001</factor>
       </pitch>
-    </engine>
+      <volume>
+        <property>engines/engine[0]/thrust-lbs</property>
+        <factor>0.000025</factor>
+        <min>0.2</min>
+        <max>0.75</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet>
 
-    <engine>
-      <name>whine</name>
+    <engine-rumble>
+      <name>engine-rumble</name>
+      <path>Sounds/rumble.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+          <property>engines/engine[0]/out-of-fuel</property>
+        </not>
+      </condition>
+      <property>engines/engine[0]/afterburner</property>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[0]/afterburner</property>
+        <factor>1</factor>
+        <offset>0.3</offset>
+      </pitch>
+      <volume>
+        <property>engines/engine[0]/afterburner</property>
+        <factor>1.2</factor>
+        <offset>0.15</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-rumble>
+
+    <engine-whine-external>
+      <name>external-whine</name>
+      <path>Sounds/turbojet_fan.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+         <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[0]/out-of-fuel</property>
+        </not>
+      </condition>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.5</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[0]/n1</property>
+        <ofset>0.7</ofset>
+        <factor>.003</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine/n1</property>
+        <offset>1.0</offset>
+        <factor>-0.008</factor>
+        <max>0.6</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-external>
+
+    <engine-whine-internal>
+      <name>internal-whine</name>
       <path>Sounds/whine.wav</path>
       <mode>looped</mode>
       <condition>
-        <property>/engines/engine[0]/running</property>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[0]/out-of-fuel</property>
+        </not>
       </condition>
-      <volume>
-        <property>/engines/engine[0]/n2</property>
-        <factor>0.010</factor>
-        <max>1.0</max>
-      </volume>
       <pitch>
-        <property>/engines/engine[0]/n2</property>
-        <factor>0.01</factor>
-        <offset>0.15</offset>
+        <property>engines/engine[0]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
       </pitch>
-    </engine>
+      <volume>
+        <property>engines/engine[0]/thrust-lbs</property>
+        <factor>0.000012</factor>
+        <min>0.2</min>
+        <max>0.7</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-internal>
 
-    <engine>
-      <name>engine</name>
+    <engine-jet-internal>
+      <name>internal-jet</name>
       <path>Sounds/jet.wav</path>
       <mode>looped</mode>
       <condition>
-        <property>/engines/engine[1]/running</property>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[0]/out-of-fuel</property>
+        </not>
       </condition>
-      <volume>
-        <property>/engines/engine[1]/prop-thrust</property>
-        <factor type="double">0.0001</factor>
-      </volume>
       <pitch>
-        <property>/engines/engine[1]/n1</property>
-        <factor>0.2</factor>
+        <property>engines/engine[0]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
       </pitch>
-    </engine>
-
-    <engine>
-      <name>whine</name>
-      <path>Sounds/whine.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>/engines/engine[1]/running</property>
-      </condition>
       <volume>
-        <property>/engines/engine[1]/n2</property>
-        <factor>0.010</factor>
-        <max>1.0</max>
+        <property>engines/engine[0]/thrust-lbs</property>
+        <factor>0.00005</factor>
+        <min>0.1</min>
+        <max>0.9</max>
       </volume>
-      <pitch>
-        <property>/engines/engine[1]/n2</property>
-        <factor>0.01</factor>
-        <offset>0.15</offset>
-      </pitch>
-    </engine>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet-internal>
 
-    <engine>
-      <name>engine</name>
+    <!-- Engines 2 -->
+    <engine-jet>
+      <name>engine-jet</name>
       <path>Sounds/jet.wav</path>
       <mode>looped</mode>
       <condition>
-        <property>/engines/engine[2]/running</property>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[1]/out-of-fuel</property>
+        </not>
       </condition>
-      <volume>
-        <property>/engines/engine[2]/prop-thrust</property>
-        <factor type="double">0.0001</factor>
-      </volume>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
       <pitch>
-        <property>/engines/engine[2]/n1</property>
-        <factor>0.2</factor>
+        <property>engines/engine[1]/n1</property>
+        <offset>0.1</offset>
+        <factor>.001</factor>
       </pitch>
-    </engine>
+      <volume>
+        <property>engines/engine[1]/thrust-lbs</property>
+        <factor>0.000025</factor>
+        <min>0.2</min>
+        <max>0.75</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet>
 
-    <engine>
-      <name>whine</name>
+    <engine-rumble>
+      <name>engine-rumble</name>
+      <path>Sounds/rumble.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+          <property>engines/engine[1]/out-of-fuel</property>
+        </not>
+      </condition>
+      <property>engines/engine[1]/afterburner</property>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[1]/afterburner</property>
+        <factor>1</factor>
+        <offset>0.3</offset>
+      </pitch>
+      <volume>
+        <property>engines/engine[1]/afterburner</property>
+        <factor>1.2</factor>
+        <offset>0.15</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-rumble>
+
+    <engine-whine-external>
+      <name>external-whine</name>
+      <path>Sounds/turbojet_fan.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+         <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[1]/out-of-fuel</property>
+        </not>
+      </condition>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.5</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[1]/n1</property>
+        <ofset>0.7</ofset>
+        <factor>.003</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine/n1</property>
+        <offset>1.0</offset>
+        <factor>-0.008</factor>
+        <max>0.6</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-external>
+
+    <engine-whine-internal>
+      <name>internal-whine</name>
       <path>Sounds/whine.wav</path>
       <mode>looped</mode>
       <condition>
-        <property>/engines/engine[2]/running</property>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[1]/out-of-fuel</property>
+        </not>
       </condition>
-      <volume>
-        <property>/engines/engine[2]/n2</property>
-        <factor>0.010</factor>
-        <max>1.0</max>
-      </volume>
       <pitch>
-        <property>/engines/engine[2]/n2</property>
-        <factor>0.01</factor>
-        <offset>0.15</offset>
+        <property>engines/engine[1]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
       </pitch>
-    </engine>
+      <volume>
+        <property>engines/engine[1]/thrust-lbs</property>
+        <factor>0.000012</factor>
+        <min>0.2</min>
+        <max>0.7</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-internal>
+
+    <engine-jet-internal>
+      <name>internal-jet</name>
+      <path>Sounds/jet.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[1]/out-of-fuel</property>
+        </not>
+      </condition>
+      <pitch>
+        <property>engines/engine[1]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine[1]/thrust-lbs</property>
+        <factor>0.00005</factor>
+        <min>0.1</min>
+        <max>0.9</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet-internal>
+
+
+    <!-- Engines 3 -->
+    <engine-jet>
+      <name>engine-jet</name>
+      <path>Sounds/jet.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[2]/out-of-fuel</property>
+        </not>
+      </condition>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[2]/n1</property>
+        <offset>0.1</offset>
+        <factor>.001</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine[2]/thrust-lbs</property>
+        <factor>0.000025</factor>
+        <min>0.2</min>
+        <max>0.75</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet>
+
+    <engine-rumble>
+      <name>engine-rumble</name>
+      <path>Sounds/rumble.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+          <property>engines/engine[2]/out-of-fuel</property>
+        </not>
+      </condition>
+      <property>engines/engine[2]/afterburner</property>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>-180.0</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[2]/afterburner</property>
+        <factor>1</factor>
+        <offset>0.3</offset>
+      </pitch>
+      <volume>
+        <property>engines/engine[2]/afterburner</property>
+        <factor>1.2</factor>
+        <offset>0.15</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-rumble>
+
+    <engine-whine-external>
+      <name>external-whine</name>
+      <path>Sounds/turbojet_fan.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <not>
+         <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[2]/out-of-fuel</property>
+        </not>
+      </condition>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1</z>
+        <inner-angle>180.0</inner-angle>
+        <outer-angle>360.0</outer-angle>
+        <outer-gain>0.5</outer-gain>
+      </orientation>
+      <pitch>
+        <property>engines/engine[2]/n1</property>
+        <ofset>0.7</ofset>
+        <factor>.003</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine/n1</property>
+        <offset>1.0</offset>
+        <factor>-0.008</factor>
+        <max>0.6</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-external>
+
+    <engine-whine-internal>
+      <name>internal-whine</name>
+      <path>Sounds/whine.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[2]/out-of-fuel</property>
+        </not>
+      </condition>
+      <pitch>
+        <property>engines/engine[2]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine[2]/thrust-lbs</property>
+        <factor>0.000012</factor>
+        <min>0.2</min>
+        <max>0.7</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-whine-internal>
+
+    <engine-jet-internal>
+      <name>internal-jet</name>
+      <path>Sounds/jet.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>sim/current-view/internal</property>
+        <not>
+          <property>engines/engine[2]/out-of-fuel</property>
+        </not>
+      </condition>
+      <pitch>
+        <property>engines/engine[2]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.0016</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine[2]/thrust-lbs</property>
+        <factor>0.00005</factor>
+        <min>0.1</min>
+        <max>0.9</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-jet-internal>
 
     <rumble>
       <name>rumble</name>
@@ -424,6 +776,7 @@
         <min>90.0</min>
       </volume>
     </stall>
+
   </fx>
 
 </PropertyList>
