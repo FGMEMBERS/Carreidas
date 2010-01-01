@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <name>CDU 2d Panel</name>
+    <background>Aircraft/Citation-Bravo/Models/Instruments/CDU/transparent.png</background>
+    <w>300</w>
+    <h>256</h>
+
+    <instruments>
+
+        <instrument include="flightplan.xml">
+            <name>FP</name>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/ac-volts</property>
+                    <value>5</value>
+                </greater-than>
+            </condition>
+            <x>128</x>
+            <y>128</y>
+            <w>256</w>
+            <h>256</h>
+        </instrument>
+
+    </instruments>
+</PropertyList>

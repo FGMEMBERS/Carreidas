@@ -64,40 +64,20 @@
       <setting>1.00</setting> <!-- FULL -->
     </flaps>
 
-<!--
+    <instrumentation>
+      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
+    </instrumentation>
+
     <systems>
       <autopilot>
-        <locks>
-          <auto-take-off type="string">Disabled</auto-take-off>
-          <rudder-control type="string">Initialised</rudder-control>
-          <auto-flap-control type="string">Manual</auto-flap-control>
-          <speed type="string">0</speed>
-          <heading type="string">0</heading>
-          <altitude type="string">0</altitude>
-          <passive-mode type="bool">0</passive-mode>
-        </locks>
+        <path>Aircraft/Carreidas/Systems/Bravo-autopilot.xml</path>
       </autopilot>
-      <electrical>
-        <path></path>
-      </electrical>
+      <path>Aircraft/Carreidas/Systems/systems.xml</path>
     </systems>
--->
 
     <menubar include="Dialogs/carreidas-menu.xml"/>
 
   </sim>
-
-  <engines>
-   <engine n="0">
-    <running>true</running>
-   </engine>
-   <engine n="1">
-    <running>true</running>
-   </engine>
-   <engine n="2">
-    <running>true</running>
-   </engine>
-  </engines>
 
   <consumables>
    <fuel>
@@ -117,6 +97,39 @@
     <keyboard include="Nasal/carreidas-keyboard.xml"/>
   </input>
  
+  <systems>
+    <electrical>
+      <ac-volts>0</ac-volts>
+    </electrical>
+  </systems>
+
+  <instrumentation>
+    <adf n="1">
+      <serviceable>true</serviceable>
+    </adf>
+    <transponder n="0">
+      <serviceable>true</serviceable>
+    </transponder>
+    <transponder n="1">
+      <serviceable>true</serviceable>
+    </transponder>
+    <radar n="0">
+      <serviceable>true</serviceable>
+    </radar>
+  </instrumentation>
+
+  <engines>
+    <engine n="0">
+      <running>false</running>
+    </engine>
+    <engine n="1">
+      <running>false</running>
+    </engine>
+    <engine n="2">
+      <running>false</running>
+    </engine>
+  </engines>
+
   <nasal>
     <carreidas>
       <file>Aircraft/Carreidas/Nasal/doors.nas</file>
@@ -124,11 +137,27 @@
       <file>Aircraft/Carreidas/Nasal/liveries.nas</file>
       <file>Aircraft/Carreidas/Nasal/immat.nas</file>
     </carreidas>
-<!--
-    <kfc200>
-      <file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
-    </kfc200>
--->
+    <efis>
+      <file>Aircraft/Instruments-3d/primus-1000/P1000.nas</file>
+    </efis>
+    <citation>
+      <file>Aircraft/Carreidas/Nasal/Bravo.nas</file>
+      <file>Aircraft/Carreidas/Nasal/Electrical.nas</file>
+      <file>Aircraft/Carreidas/Nasal/flightdirector.nas</file>
+    </citation>
+    <systems>
+      <file>Aircraft/Carreidas/Models/Interior/Instruments/KLN90B/kln90b.nas</file>
+    </systems>
+    <zkv500>
+      <file>Aircraft/Instruments-3d/zkv500/ZKV500.nas</file>
+    </zkv500>
+    <kr87>
+      <file>Aircraft/Carreidas/Models/Interior/Instruments/kr87/kr87.nas</file>
+      <script><![CDATA[
+        kr87.new("/instrumentation/adf[0]");
+        kr87.new("/instrumentation/adf[1]");
+      ]]></script>
+    </kr87>
   </nasal>
 
 </PropertyList>

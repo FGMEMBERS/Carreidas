@@ -1,0 +1,235 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+  <params>
+    <selected-radial>instrumentation/nav[1]/radials/selected-deg</selected-radial>
+    <signal-quality>instrumentation/nav[1]/signal-quality-norm</signal-quality>
+    <to-flag>instrumentation/nav[1]/to-flag</to-flag>
+    <from-flag>instrumentation/nav[1]/from-flag</from-flag>
+    <tofrom-serviceable>instrumentation/nav[1]/to-from/serviceable</tofrom-serviceable>
+    <gs-needle-deflection>instrumentation/nav[1]/gs-needle-deflection</gs-needle-deflection>
+    <heading-needle-deflection>instrumentation/nav[1]/heading-needle-deflection</heading-needle-deflection>
+    <has-gs>instrumentation/nav[1]/has-gs</has-gs>
+    <gs-serviceable>instrumentation/nav[1]/gs/serviceable</gs-serviceable>
+  </params>
+
+  <path>VOR_LOC.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>FROM</object-name>
+    <object-name>GS</object-name>
+    <object-name>NAV</object-name>
+    <object-name>TO</object-name>
+    <object-name>GSNeedle</object-name>
+    <object-name>LOCNeedle</object-name>
+    <object-name>Course1</object-name>
+    <object-name>Course10</object-name>
+    <object-name>Course100</object-name>
+    <object-name>OBS</object-name>
+    <emission include="InstrumentLightEmissionInclude.xml"/>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>GSNeedle</object-name>
+    <property alias="/params/gs-needle-deflection"/>
+    <factor>1</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>-0.0238677</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LOCNeedle</object-name>
+    <property alias="/params/heading-needle-deflection"/>
+    <factor>1</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.0255278</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>TO</object-name>
+    <condition>
+      <property alias="/params/to-flag"/>
+      <property alias="/params/tofrom-serviceable"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FROM</object-name>
+    <condition>
+      <property alias="/params/from-flag"/>
+      <property alias="/params/tofrom-serviceable"/>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>NAV</object-name>
+    <condition>
+      <less-than>
+        <property alias="/params/signal-quality"/>
+        <value type="double">0.3</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GS</object-name>
+    <condition>
+      <not>
+        <property alias="/params/has-gs"/>
+        <property alias="/params/gs-serviceable"/>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course1</object-name>
+    <property alias="/params/selected-radial"/>
+    <factor>-0.1</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course10</object-name>
+    <property alias="/params/selected-radial"/>
+    <factor>-0.01</factor>
+    <step>10</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course100</object-name>
+    <property alias="/params/selected-radial"/>
+    <factor>-0.001</factor>
+    <step>100</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>OBSSelectorPick.L</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>-10</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>OBSSelectorPick.R</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>10</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>OBSSelector</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-radial"/>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

@@ -1,4 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New version by MyName -->
 
 <PropertyList>
 
@@ -17,137 +19,306 @@
     <!-- Objets transparents -->
   </animation>
 
-  <!-- KFC 200 -->
-  <!-- ki256 -->
+  <!-- PFD -->
   <model>
-    <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.550 </y-m>
-      <z-m>  0.104 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.550 </y-m>
-      <z-m>  0.104 </z-m>
-    </offsets>
-  </model>
-
-  <!-- ki252a -->
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.550 </y-m>
-      <z-m>  0.000 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.550 </y-m>
-      <z-m>  0.000 </z-m>
-    </offsets>
-  </model>
-
-  <!-- kas297 -->
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/kas297.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.490 </y-m>
-      <z-m>  0.230 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/kas297.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.490 </y-m>
-      <z-m>  0.230 </z-m>
-    </offsets>
-  </model>
-
-  <!-- fd-control -->
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.680 </y-m>
-      <z-m>  0.070 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.680 </y-m>
-      <z-m>  0.070 </z-m>
-    </offsets>
-  </model>
-
-  <!-- fd-annun -->
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.470 </y-m>
-      <z-m>  0.190 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.470 </y-m>
-      <z-m>  0.190 </z-m>
-    </offsets>
-  </model>
-
-  <!-- altitude -->
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/alt-2/alt2.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m> -0.440 </y-m>
-      <z-m>  0.101 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/alt-2/alt2.xml</path>
-    <offsets>
-      <x-m>  0.740 </x-m>
-      <y-m>  0.440 </y-m>
-      <z-m>  0.101 </z-m>
-    </offsets>
-  </model>
-
-  <!-- ASI -->
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <path>Aircraft/Instruments-3d/primus-1000/PFD/PFD.xml</path>
     <offsets>
       <x-m>  0.744 </x-m>
-      <y-m> -0.440 </y-m>
+      <y-m> -0.560 </y-m>
       <z-m>  0.000 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <path>Aircraft/Instruments-3d/primus-1000/PFD/PFD.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.560 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MFD -->
+  <model>
+    <path>Aircraft/Instruments-3d/primus-1000/MFD/MFD.xml</path>
     <offsets>
       <x-m>  0.744 </x-m>
-      <y-m>  0.440 </y-m>
+      <y-m> -0.360 </y-m>
       <z-m>  0.000 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/primus-1000/MFD/MFD.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.360 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Standby instruments -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/stdby/ai/STBYai.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.162 </y-m>
+      <z-m>  0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/stdby/hsi/hsi.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.162 </y-m>
+      <z-m>  0.040 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/stdby/alt/ALT.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.162 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- EICAS -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EICAS/EICAS.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AP Mode -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/fmc/fmc.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.092 </y-m>
+      <z-m>  0.209 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Heading/Course knobs -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/ric/RIC.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.078 </y-m>
+      <z-m> 0.209 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Engine 3 Instruments -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/rpm/rpmN1R.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.058 </y-m>
+      <z-m> -0.095 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/rpm/rpmN2R.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.002 </y-m>
+      <z-m> -0.095 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/egt/egtR.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.062 </y-m>
+      <z-m> -0.095 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/debit/debitR.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.028 </y-m>
+      <z-m> -0.155 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/oilpressure/oilpressureR.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.032 </y-m>
+      <z-m> -0.155 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/oiltemp/oiltempR.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.002 </y-m>
+      <z-m> -0.215 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Radio/GPS/Transponder -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+    <offsets>
+      <pitch-deg>69.12</pitch-deg>
+      <x-m>  0.889 </x-m>
+      <y-m> -0.106 </y-m>
+      <z-m>  0.604 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
+    <offsets>
+      <pitch-deg>69.12</pitch-deg>
+      <x-m> 0.889 </x-m>
+      <y-m> 0.106 </y-m>
+      <z-m> 0.604 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+    <offsets>
+      <pitch-deg>70</pitch-deg>
+      <x-m>  0.848 </x-m>
+      <y-m> -0.106 </y-m>
+      <z-m>  0.571 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+    <offsets>
+      <pitch-deg>70</pitch-deg>
+      <x-m> 0.848 </x-m>
+      <y-m> 0.106 </y-m>
+      <z-m> 0.571 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87-1.xml</path>
+    <offsets>
+      <pitch-deg>70</pitch-deg>
+      <x-m>  0.803 </x-m>
+      <y-m> -0.106 </y-m>
+      <z-m>  0.555 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87-2.xml</path>
+    <offsets>
+      <pitch-deg>70</pitch-deg>
+      <x-m> 0.803 </x-m>
+      <y-m> 0.106 </y-m>
+      <z-m> 0.555 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/KLN90B/kln90b.xml</path>
+    <offsets>
+      <pitch-deg>36.76</pitch-deg>
+      <x-m>  0.685 </x-m>
+      <y-m> -0.098 </y-m>
+      <z-m>  0.507 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Instruments-3d/zkv500/ZKV500.xml</path>
+    <offsets>
+      <pitch-deg>36.76</pitch-deg>
+      <x-m> 0.690 </x-m>
+      <y-m> 0.098 </y-m>
+      <z-m> 0.507 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FMS and EFIS control panel -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/CDU/gnx.xml</path>
+    <offsets>
+      <pitch-deg>-74.48</pitch-deg>
+      <x-m>  0.816 </x-m>
+      <y-m> -0.087 </y-m>
+      <z-m> -0.278 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/CDU/gnx.xml</path>
+    <offsets>
+      <pitch-deg>-74.48</pitch-deg>
+      <x-m>  0.816 </x-m>
+      <y-m>  0.087 </y-m>
+      <z-m> -0.278 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dc550/dc550.xml</path>
+    <offsets>
+      <pitch-deg>-73.93</pitch-deg>
+      <x-m>  0.932 </x-m>
+      <y-m> -0.087 </y-m>
+      <z-m> -0.312 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dc550/dc550.xml</path>
+    <offsets>
+      <pitch-deg>-73.93</pitch-deg>
+      <x-m>  0.932 </x-m>
+      <y-m>  0.087 </y-m>
+      <z-m> -0.312 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AP controls -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/ap/AP-control.xml</path>
+    <offsets>
+      <pitch-deg>-90</pitch-deg>
+      <x-m>  1.394 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.371 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MFD controls -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mfc/mfc.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.460 </y-m>
+      <z-m> -0.164 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mfc/mfc.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.460 </y-m>
+      <z-m> -0.164 </z-m>
     </offsets>
   </model>
 
@@ -167,6 +338,170 @@
       <x-m>  0.744 </x-m>
       <y-m>  0.333 </y-m>
       <z-m>  0.170 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AoA -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/aoa/aoa-gauge.xml</path>
+    <offsets>
+      <roll-deg>-90</roll-deg>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.503 </y-m>
+      <z-m>  0.170 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/aoa/aoa-gauge.xml</path>
+    <offsets>
+      <roll-deg>-90</roll-deg>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.503 </y-m>
+      <z-m> 0.170 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Master Caution -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/caution/caution.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.543 </y-m>
+      <z-m>  0.220 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/caution/caution.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.543 </y-m>
+      <z-m> 0.220 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Master Warning -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/caution/warning.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.453 </y-m>
+      <z-m>  0.220 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/caution/warning.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.453 </y-m>
+      <z-m> 0.220 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RMI -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/rmi/RMI-1.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.150 </y-m>
+      <z-m> 0.100 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ILS -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/ILS/VOR_LOC.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.150 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Radar Altimeter -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/radar-alt/kra10a.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m>  0.150 </y-m>
+      <z-m> -0.100 </z-m>
+    </offsets>
+  </model>
+
+
+  <!-- Marker Beacon -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/outer.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.610 </y-m>
+      <z-m>  0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/outer.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.610 </y-m>
+      <z-m> 0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/middle.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.560 </y-m>
+      <z-m>  0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/middle.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.560 </y-m>
+      <z-m> 0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/inner.xml</path>
+    <offsets>
+      <x-m>  0.744 </x-m>
+      <y-m> -0.510 </y-m>
+      <z-m>  0.140 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/marker-beacon/inner.xml</path>
+    <offsets>
+      <x-m> 0.744 </x-m>
+      <y-m> 0.510 </y-m>
+      <z-m> 0.140 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Afterburner toggle -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/afterburner/afterburner.xml</path>
+    <offsets>
+      <x-m>  1.163 </x-m>
+      <y-m> -0.134 </y-m>
+      <z-m>  -0.356 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/afterburner/afterburner.xml</path>
+    <offsets>
+      <x-m>  1.163 </x-m>
+      <y-m>  0.134 </y-m>
+      <z-m> -0.356 </z-m>
     </offsets>
   </model>
 

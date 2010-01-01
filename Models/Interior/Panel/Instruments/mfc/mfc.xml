@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+MFD Controller
+-->
+<PropertyList>
+
+<path>mfc.ac</path>
+
+<!-- hotspots-->
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.map</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("map");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.tcas</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("tcas");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.wx</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("wx");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.apt</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("apt");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.dat</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("dat");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.rdr-up</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("radar-up");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>MFC.rdr-dn</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("radar-dn");</script>
+        </binding>
+    </action>
+</animation>
+
+</PropertyList>

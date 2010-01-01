@@ -6,6 +6,20 @@
     <menu n="10">
       <label>Carreidas 160 Jet</label>
       <enabled type="bool">true</enabled>
+                <item n="3">
+                    <label>Autostart</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/autostart</property>
+                    </binding>
+                </item>
+                <item n="0">
+                <label>Autopilot Settings</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>citation.ap_settings.open()</script>
+                    </binding>
+                </item>
       <item>
         <label>Select Livery</label>
         <binding>

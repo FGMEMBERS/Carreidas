@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+<path>M.ac</path>
+<animation>
+  <type>pick</type>
+  <object-name>Chassis</object-name>
+  <object-name>Light</object-name>
+  <object-name>Glass</object-name>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/instrumentation/marker-beacon/middle-test</property>
+      <value>1</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+      <property>/instrumentation/marker-beacon/middle-test</property>
+        <value>0</value>
+      </binding>
+    </mod-up>
+  </action>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>Light</object-name>
+  <condition>
+    <or>
+      <property>/instrumentation/marker-beacon/middle</property>
+      <property>/instrumentation/marker-beacon/middle-test</property>
+    </or>
+  </condition>
+</animation>
+<animation>
+  <type>translate</type>
+  <factor>-0.002</factor>
+  <property>/instrumentation/marker-beacon/middle-test</property>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+</PropertyList>

@@ -29,12 +29,17 @@
     </binding>
     <binding>
       <command>property-toggle</command>
-      <property>controls/engines/engine[1]/reverser</property>
-    </binding>
-    <binding>
-      <command>property-toggle</command>
       <property>controls/engines/engine[2]/reverser</property>
     </binding>
   </key>
+
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>citation.ap_settings.toggle()</script>
+                </binding>
+            </key>
 
 </PropertyList>

@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Display Control 550
+-->
+<PropertyList>
+
+<path>dc550.ac</path>
+
+<animation>
+    <type>rotate</type>
+    <object-name>nav1.knob</object-name>
+    <property>instrumentation/primus1000/control/nav1ptr</property>
+    <interpolation>
+        <entry><ind>0.0</ind><dep>0.0</dep></entry>
+        <entry><ind>1.0</ind><dep>35.0</dep></entry>
+        <entry><ind>2.0</ind><dep>70.0</dep></entry>
+        <entry><ind>3.0</ind><dep>100.0</dep></entry>
+    </interpolation>
+    <axis>
+        <x>-1.0</x>
+        <y>0.0</y>
+        <z>0.0</z>
+    </axis>
+    <center>
+        <x-m>0.002</x-m>
+        <y-m>-0.053</y-m>
+        <z-m>-0.012</z-m>
+    </center>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>nav2.knob</object-name>
+    <property>instrumentation/primus1000/control/nav2ptr</property>
+    <interpolation>
+        <entry><ind>0.0</ind><dep>0.0</dep></entry>
+        <entry><ind>1.0</ind><dep>30.0</dep></entry>
+        <entry><ind>2.0</ind><dep>60.0</dep></entry>
+        <entry><ind>3.0</ind><dep>90.0</dep></entry>
+    </interpolation>
+    <axis>
+        <x>-1.0</x>
+        <y>0.0</y>
+        <z>0.0</z>
+    </axis>
+    <center>
+        <x-m>0.002</x-m>
+        <y-m>0.051</y-m>
+        <z-m>-0.012</z-m>
+    </center>
+</animation>
+
+
+<!--    OSG hotspots   -->
+<animation>
+    <type>pick</type>
+    <object-name>nav1.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("pointer1-dec");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav1.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("pointer1-inc");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav2.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("pointer2-dec");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav2.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("pointer2-inc");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.hsi</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("hsi");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.sc-cp</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("cp");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.in-hpa</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("hpa");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.gspd-ttg</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("ttg");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.et</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("et");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.nav</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("nav");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DC550.fms</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("fms");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DH.knob</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("ra-up");</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>DH.knob</object-name>
+    <action>
+        <button>1</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.2</interval-sec>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("ra-dn");</script>
+        </binding>
+    </action>
+</animation>
+
+</PropertyList>
