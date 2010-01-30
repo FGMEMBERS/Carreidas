@@ -8,10 +8,26 @@ This file selects the instrumentation modules that should be available.
 
 <PropertyList>
 
+    <groundradar>
+        <name>groundradar</name>
+        <airport-id-source>instrumentation/groundradar/id</airport-id-source>
+        <range-source>instrumentation/groundradar/range</range-source>
+    </groundradar>
+
+    <master-reference-gyro>
+        <name>master-reference-gyro</name>
+        <number>0</number>
+    </master-reference-gyro>
+
     <turn-indicator>
         <name>turn-indicator</name>
         <number>0</number>
     </turn-indicator>
+
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
 
     <slip-skid-ball>
         <name>slip-skid-ball</name>
@@ -96,12 +112,12 @@ This file selects the instrumentation modules that should be available.
     </KT-70>
 
     <KR-87>
-        <name>adf</name>
+        <name>kr-87</name>
         <number>0</number>
     </KR-87>
 
     <KR-87>
-        <name>adf</name>
+        <name>kr-87</name>
         <number>1</number>
     </KR-87>
 
@@ -125,9 +141,24 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </radar>
 
+    <radar>
+        <name>radar</name>
+        <number>1</number>
+    </radar>
+
     <marker-beacon>
         <name>marker-beacon</name>
         <number>0</number>
     </marker-beacon>
+
+    <radar-altimeter>
+        <name>radar-altimeter</name>
+        <number>0</number>
+    </radar-altimeter>
+
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
 
 </PropertyList>

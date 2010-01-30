@@ -34,6 +34,13 @@
           <script>carreidas.immat_dialog.toggle()</script>
         </binding>
       </item>
+                    <item>
+                        <label>EFB</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>citation.EFB.toggle();</script>
+                        </binding>
+                    </item>
     </menu>
   </default>
 

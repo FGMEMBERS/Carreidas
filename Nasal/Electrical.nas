@@ -206,7 +206,7 @@ var init_switches = func{
     append(rbus_input,props.globals.initNode("controls/engines/engine[1]/starter",0,"BOOL"));
     append(rbus_output,props.globals.initNode("systems/electrical/outputs/starter[1]",0,"DOUBLE"));
     append(rbus_load,1);
-    append(rbus_input,props.globals.initNode("controls/engines/engine[1]/starter",0,"BOOL"));
+    append(rbus_input,props.globals.initNode("controls/engines/engine[2]/starter",0,"BOOL"));
     append(rbus_output,props.globals.initNode("systems/electrical/outputs/starter[2]",0,"DOUBLE"));
     append(rbus_load,1);
     append(rbus_input,AVswitch);
@@ -215,6 +215,18 @@ var init_switches = func{
     append(rbus_input,AVswitch);
     append(rbus_output,props.globals.initNode("systems/electrical/outputs/efis",0,"DOUBLE"));
     append(rbus_load,1);
+    append(lbus_input,AVswitch);
+    append(lbus_output,props.globals.initNode("systems/electrical/outputs/comm",0,"DOUBLE"));
+    append(lbus_load,1);
+    append(lbus_input,AVswitch);
+    append(lbus_output,props.globals.initNode("systems/electrical/outputs/comm[1]",0,"DOUBLE"));
+    append(lbus_load,1);
+    append(lbus_input,AVswitch);
+    append(lbus_output,props.globals.initNode("systems/electrical/outputs/nav",0,"DOUBLE"));
+    append(lbus_load,1);
+    append(lbus_input,AVswitch);
+    append(lbus_output,props.globals.initNode("systems/electrical/outputs/nav[1]",0,"DOUBLE"));
+    append(lbus_load,1);
 
 
     append(lbus_input,AVswitch);
@@ -228,31 +240,23 @@ var init_switches = func{
     append(lbus_input,AVswitch);
     append(lbus_output,props.globals.initNode("systems/electrical/outputs/gps",0,"DOUBLE"));
     append(lbus_load,1);
-    append(lbus_input,AVswitch);
-    append(lbus_output,props.globals.initNode("systems/electrical/outputs/DG",0,"DOUBLE"));
-    append(lbus_load,1);
-    append(lbus_input,AVswitch);
-    append(lbus_output,props.globals.initNode("systems/electrical/outputs/transponder",0,"DOUBLE"));
-    append(lbus_load,1);
-    append(lbus_output,props.globals.initNode("systems/electrical/outputs/transponder[1]",0,"DOUBLE"));
-    append(lbus_load,1);
-    append(lbus_input,AVswitch);
-    append(lbus_output,props.globals.initNode("systems/electrical/outputs/mk-viii",0,"DOUBLE"));
-    append(lbus_load,1);
-    append(lbus_input,AVswitch);
-    append(lbus_output,props.globals.initNode("systems/electrical/outputs/turn-coordinator",0,"DOUBLE"));
-    append(lbus_load,1);
     append(rbus_input,AVswitch);
-    append(rbus_output,props.globals.initNode("systems/electrical/outputs/comm",0,"DOUBLE"));
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/DG",0,"DOUBLE"));
     append(rbus_load,1);
     append(rbus_input,AVswitch);
-    append(rbus_output,props.globals.initNode("systems/electrical/outputs/comm[1]",0,"DOUBLE"));
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/MRG",0,"DOUBLE"));
     append(rbus_load,1);
     append(rbus_input,AVswitch);
-    append(rbus_output,props.globals.initNode("systems/electrical/outputs/nav",0,"DOUBLE"));
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/transponder",0,"DOUBLE"));
     append(rbus_load,1);
     append(rbus_input,AVswitch);
-    append(rbus_output,props.globals.initNode("systems/electrical/outputs/nav[1]",0,"DOUBLE"));
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/transponder[1]",0,"DOUBLE"));
+    append(rbus_load,1);
+    append(rbus_input,AVswitch);
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/mk-viii",0,"DOUBLE"));
+    append(rbus_load,1);
+    append(rbus_input,AVswitch);
+    append(rbus_output,props.globals.initNode("systems/electrical/outputs/turn-coordinator",0,"DOUBLE"));
     append(rbus_load,1);
 }
 
@@ -287,6 +291,29 @@ update_virtual_bus = func( dt ) {
         Rbus.setValue(rbus_volts);
         load += rh_bus(rbus_volts);
         alternator2.apply_load(load);
+    }
+    if(count!=0 and getprop("controls/electric/engine[2]/generator")==1){
+        lbus_volts = battery_volts;
+        power_source = "battery";
+        var alternator3_volts = alternator3.get_output_volts();
+        if (alternator3_volts > lbus_volts) {
+            lbus_volts = alternator3_volts;
+            power_source = "alternator3";
+        }
+        lbus_volts *=PWR;
+         Lbus.setValue(lbus_volts);
+        load += lh_bus(lbus_volts);
+        alternator3.apply_load(load);
+        rbus_volts = battery_volts;
+        var alternator3_volts = alternator3.get_output_volts();
+        if (alternator3_volts > rbus_volts) {
+            rbus_volts = alternator3_volts;
+            power_source = "alternator3";
+        }
+        rbus_volts *=PWR;
+        Rbus.setValue(rbus_volts);
+        load += rh_bus(rbus_volts);
+        alternator3.apply_load(load);
     }
     count=1-count;
     if(rbus_volts > 5 and  lbus_volts>5) xtie=1;

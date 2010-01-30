@@ -2,7 +2,7 @@
 <PropertyList>
 
     <name>EICAS Panel</name>
-    <background>Aircraft/CitationX/Models/Instruments/EICAS/transparent.png</background>
+    <background>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EICAS/transparent.png</background>
     <w>200</w>
     <h>200</h>
 

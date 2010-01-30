@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Updated by Victhor FOSTER : 2010 -->
+
 <airplane mass="21700">
 
   <approach speed="150" aoa="2" fuel="0.3">
@@ -93,17 +95,18 @@
 
   <!-- left -->
   <jet x="-6.191" y="1.718" z="-0.529"
-       mass="700"
-       thrust="24000"
+       mass="4500"
+       thrust="21000"
        afterburner="32000"
-       tsfc="0.65"
+       tsfc="0.519"
        epr="5.1">
        <actionpt x="-8.122" y="1.718" z="-0.529"/>
+
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-       <control-input axis="/controls/engines/engine[0]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[0]/augmentation" control="REHEAT"/>
        <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
 
-       <control-output control="REHEAT" prop="engines/engine[0]/afterburner"/>
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
        <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
 
        <control-speed control="THROTTLE" transition-time="3.0"/>
@@ -113,17 +116,17 @@
 
   <!-- right -->
   <jet x="-6.191" y="-1.718" z="-0.529"
-       mass="700"
-       thrust="24000"
+       mass="4500"
+       thrust="21000"
        afterburner="32000"
-       tsfc="0.65"
+       tsfc="0.519"
        epr="5.1">
        <actionpt x="-8.122" y="-1.718" z="-0.529"/>
+
        <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
-       <control-input axis="/controls/engines/engine[1]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[1]/augmentation" control="REHEAT"/>
        <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
 
-       <control-output control="REHEAT" prop="engines/engine[1]/afterburner"/>
        <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
 
        <control-speed control="THROTTLE" transition-time="3.0"/>
@@ -133,16 +136,15 @@
 
   <!-- center -->
   <jet x="-9.126" y="0.0" z="-0.648"
-       mass="700"
-       thrust="24000"
+       mass="4500"
+       thrust="21000"
        afterburner="32000"
-       tsfc="0.65"
+       tsfc="0.519"
        epr="5.1">
        <actionpt x="-11.057" y="0" z="-0.648"/>
-       <control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
-       <control-input axis="/controls/engines/engine[2]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
 
-       <control-output control="REHEAT" prop="engines/engine[2]/afterburner"/>
+       <control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[2]/augmentation" control="REHEAT"/>
 
        <control-speed control="THROTTLE" transition-time="3.0"/>
        <control-speed control="REHEAT" transition-time="8.0"/>
@@ -216,7 +218,7 @@
   <tank x="1.2" y="2" z="-2" jet="true" capacity="25000"/>
   <tank x="3" y="0" z="-2" jet="true" capacity="14000"/>
   <tank x="1.2" y="-2" z="-2" jet="true" capacity="25000"/>
-  
-  <ballast x="10" y="0" z="-2" mass="1300"/>
+
+  <ballast  x="8.958" y="0" z="0" mass="5500"/>
 
 </airplane>

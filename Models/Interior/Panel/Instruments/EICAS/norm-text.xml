@@ -142,7 +142,7 @@ Primus 2000 EICAS
                 <chunks>
                     <chunk>
                         <type>number-value</type>
-                        <property>consumables/fuel/tank[1]/level-lbs</property>
+                        <property>consumables/fuel/tank[2]/level-lbs</property>
                         <format>%04.0f</format>
                     </chunk>
                 </chunks>
@@ -171,7 +171,7 @@ Primus 2000 EICAS
                 <chunks>
                     <chunk>
                         <type>number-value</type>
-                        <property>consumables/fuel/tank[2]/level-lbs</property>
+                        <property>consumables/fuel/tank[1]/level-lbs</property>
                         <format>%04.0f</format>
                     </chunk>
                 </chunks>
@@ -203,7 +203,7 @@ Primus 2000 EICAS
                 <chunks>
                     <chunk>
                         <type>number-value</type>
-                        <property>systems/electrical/bus-volts</property>
+                        <property>systems/electrical/right-bus</property>
                         <format>%02.0f</format>
                     </chunk>
                     <chunk>
@@ -212,7 +212,7 @@ Primus 2000 EICAS
                     </chunk>
                     <chunk>
                         <type>number-value</type>
-                        <property>systems/electrical/bus-volts</property>
+                        <property>systems/electrical/left-bus</property>
                         <format>%02.0f</format>
                     </chunk>
                 </chunks>
@@ -241,8 +241,8 @@ Primus 2000 EICAS
                 <chunks>
                     <chunk>
                         <type>number-value</type>
-                        <property>systems/electrical/bus-volts</property>
-                        <scale>3.04</scale>
+                        <property>systems/electrical/gen-load</property>
+                        <scale>150</scale>
                         <format>%03.0f</format>
                     </chunk>
                     <chunk>
@@ -251,8 +251,8 @@ Primus 2000 EICAS
                     </chunk>
                     <chunk>
                         <type>number-value</type>
-                        <property>systems/electrical/bus-volts</property>
-                        <scale>3.04</scale>
+                        <property>systems/electrical/gen-load[1]</property>
+                        <scale>150</scale>
                         <format>%03.0f</format>
                     </chunk>
                 </chunks>

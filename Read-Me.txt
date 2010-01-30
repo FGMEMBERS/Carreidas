@@ -40,6 +40,8 @@ Thanks
 
 The company Moulinsart SA for having given its consent to the use and dissemination of this sublime device that is Carreidas 160 Jet.
 
+Victhor FOSTER for the updated FDM and new panel.
+
 Legal Notice
 ================
 
@@ -96,6 +98,8 @@ Remerciements
 =============
 
 La société Moulinsart SA pour avoir donné son accord à l'utilisation et la diffusion de ce sublime appareil qu'est le Carreidas 160 Jet.
+
+Victhor FOSTER pour les mises à jour du FDM et le superbe tableau debord.
 
 Mentions Légales
 ================

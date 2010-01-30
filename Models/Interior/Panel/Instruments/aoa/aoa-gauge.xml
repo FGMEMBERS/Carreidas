@@ -1,71 +1,63 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <PropertyList>
 
- <path>aoa-gauge.ac</path>
+  <path>aoa-gauge.ac</path>
 
- <animation>
-  <type>select</type>
-  <object-name>off-flag</object-name>
-  <condition>
-   <equals>
-    <property type="bool">systems/static/serviceable</property>
-    <value>false</value>
-   </equals>
-  </condition>
- </animation>
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>mask</object-name>
+    <object-name>tape</object-name>
+    <object-name>off-flag</object-name>
 
- <animation>
-  <type>textranslate</type>
-  <object-name>tape</object-name>
-  <property>orientation/alpha-deg</property>
-  <factor>0.1</factor>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-  </axis>
- </animation>
+    <object-name>vitre</object-name>
+  </animation>
 
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
 
- <!-- lighting -->
- <animation>
-  <object-name>mount</object-name>
-  <object-name>knob</object-name>
-  <type>material</type>
-  <emission>
-   <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
-  <red>0.488</red>
-  <green>0.803</green>
-  <blue>1.000</blue>
-  </emission>
- </animation>
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
 
- <animation>
-  <object-name>face</object-name>
-  <type>material</type>
-  <object-name>tape</object-name>
-  <emission> 
-   <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
-  <red>0.488</red>
-  <green>0.803</green>
-  <blue>1.000</blue>
-  </emission>
- </animation>
- <animation>
-  <object-name>mask</object-name>
-  <type>material</type>
-  <emission> 
-   <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
-  <red>0.488</red>
-  <green>0.803</green>
-  <blue>1.000</blue>
-  </emission>
- </animation>
+  <animation>
+    <type>material</type>
+    <object-name>tape</object-name>
+    <object-name>mask</object-name>
+    <object-name>off-flag</object-name>
+    <emission>
+      <red>   0.488 </red>
+      <green> 0.803 </green>
+      <blue>  1.000 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    </emission>
+  </animation>
 
+  <animation>
+    <type>select</type>
+    <object-name>off-flag</object-name>
+    <condition>
+      <equals>
+        <property type="bool">systems/static/serviceable</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>tape</object-name>
+    <property>orientation/alpha-deg</property>
+    <factor>0.1</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+    </axis>
+  </animation>
 
 </PropertyList>

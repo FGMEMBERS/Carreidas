@@ -8,7 +8,7 @@ Primus 2000 EICAS
 <path>eicas.ac</path>
 
    <panel>
-        <path>Aircraft/CitationX/Models/Instruments/EICAS/EICAS-panel.xml</path>
+        <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EICAS/EICAS-panel.xml</path>
         <bottom-left>
             <x-m>0.003</x-m>
             <y-m>-0.076</y-m>

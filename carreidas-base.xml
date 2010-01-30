@@ -4,11 +4,11 @@
 
   <sim  include="Nasal/views.xml">
 
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM), Victhor FOSTER (Panel/FDM)</author>
     <status>development</status>
-  
+
     <fuel-fraction>1.0</fuel-fraction>
-  
+
     <sound>
       <audible>true</audible>
       <path>Aircraft/Carreidas/Sounds/carreidas-sound.xml</path>
@@ -64,16 +64,16 @@
       <setting>1.00</setting> <!-- FULL -->
     </flaps>
 
-    <instrumentation>
-      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
-    </instrumentation>
-
     <systems>
       <autopilot>
         <path>Aircraft/Carreidas/Systems/Bravo-autopilot.xml</path>
       </autopilot>
       <path>Aircraft/Carreidas/Systems/systems.xml</path>
     </systems>
+
+    <instrumentation>
+      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
+    </instrumentation>
 
     <menubar include="Dialogs/carreidas-menu.xml"/>
 
@@ -102,31 +102,104 @@
       <ac-volts>0</ac-volts>
     </electrical>
   </systems>
-
   <instrumentation>
     <adf n="1">
-      <serviceable>true</serviceable>
+      <serviceable type="bool" archive="y">true</serviceable>
     </adf>
+
     <transponder n="0">
-      <serviceable>true</serviceable>
+      <serviceable type="bool" archive="y">true</serviceable>
     </transponder>
+
     <transponder n="1">
-      <serviceable>true</serviceable>
+      <serviceable type="bool" archive="y">true</serviceable>
     </transponder>
+
     <radar n="0">
-      <serviceable>true</serviceable>
+      <switch type="string" archive="y">on</switch>
+      <mode-control type="int" archive="y">1</mode-control>
+      <display-controls>
+        <WX type="bool" archive="y">false</WX>
+        <pos type="bool" archive="y">true</pos>
+        <data type="bool" archive="y">true</data>
+        <symbol type="bool" archive="y">true</symbol>
+        <rotate type="bool" archive="y">true</rotate>
+      </display-controls>
+      <serviceable type="bool">true</serviceable>
+      <range type="int" archive="y">5</range>
+      <reference-range-nm type="double" archive="y">640</reference-range-nm>
+      <mode type="string" archive="y">WX</mode>
+      <font>
+        <name type="string">typewriter.txf</name>
+        <size type="float">6</size>
+        <line-spacing type="float">0.4</line-spacing>
+        <color>
+          <red type="float">0.7</red>
+          <green type="float">0.7</green>
+          <blue type="float">0.7</blue>
+          <alpha type="float">1</alpha>
+        </color>
+      </font>
+      <lightning type="bool" archive="y">true</lightning>
+      <display-mode type="string" archive="y">plan</display-mode>
+      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/od_wxradar.png</radar-texture-path>
+      <echo-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/wxecho.png</echo-texture-path>
+      <minimized type="bool" archive="y">false</minimized>
+      <heading-marker type="bool" archive="y">true</heading-marker>
+      <limit-deg type="int">360</limit-deg>
     </radar>
+
+    <radar n="1">
+      <serviceable type="bool" archive="y">true</serviceable>
+      <switch type="string" archive="y">off</switch>
+      <mode-control type="int" archive="y">3</mode-control>
+      <range type="int" archive="y">20</range>
+      <mode type="string"	archive="y">WX</mode>
+      <font>
+        <name type="string">typewriter.txf</name>
+        <size type="float">6</size>
+        <line-spacing type="float">0.4</line-spacing>
+        <color>
+          <red type="float">0.7</red>
+          <green type="float">0.7</green>
+          <blue type="float">0.7</blue>
+          <alpha type="float">1</alpha>
+        </color>
+      </font>
+      <heading-marker type="bool"	archive="y">false</heading-marker>
+      <lightning type="bool" archive="y">false</lightning>
+      <display-mode type="string">arc</display-mode>
+      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
+      <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+      <display-controls>
+        <WX type="bool" archive="y">false</WX>
+        <data type="bool" archive="y">false</data>
+        <pos type="bool" archive="y">true</pos>
+      </display-controls>
+    </radar>
+
+    <mk-viii n="0">
+      <serviceable type="bool" archive="y">true</serviceable>
+    </mk-viii>
+
+    <groundradar>
+      <range type="double">1.2</range>
+    </groundradar>
+
+    <master-reference-gyro n="0">
+      <heading-source type="bool" archive="y">true</heading-source>
+    </master-reference-gyro>
   </instrumentation>
 
   <engines>
     <engine n="0">
-      <running>false</running>
+      <running type="bool">false</running>
     </engine>
     <engine n="1">
-      <running>false</running>
+      <running type="bool">false</running>
     </engine>
     <engine n="2">
-      <running>false</running>
+      <running type="bool">false</running>
     </engine>
   </engines>
 
@@ -146,19 +219,30 @@
       <file>Aircraft/Carreidas/Nasal/flightdirector.nas</file>
     </citation>
     <systems>
-      <file>Aircraft/Carreidas/Models/Interior/Instruments/KLN90B/kln90b.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/KLN90B/kln90b.nas</file>
     </systems>
     <zkv500>
-      <file>Aircraft/Instruments-3d/zkv500/ZKV500.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/zkv500/ZKV500-gps1.nas</file>
     </zkv500>
+    <radar>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/RDR-160/RDR160.nas</file>
+    </radar>
     <kr87>
-      <file>Aircraft/Carreidas/Models/Interior/Instruments/kr87/kr87.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87.nas</file>
       <script><![CDATA[
         kr87.new("/instrumentation/adf[0]");
         kr87.new("/instrumentation/adf[1]");
       ]]></script>
     </kr87>
+    <ki266>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dme/ki266.nas</file>
+      <script><![CDATA[
+        ki266.new(0);
+      ]]></script>
+     </ki266>
+    <m877>
+        <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
+    </m877>
   </nasal>
 
 </PropertyList>
-

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+<path>gpws.ac</path>
+<animation>
+    <type>material</type>
+    <object-name>lamp_1</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 0.5 </green>
+      <blue>  0 </blue>
+      <factor-prop>/instrumentation/mk-viii/outputs/discretes/gpws-inop</factor-prop>
+    </emission>
+</animation>
+</PropertyList>

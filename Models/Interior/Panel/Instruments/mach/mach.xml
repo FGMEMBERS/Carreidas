@@ -29,6 +29,9 @@
     <type>material</type>
     <object-name>face</object-name>
     <object-name>needle</object-name>
+    <object-name>Course1</object-name>
+    <object-name>Course10</object-name>
+    <object-name>Course100</object-name>
     <emission>
       <red>   0.488 </red>
       <green> 0.803 </green>
@@ -67,6 +70,42 @@
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course1</object-name>
+    <property>velocities/mach</property>
+    <factor>-10</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course10</object-name>
+    <property>velocities/mach</property>
+    <factor>-1</factor>
+    <step>0.1</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>Course100</object-name>
+    <property>velocities/mach</property>
+    <factor>-0.1</factor>
+    <step>1</step>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
     </axis>
   </animation>
  

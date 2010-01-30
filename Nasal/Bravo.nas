@@ -8,6 +8,8 @@ var Annun = props.globals.getNode("instrumentation/annunciators",1);
 var MstrWarn =Annun.getNode("master-warning",1);
 var MstrCaution = Annun.getNode("master-caution",1);
 var PWR2 =0;
+var EFB = gui.Dialog.new("/sim/gui/dialogs/EFB/dialog",
+        "Aircraft/Carreidas/Systems/EFB-dlg.xml");
 
 #Jet Engine Helper class
 # ie: var Eng = JetEngine.new(engine number);
@@ -119,8 +121,19 @@ setlistener("/sim/signals/fdm-initialized", func {
     if(getprop("/sim/flight-model")=="jsb"){FDMjsb=1;}
     setprop("/sim/model/start-idling",0);
     setprop("controls/engines/N1-limit",94.0);
+    setprop("/instrumentation/groundradar/id",getprop("sim/tower/airport-id"));
     settimer(update_systems,2);
 });
+
+setlistener("/autopilot/route-manager/route/num", func(wp){
+    var wpt= wp.getValue() -1;
+
+    if(wpt>-1){
+    setprop("instrumentation/groundradar/id",getprop("autopilot/route-manager/route/wp["~wpt~"]/id"));
+    }else{
+    setprop("instrumentation/groundradar/id",getprop("sim/tower/airport-id"));
+    }
+},1,0);
 
 setlistener("/gear/gear[1]/wow", func(ww){
     if(ww.getBoolValue()){

@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+<path>gps_waypt.ac</path>
+<animation>
+    <type>select</type>
+    <object-name>lamp_1.002</object-name>
+        <condition>
+	<or>
+	   <greater-than>
+            <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+	    <value>5</value>
+	   </greater-than>
+	   <equals>
+            <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+	    <value>0</value>
+	   </equals>
+	</or>
+        </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>lamp_1</object-name>
+        <condition>
+	<and>
+	   <less-than>
+            <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+	    <value>5</value>
+	   </less-than>
+	   <greater-than>
+            <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+	    <value>0</value>
+	   </greater-than>
+	</and>
+        </condition>
+</animation>
+</PropertyList>

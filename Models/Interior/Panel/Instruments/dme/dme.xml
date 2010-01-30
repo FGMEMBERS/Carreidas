@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 1000 Autopilot Controller
+-->
+<PropertyList>
+<path>dme.ac</path>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dme/ki266.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> 0 </y-m>
+      <z-m>  0.003 </z-m>
+    </offsets>
+  </model>
+
+<animation>
+    <type>pick</type>
+    <object-name>on</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-toggle</command>
+                <property>/instrumentation/dme/power-btn</property>
+        </binding>
+    </action>
+</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>on</object-name>
+    <factor>-0.005</factor>
+    <property>/instrumentation/dme/power-btn</property>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position</property>
+		<value type="int">2</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position-nav2</property>
+		<value type="int">1</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position-nav1</property>
+		<value type="int">0</value>
+        </binding>
+          <binding>
+              <condition>
+                  <equals>
+                      <property>instrumentation/dme/switch-position</property>
+                      <value type="int">2</value>
+                  </equals>
+              </condition>
+              <command>property-assign</command>
+              <property>instrumentation/dme/frequencies/source</property>
+              <value>instrumentation/nav[1]/frequencies/selected-mhz</value>
+          </binding>
+    </action>
+</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>nav2</object-name>
+    <factor>-0.005</factor>
+    <property>/instrumentation/dme/switch-position-nav2</property>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>nav1</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position</property>
+		<value type="int">1</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position-nav2</property>
+		<value type="int">0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+                <property>/instrumentation/dme/switch-position-nav1</property>
+		<value type="int">1</value>
+        </binding>
+          <binding>
+              <condition>
+                  <equals>
+                      <property>instrumentation/dme/switch-position</property>
+                      <value type="int">1</value>
+                  </equals>
+              </condition>
+              <command>property-assign</command>
+              <property>instrumentation/dme/frequencies/source</property>
+              <value>instrumentation/nav[0]/frequencies/selected-mhz</value>
+          </binding>
+    </action>
+</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>nav1</object-name>
+    <factor>-0.005</factor>
+    <property>/instrumentation/dme/switch-position-nav1</property>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+</PropertyList>
