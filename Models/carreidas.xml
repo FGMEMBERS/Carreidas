@@ -65,9 +65,6 @@
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>lampeC</object-name>
-
-    <object-name>rayon1</object-name>
-    <object-name>rayon2</object-name>
   </animation>
 
   <animation>
@@ -78,9 +75,6 @@
     <object-name>bruleC</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
-
-    <object-name>rayon1</object-name>
-    <object-name>rayon2</object-name>
   </animation>
 
   <animation>
@@ -197,64 +191,6 @@
       <z-m> 0 </z-m>
     </offsets>
   </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>rayon1</object-name>
-    <object-name>rayon2</object-name>
-    <condition>
-      <equals>
-        <property>sim/current-view/view-number</property>
-        <value>99999</value>
-      </equals>
-    </condition>
-  </animation>
-<!-- 
-  <animation>
-    <type>select</type>
-    <object-name>rayon2</object-name>
-    <condition>
-      <less-than>
-        <property>/position/gear-agl-m</property>
-        <value>20</value>
-      </less-than>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>rayon2</object-name>
-    <property>/position/gear-agl-ft</property>
-    <factor>-0.3</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-   </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>rayon2</object-name>
-    <property>/position/gear-agl-ft</property>
-    <factor>-0.8</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation>
--->
 
   <!-- Trainée Gauche -->
   <model>
@@ -847,6 +783,18 @@
     </offsets>
   </model>
 
+  <!-- Wing light cone -->
+  <model>
+    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>       -3.519 </x-m>
+      <y-m>       -1.493 </y-m>
+      <z-m>       -1.895 </z-m>
+      <heading-deg>  10 </heading-deg>
+      <pitch-deg> -7.500 </pitch-deg>
+    </offsets>
+  </model>
+
   <!-- Flash droit -->
   <model>
     <path>Aircraft/Carreidas/Models/light/flash.xml</path>
@@ -854,6 +802,18 @@
       <x-m> -3.519 </x-m>
       <y-m>  1.493 </y-m>
       <z-m> -1.895 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Wing light cone -->
+  <model>
+    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>       -3.519 </x-m>
+      <y-m>        1.493 </y-m>
+      <z-m>       -1.895 </z-m>
+      <heading-deg> -10 </heading-deg>
+      <pitch-deg> -7.500 </pitch-deg>
     </offsets>
   </model>
 
