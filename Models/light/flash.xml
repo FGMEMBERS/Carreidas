@@ -25,10 +25,7 @@
     <type>select</type>
     <object-name>flash</object-name>
     <condition>
-      <and>
-        <property>/systems/electrical/left-bus</property>
-        <property>/sim/model/lights/sbc1/state</property>
-      </and>
+      <property>/systems/electrical/left-bus</property>
     </condition>
   </animation>
 
