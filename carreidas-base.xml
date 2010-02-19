@@ -4,11 +4,11 @@
 
   <sim  include="Nasal/views.xml">
 
-    <author>Emmanuel BARANGER (3D/FDM), Victhor FOSTER (Panel/FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
     <status>development</status>
-
+  
     <fuel-fraction>1.0</fuel-fraction>
-
+  
     <sound>
       <audible>true</audible>
       <path>Aircraft/Carreidas/Sounds/carreidas-sound.xml</path>
@@ -23,6 +23,21 @@
       <klu type="bool">false</klu>
       <us type="bool">true</us>
      </carreidas>
+        <autostart type="bool">0</autostart>
+        <Bravo>
+            <n1 n="0" type="double">0</n1>
+            <n1 n="1" type="double">0</n1>
+            <n1 n="2" type="double">0</n1>
+            <n1 n="3" type="double">0</n1>
+            <n2 n="0" type="double">0</n2>
+            <n2 n="1" type="double">0</n2>
+            <n2 n="2" type="double">0</n2>
+            <n2 n="3" type="double">0</n2>
+            <start-cycle n="0" type="bool">0</start-cycle>
+            <start-cycle n="1" type="bool">0</start-cycle>
+            <start-cycle n="2" type="bool">0</start-cycle>
+            <start-cycle n="3" type="bool">0</start-cycle>
+        </Bravo>
     </model>
 
     <startup>
@@ -106,86 +121,51 @@
     <adf n="1">
       <serviceable type="bool" archive="y">true</serviceable>
     </adf>
-
     <transponder n="0">
       <serviceable type="bool" archive="y">true</serviceable>
     </transponder>
-
     <transponder n="1">
       <serviceable type="bool" archive="y">true</serviceable>
     </transponder>
-
-    <radar n="0">
-      <switch type="string" archive="y">on</switch>
-      <mode-control type="int" archive="y">1</mode-control>
-      <display-controls>
-        <WX type="bool" archive="y">false</WX>
-        <pos type="bool" archive="y">true</pos>
-        <data type="bool" archive="y">true</data>
-        <symbol type="bool" archive="y">true</symbol>
-        <rotate type="bool" archive="y">true</rotate>
-      </display-controls>
-      <serviceable type="bool">true</serviceable>
-      <range type="int" archive="y">5</range>
-      <reference-range-nm type="double" archive="y">640</reference-range-nm>
-      <mode type="string" archive="y">WX</mode>
-      <font>
-        <name type="string">typewriter.txf</name>
-        <size type="float">6</size>
-        <line-spacing type="float">0.4</line-spacing>
-        <color>
-          <red type="float">0.7</red>
-          <green type="float">0.7</green>
-          <blue type="float">0.7</blue>
-          <alpha type="float">1</alpha>
-        </color>
-      </font>
-      <lightning type="bool" archive="y">true</lightning>
-      <display-mode type="string" archive="y">plan</display-mode>
-      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/od_wxradar.png</radar-texture-path>
-      <echo-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/wxecho.png</echo-texture-path>
-      <minimized type="bool" archive="y">false</minimized>
-      <heading-marker type="bool" archive="y">true</heading-marker>
-      <limit-deg type="int">360</limit-deg>
-    </radar>
-
-    <radar n="1">
-      <serviceable type="bool" archive="y">true</serviceable>
-      <switch type="string" archive="y">off</switch>
-      <mode-control type="int" archive="y">3</mode-control>
-      <range type="int" archive="y">20</range>
-      <mode type="string"	archive="y">WX</mode>
-      <font>
-        <name type="string">typewriter.txf</name>
-        <size type="float">6</size>
-        <line-spacing type="float">0.4</line-spacing>
-        <color>
-          <red type="float">0.7</red>
-          <green type="float">0.7</green>
-          <blue type="float">0.7</blue>
-          <alpha type="float">1</alpha>
-        </color>
-      </font>
-      <heading-marker type="bool"	archive="y">false</heading-marker>
-      <lightning type="bool" archive="y">false</lightning>
-      <display-mode type="string">arc</display-mode>
-      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
-      <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
-      <display-controls>
-        <WX type="bool" archive="y">false</WX>
-        <data type="bool" archive="y">false</data>
-        <pos type="bool" archive="y">true</pos>
-      </display-controls>
-    </radar>
-
+        <radar n="0">
+            <switch type="string" archive="y">on</switch>
+            <mode-control type="int" archive="y">1</mode-control>
+            <display-controls>
+                <WX type="bool" archive="y">false</WX>
+                <pos type="bool" archive="y">true</pos>
+                <data type="bool" archive="y">true</data>
+                <symbol type="bool" archive="y">true</symbol>
+                <rotate type="bool" archive="y">true</rotate>
+            </display-controls>
+            <serviceable type="bool">true</serviceable>
+            <range type="int" archive="y">5</range>
+            <reference-range-nm type="double" archive="y">640</reference-range-nm>
+            <mode type="string" archive="y">WX</mode>
+            <font>
+                <name type="string">typewriter.txf</name>
+                <size type="float">6</size>
+                <line-spacing type="float">0.4</line-spacing>
+                <color>
+                    <red type="float">0.7</red>
+                    <green type="float">0.7</green>
+                    <blue type="float">0.7</blue>
+                    <alpha type="float">1</alpha>
+                </color>
+            </font>
+            <lightning type="bool" archive="y">true</lightning>
+            <display-mode type="string" archive="y">plan</display-mode>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/wxecho.png</echo-texture-path>
+            <minimized type="bool" archive="y">false</minimized>
+            <heading-marker type="bool" archive="y">true</heading-marker>
+            <limit-deg type="int">360</limit-deg>
+        </radar>
     <mk-viii n="0">
       <serviceable type="bool" archive="y">true</serviceable>
     </mk-viii>
-
-    <groundradar>
-      <range type="double">1.2</range>
-    </groundradar>
-
+        <groundradar>
+            <range type="double">1.2</range>
+        </groundradar>
     <master-reference-gyro n="0">
       <heading-source type="bool" archive="y">true</heading-source>
     </master-reference-gyro>
@@ -199,6 +179,9 @@
       <running type="bool">false</running>
     </engine>
     <engine n="2">
+      <running type="bool">false</running>
+    </engine>
+    <engine n="3">
       <running type="bool">false</running>
     </engine>
   </engines>
@@ -246,3 +229,4 @@
   </nasal>
 
 </PropertyList>
+

@@ -19,6 +19,20 @@
     <!-- Objets transparents -->
   </animation>
 
+  <!-- OverHead -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/overhead/overhead.xml</path>
+    <offsets>
+      <x-m> 0.800 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.608 </z-m>
+      <roll-deg>     0.00 </roll-deg>
+      <pitch-deg>   69.31 </pitch-deg>
+      <heading-deg>  0.00 </heading-deg>
+
+    </offsets>
+  </model>
+
   <!-- PFD -->
   <model>
     <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/PFD.xml</path>
@@ -170,74 +184,13 @@
     </offsets>
   </model>
 
-  <!-- Radio/GPS/Transponder -->
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
-    <offsets>
-      <pitch-deg>69.12</pitch-deg>
-      <x-m>  0.889 </x-m>
-      <y-m> -0.106 </y-m>
-      <z-m>  0.604 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
-    <offsets>
-      <pitch-deg>69.12</pitch-deg>
-      <x-m> 0.889 </x-m>
-      <y-m> 0.106 </y-m>
-      <z-m> 0.604 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kt70/kt70.xml</path>
-    <offsets>
-      <pitch-deg>70</pitch-deg>
-      <x-m>  0.848 </x-m>
-      <y-m> -0.106 </y-m>
-      <z-m>  0.571 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kt70/kt70-1.xml</path>
-    <offsets>
-      <pitch-deg>70</pitch-deg>
-      <x-m> 0.848 </x-m>
-      <y-m> 0.106 </y-m>
-      <z-m> 0.571 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87-1.xml</path>
-    <offsets>
-      <pitch-deg>70</pitch-deg>
-      <x-m>  0.803 </x-m>
-      <y-m> -0.106 </y-m>
-      <z-m>  0.555 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87-2.xml</path>
-    <offsets>
-      <pitch-deg>70</pitch-deg>
-      <x-m> 0.803 </x-m>
-      <y-m> 0.106 </y-m>
-      <z-m> 0.555 </z-m>
-    </offsets>
-  </model>
-
   <model>
     <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/KLN90B/kln90b.xml</path>
     <offsets>
       <pitch-deg>36.76</pitch-deg>
-      <x-m>  0.685 </x-m>
+      <x-m>  0.680 </x-m>
       <y-m> -0.098 </y-m>
-      <z-m>  0.507 </z-m>
+      <z-m>  0.499 </z-m>
     </offsets>
   </model>
 
@@ -245,9 +198,9 @@
     <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kln89/kln89.xml</path>
     <offsets>
       <pitch-deg>36.76</pitch-deg>
-      <x-m> 0.690 </x-m>
+      <x-m> 0.680 </x-m>
       <y-m> 0.098 </y-m>
-      <z-m> 0.507 </z-m>
+      <z-m> 0.500 </z-m>
     </offsets>
   </model>
 
@@ -347,18 +300,20 @@
   <model>
     <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mfc/mfc.xml</path>
     <offsets>
-      <x-m>  0.744 </x-m>
-      <y-m> -0.460 </y-m>
-      <z-m> -0.164 </z-m>
+      <pitch-deg>-74.48</pitch-deg>
+      <x-m>  0.816 </x-m>
+      <y-m>  -0.850 </y-m>
+      <z-m> -0.280 </z-m>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/mfc/mfc.xml</path>
     <offsets>
-      <x-m>  0.744 </x-m>
-      <y-m>  0.460 </y-m>
-      <z-m> -0.164 </z-m>
+      <pitch-deg>-74.48</pitch-deg>
+      <x-m>  0.816 </x-m>
+      <y-m>  0.850 </y-m>
+      <z-m> -0.280 </z-m>
     </offsets>
   </model>
 
@@ -577,7 +532,7 @@
     <offsets>
       <x-m> 0.744 </x-m>
       <y-m> 0.150 </y-m>
-      <z-m> 0.100 </z-m>
+      <z-m> 0.120 </z-m>
     </offsets>
   </model>
 
@@ -587,7 +542,7 @@
     <offsets>
       <x-m> 0.744 </x-m>
       <y-m> 0.150 </y-m>
-      <z-m> 0.000 </z-m>
+      <z-m> 0.030 </z-m>
     </offsets>
   </model>
 
@@ -597,7 +552,7 @@
     <offsets>
       <x-m>  0.744 </x-m>
       <y-m>  0.150 </y-m>
-      <z-m> -0.100 </z-m>
+      <z-m> -0.070 </z-m>
     </offsets>
   </model>
 

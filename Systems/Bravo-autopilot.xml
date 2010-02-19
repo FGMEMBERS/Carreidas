@@ -537,5 +537,32 @@ Velocity Modes
 </config>
 </pid-controller>
 
+<!-- Non-flight related functions
+APU governor -->
+
+  <pi-simple-controller>
+    <name>APU governor</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/controls/APU/off-start-run</prop>
+      <value>1</value>
+    </enable>
+    <input>
+      <prop>/engines/engine[3]/n1</prop>
+    </input>
+    <reference>
+      <value>100</value>
+    </reference>
+    <output>
+      <prop>/controls/APU/throttle</prop>
+    </output>
+    <config>
+      <Kp>0.6</Kp>
+      <Ki>0.0</Ki>
+      <u_min>0</u_min>
+      <u_max>1</u_max>
+    </config>
+  </pi-simple-controller>
+
 </PropertyList>
 

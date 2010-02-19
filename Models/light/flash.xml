@@ -12,29 +12,33 @@
   </animation>
 
   <animation>
+    <type>alpha-test</type>
+    <alpha-factor>0.01</alpha-factor>
+  </animation>
+
+  <animation>
     <type>noshadow</type>
     <object-name>flash</object-name>
   </animation>
-<!--
+
   <animation>
     <type>select</type>
-    <object-name>lumiereG</object-name>
-    <object-name>lumiereD</object-name>
+    <object-name>flash</object-name>
     <condition>
-      <not-equals>
-        <property>systems/electrical/outputs/landing-lights</property>
-        <value>0</value>
-      </not-equals>
+      <and>
+        <property>/systems/electrical/left-bus</property>
+        <property>/sim/model/lights/sbc1/state</property>
+      </and>
     </condition>
   </animation>
--->
+
   <animation>
     <type>flash</type>
     <object-name>flash</object-name>
     <center>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
     </center>
     <axis>
       <x> -1 </x>

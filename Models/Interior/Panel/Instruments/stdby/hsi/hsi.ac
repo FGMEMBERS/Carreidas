@@ -1,10 +1,10 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "illum.002" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0.8 0.8 0.8 spec 0 0 0 shi 0 trans 0
-MATERIAL "illum" rgb 1 1 1 amb 0.8 0.8 0.8 emis 0.7 0.7 0.7 spec 0 0 0 shi 0 trans 0
-MATERIAL "dark.001" rgb 0.799894 0.799894 0.799894 amb 0.8 0.8 0.8 emis 0.1 0.1 0.1 spec 0.6 0.6 0.6 shi 17 trans 0
+MATERIAL "illum" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0.8 0.8 0.8 spec 0 0 0 shi 0 trans 0
+MATERIAL "illum.001" rgb 1 1 1 amb 0.8 0.8 0.8 emis 0.7 0.7 0.7 spec 0 0 0 shi 0 trans 0
+MATERIAL "dark" rgb 0.799894 0.799894 0.799894 amb 0.8 0.8 0.8 emis 0.1 0.1 0.1 spec 0.6 0.6 0.6 shi 17 trans 0
 OBJECT world
-kids 8
+kids 10
 OBJECT poly
 name "ADF.needle"
 data 9
@@ -1611,6 +1611,27 @@ refs 4
 15 0.0608519464731 0.106076464057
 kids 0
 OBJECT poly
+name "gs"
+data 9
+Plane.003
+texture "flags.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+0.002015 -0.021679 -0.036649
+0.002015 -0.012853 -0.026131
+0.002015 -0.007771 -0.030395
+0.002015 -0.016597 -0.040913
+numsurf 1
+SURF 0x00
+mat 0
+refs 4
+0 0.86230969429 0.362499475479
+3 0.862309575081 0.637500524521
+2 0.13769030571 0.637500524521
+1 0.137690365314 0.362499445677
+kids 0
+OBJECT poly
 name "hdgring"
 data 8
 Mesh.135
@@ -1763,4 +1784,25 @@ refs 4
 0 0.683369398117 0.683368682861
 16 0.777987957001 0.77798807621
 31 0.650456249714 0.863215446472
+kids 0
+OBJECT poly
+name "off"
+data 9
+Plane.002
+texture "flags.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+0.002015 -0.003684 0.016732
+0.002015 -0.003684 0.036747
+0.002015 0.003684 0.036747
+0.002015 0.003684 0.016732
+numsurf 1
+SURF 0x00
+mat 0
+refs 4
+0 1.00038266182 0.653198122978
+3 1.00038266182 0.999051868916
+2 0.00761711597443 0.999051988125
+1 0.00761711597443 0.653198242188
 kids 0

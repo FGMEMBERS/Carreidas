@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>egt.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <emission>
+      <red>   0.030 </red>
+      <green> 0.015 </green>
+      <blue>  0.005 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/engines/engine[0]/egt-degf</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>   0 </dep></entry> <!--    0 degC -->
+      <entry><ind>  212 </ind><dep>  25 </dep></entry> <!--  100 degC -->
+      <entry><ind>  392 </ind><dep>  50 </dep></entry> <!--  200 degC -->
+      <entry><ind>  572 </ind><dep>  75 </dep></entry> <!--  300 degC -->
+      <entry><ind>  752 </ind><dep>  99 </dep></entry> <!--  400 degC -->
+      <entry><ind>  932 </ind><dep> 123 </dep></entry> <!--  500 degC -->
+      <entry><ind> 1112 </ind><dep> 191 </dep></entry> <!--  600 degC -->
+      <entry><ind> 1292 </ind><dep> 260 </dep></entry> <!--  700 degC -->
+      <entry><ind> 1472 </ind><dep> 284 </dep></entry> <!--  800 degC -->
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

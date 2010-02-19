@@ -24,7 +24,10 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/lights/sbc1/state</property>
+      <and>
+        <property>/systems/electrical/left-bus</property>
+        <property>/sim/model/lights/sbc1/state</property>
+      </and>
     </condition>
   </animation>
 
@@ -35,7 +38,7 @@
       <red>   1.0 </red>
       <green> 1.0 </green>
       <blue>  1.0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>/systems/electrical/outputs/left-bus</factor-prop>
     </emission>
   </animation>
 

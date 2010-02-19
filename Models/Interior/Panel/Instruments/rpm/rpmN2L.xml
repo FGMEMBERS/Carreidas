@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Tachometer -->
+
+<PropertyList>
+
+  <path>rpmN1.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>needle2</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>needle2</object-name>
+    <emission>
+      <red>   0.030 </red>
+      <green> 0.015 </green>
+      <blue>  0.005 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/engines/engine[0]/n2</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  10 </ind><dep>  25 </dep></entry>
+      <entry><ind>  20 </ind><dep>  51 </dep></entry>
+      <entry><ind>  30 </ind><dep>  77 </dep></entry>
+      <entry><ind>  40 </ind><dep> 106 </dep></entry>
+      <entry><ind>  50 </ind><dep> 135 </dep></entry>
+      <entry><ind>  60 </ind><dep> 162 </dep></entry>
+      <entry><ind>  70 </ind><dep> 189 </dep></entry>
+      <entry><ind>  80 </ind><dep> 217 </dep></entry>
+      <entry><ind>  90 </ind><dep> 243 </dep></entry>
+      <entry><ind> 100 </ind><dep> 271 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!--
+  Rotation center of needle2
+  
+    x  0.000
+    y -0.009
+    z  0.010
+
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep>  42 </dep></entry>
+      <entry><ind> 2 </ind><dep>  71 </dep></entry>
+      <entry><ind> 3 </ind><dep> 108 </dep></entry>
+      <entry><ind> 4 </ind><dep> 145 </dep></entry>
+      <entry><ind> 5 </ind><dep> 182 </dep></entry>
+      <entry><ind> 6 </ind><dep> 217 </dep></entry>
+      <entry><ind> 7 </ind><dep> 252 </dep></entry>
+      <entry><ind> 8 </ind><dep> 288 </dep></entry>
+      <entry><ind> 9 </ind><dep> 325 </dep></entry>
+    </interpolation>
+
+-->
+</PropertyList>
+

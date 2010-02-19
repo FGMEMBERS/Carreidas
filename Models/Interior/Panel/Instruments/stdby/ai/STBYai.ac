@@ -3,7 +3,28 @@ MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 
 MATERIAL "illum.002" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0.8 0.8 0.8 spec 0 0 0 shi 0 trans 0
 MATERIAL "dark.001" rgb 0.799894 0.799894 0.799894 amb 0.8 0.8 0.8 emis 0.1 0.1 0.1 spec 0.6 0.6 0.6 shi 17 trans 0
 OBJECT world
-kids 5
+kids 6
+OBJECT poly
+name "Flag"
+data 9
+Plane.001
+texture "STBYai.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+0.001752 -0.025433 0.009786
+0.001752 -0.030812 0.029862
+0.001752 -0.023799 0.031741
+0.001752 -0.01842 0.011665
+numsurf 1
+SURF 0x00
+mat 0
+refs 4
+0 1.00037264824 0.255178660154
+3 1.00037264824 0.371244847775
+2 0.712517857552 0.371244847775
+1 0.712517857552 0.255178660154
+kids 0
 OBJECT poly
 name "STBYai.ball"
 data 10

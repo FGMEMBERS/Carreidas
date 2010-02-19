@@ -9,4 +9,22 @@
     <object-name>Cone</object-name>
   </effect>
   
+  <animation>
+    <name>Light-Cone</name>
+    <object-name>Cone-texture</object-name>
+    <object-name>Cone</object-name>
+    <object-name>Light</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light-Cone</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/left-bus</property>
+        <property>/systems/electrical/outputs/nav-lights</property>
+      </and>
+    </condition>
+  </animation>
+
  </PropertyList>

@@ -11,6 +11,99 @@ var PWR2 =0;
 var EFB = gui.Dialog.new("/sim/gui/dialogs/EFB/dialog",
         "Aircraft/Carreidas/Systems/EFB-dlg.xml");
 
+var APU = {
+    new : func(eng_num){
+        m = { parents : [JetEngine]};
+        m.ITTlimit=6;
+        m.fdensity = getprop("consumables/fuel/tank/density-ppg") or 6.72;
+        m.eng = props.globals.initNode("engines/engine["~eng_num~"]");
+        m.controls = props.globals.initNode("controls/engines/engine["~eng_num~"]");
+        m.running = m.eng.initNode("running",0,"BOOL");
+        m.itt=m.eng.initNode("itt-norm",0.0);
+        m.itt_c=m.eng.initNode("itt-celcius",0.0);
+        m.n1 = m.eng.initNode("n1");
+        m.n2 = m.eng.initNode("n2");
+        m.fan = m.eng.initNode("fan",0.0);
+        m.cycle_up = 0;
+        m.turbine = m.eng.initNode("turbine",0.0);
+        m.throttle_lever = m.controls.initNode("throttle-lever",0.0);
+        m.throttle = m.controls.initNode("throttle",0.0);
+        m.ignition = m.controls.initNode("ignition",1);
+        m.cutoff = m.controls.initNode("cutoff",1,"BOOL");
+        m.engine_off=1;
+        m.fuel_out = m.eng.initNode("out-of-fuel",0,"BOOL");
+        m.starter = m.controls.initNode("starter");
+        m.fuel_pph=m.eng.initNode("fuel-flow_pph",0.0);
+        m.fuel_gph=m.eng.initNode("fuel-flow-gph");
+        m.hpump=props.globals.initNode("systems/hydraulics/pump-psi["~eng_num~"]",0.0);
+        
+        m.Lfuel = setlistener(m.fuel_out, func (fl) {m.shutdown(fl.getValue())},1,0);
+        m.Lign = setlistener(m.ignition, func (ig) {m.shutdown(1-ig.getValue())},1,0);
+        m.CutOff = setlistener(m.cutoff, func (ct){m.engine_off=ct.getValue()},1,0);
+        return m;
+    },
+
+#### update ####
+    update : func{
+        if(!me.engine_off){
+            var thr = me.throttle.getValue();
+            me.fan.setValue(me.n1.getValue());
+            me.turbine.setValue(me.n2.getValue());
+            if(getprop("controls/engines/grnd_idle"))thr *=0.92;
+            me.throttle_lever.setValue(thr);
+        }else{
+            me.throttle_lever.setValue(0);
+            if(me.starter.getBoolValue())me.cycle_up=me.ignition.getValue();
+            if(me.cycle_up){
+                me.spool_up(15);
+            }else{
+                var tmprpm = me.fan.getValue();
+                if(tmprpm > 0.0){
+                    tmprpm -= getprop("sim/time/delta-sec") * 2;
+                    me.fan.setValue(tmprpm);
+                    me.turbine.setValue(tmprpm);
+                }
+            }
+        }
+    me.fuel_pph.setValue(me.fuel_gph.getValue()*me.fdensity);
+    var hpsi =me.fan.getValue();
+    if(hpsi>60)hpsi = 60;
+    me.hpump.setValue(hpsi);
+    me.itt_c.setValue(me.fan.getValue() * me.ITTlimit);
+    },
+
+    spool_up : func(scnds){
+        if(!me.engine_off){
+            return;
+        }else{
+            var n1=me.n1.getValue() ;
+            var n1factor = n1/scnds;
+            var n2=me.n2.getValue() ;
+            var n2factor = n2/scnds;
+            var tmprpm = me.fan.getValue();
+            tmprpm += getprop("sim/time/delta-sec") * n1factor;
+            var tmprpm2 = me.turbine.getValue();
+            tmprpm2 += getprop("sim/time/delta-sec") * n2factor;
+            me.fan.setValue(tmprpm);
+            me.turbine.setValue(tmprpm2);
+            if(tmprpm >= me.n1.getValue()){
+                me.cutoff.setBoolValue(0);
+                me.cycle_up=0;
+            }
+        }
+    },
+
+    shutdown : func(b){
+        if(b!=0){
+            me.cutoff.setBoolValue(1);
+        }
+    }
+};
+
+
+
+
+
 #Jet Engine Helper class
 # ie: var Eng = JetEngine.new(engine number);
 var JetEngine = {
@@ -103,6 +196,7 @@ var JetEngine = {
 };
 
 
+
 aircraft.light.new("instrumentation/annunciators", [0.5, 0.5], MstrCaution);
 var cabin_door = aircraft.door.new("/controls/cabin-door", 2);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10,1);
@@ -111,6 +205,7 @@ Grd_Idle.setBoolValue(1);
 var LHeng= JetEngine.new(0);
 var CHeng= JetEngine.new(1);
 var RHeng= JetEngine.new(2);
+var APU= APU.new(3);
 
 #######################################
 setlistener("/sim/signals/fdm-initialized", func {
@@ -198,6 +293,8 @@ var annunciators_loop = func{
     setprop("/instrumentation/annunciators/fuel-boost",LHeng.cycle_up);
     setprop("/instrumentation/annunciators/RHign",RHeng.cycle_up);
     setprop("/instrumentation/annunciators/fuel-boost",RHeng.cycle_up);
+    setprop("/instrumentation/annunciators/CHign",CHeng.cycle_up);
+    setprop("/instrumentation/annunciators/fuel-boost",CHeng.cycle_up);
 
     var Tfuel = getprop("/consumables/fuel/total-fuel-lbs");
         if(Tfuel != nil){
@@ -429,6 +526,7 @@ var update_systems = func{
     LHeng.update();
     CHeng.update();
     RHeng.update();
+    APU.update();
 	FHupdate(0);
 
 	if(getprop("velocities/airspeed-kt") > 40) cabin_door.close();

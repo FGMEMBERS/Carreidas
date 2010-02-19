@@ -827,13 +827,24 @@
     </offsets>
   </model>
 
-  <!-- Lumière rouge -->
+  <!-- Lumière rouge gauche -->
   <model>
     <name>LeftLight</name>
     <path>Aircraft/Carreidas/Models/light/RedLight.xml</path>
     <offsets>
       <x-m>   3.391 </x-m>
       <y-m> -11.441 </y-m>
+      <z-m>  -1.909 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Lumière blanche -->
+  <model>
+    <name>LeftLightW</name>
+    <path>Aircraft/Carreidas/Models/light/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>   3.391 </x-m>
+      <y-m> -11.541 </y-m>
       <z-m>  -1.909 </z-m>
     </offsets>
   </model>
@@ -851,21 +862,11 @@
 
   <!-- Lumière blanche -->
   <model>
-    <name>LeftLightW</name>
-    <path>Aircraft/Carreidas/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>   3.291 </x-m>
-      <y-m> -11.441 </y-m>
-      <z-m>  -1.909 </z-m>
-    </offsets>
-  </model>
-
-  <model>
     <name>RightLightW</name>
     <path>Aircraft/Carreidas/Models/light/StrobeWhite.xml</path>
     <offsets>
-      <x-m>  3.291 </x-m>
-      <y-m> 11.441 </y-m>
+      <x-m>  3.391 </x-m>
+      <y-m> 11.541 </y-m>
       <z-m> -1.909 </z-m>
     </offsets>
   </model>
