@@ -68,23 +68,6 @@
   </animation>
 
   <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>bruleG</object-name>
-    <object-name>bruleD</object-name>
-    <object-name>bruleC</object-name>
-    <object-name>lampeG</object-name>
-    <object-name>lampeD</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass.png</texture>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>porte</object-name>
@@ -132,10 +115,7 @@
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
 <!--
-    <diffuse>      <x-m>  8.122 </x-m>
-      <y-m> -1.718 </y-m>
-      <z-m> -0.529 </z-m>
-
+    <diffuse>
       <red-prop>diffuse/red</red-prop>
       <green-prop>diffuse/green</green-prop>
       <blue-prop>diffuse/blue</blue-prop>
@@ -163,6 +143,53 @@
       <shininess-prop>shininess</shininess-prop>
     </shininess>
 -->
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>porte</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
+    <object-name>derive</object-name>
+    <object-name>derive2</object-name>
+    <object-name>centreailes</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>bolG</object-name>
+    <object-name>bolD</object-name>
+    <object-name>portebaieA</object-name>
+    <object-name>portebaieG</object-name>
+    <object-name>portebaieD</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>direction</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
+  </effect>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>bruleG</object-name>
+    <object-name>bruleD</object-name>
+    <object-name>bruleC</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
   </animation>
 
   <!-- Une ombre pour OSG -->
@@ -194,7 +221,7 @@
 
   <!-- Trainée Gauche -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/trailL.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/trailL.xml</path>
     <offsets>
       <x-m>  8.122 </x-m>
       <y-m> -1.718 </y-m>
@@ -204,7 +231,7 @@
 
   <!-- Trainée Central -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/trailC.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/trailC.xml</path>
     <offsets>
       <x-m> 11.057 </x-m>
       <y-m>  0.000 </y-m>
@@ -214,11 +241,62 @@
 
   <!-- Trainée Droite -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/trailR.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/trailR.xml</path>
     <offsets>
       <x-m>  8.122 </x-m>
       <y-m>  1.718 </y-m>
       <z-m> -0.529 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -8.958 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -3.431 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue gauche 1 -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m>  1.140 </x-m>
+      <y-m> -2.519 </y-m>
+      <z-m> -3.608 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue gauche 2 -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m>  2.364 </x-m>
+      <y-m> -2.519 </y-m>
+      <z-m> -3.608 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite 1 -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  1.140 </x-m>
+      <y-m>  2.519 </y-m>
+      <z-m> -3.608 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite 2 -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  2.364 </x-m>
+      <y-m>  2.519 </y-m>
+      <z-m> -3.608 </z-m>
     </offsets>
   </model>
 
@@ -745,7 +823,7 @@
   <!-- Les flammes -->
   <!-- Gauche -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/flammesG.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/flammesG.xml</path>
     <offsets>
       <x-m>  8.359 </x-m>
       <y-m> -1.796 </y-m>
@@ -755,7 +833,7 @@
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/flammesD.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/flammesD.xml</path>
     <offsets>
       <x-m>  8.359 </x-m>
       <y-m>  1.796 </y-m>
@@ -765,7 +843,7 @@
 
   <!-- Centre -->
   <model>
-    <path>Aircraft/Carreidas/Models/flammes/flammesC.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/flammesC.xml</path>
     <offsets>
       <x-m> 10.711 </x-m>
       <y-m>  0.000 </y-m>
@@ -783,18 +861,6 @@
     </offsets>
   </model>
 
-  <!-- Wing light cone -->
-  <model>
-    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m>       -3.519 </x-m>
-      <y-m>       -1.493 </y-m>
-      <z-m>       -1.895 </z-m>
-      <heading-deg>  10 </heading-deg>
-      <pitch-deg> -7.500 </pitch-deg>
-    </offsets>
-  </model>
-
   <!-- Flash droit -->
   <model>
     <path>Aircraft/Carreidas/Models/light/flash.xml</path>
@@ -802,18 +868,6 @@
       <x-m> -3.519 </x-m>
       <y-m>  1.493 </y-m>
       <z-m> -1.895 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Wing light cone -->
-  <model>
-    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m>       -3.519 </x-m>
-      <y-m>        1.493 </y-m>
-      <z-m>       -1.895 </z-m>
-      <heading-deg> -10 </heading-deg>
-      <pitch-deg> -7.500 </pitch-deg>
     </offsets>
   </model>
 
@@ -870,6 +924,48 @@
       <z-m> -1.909 </z-m>
     </offsets>
   </model>
+
+  <!-- Wing light cone -->
+  <model>
+    <name>Left-Taxi-Light</name>
+    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>         -3.519 </x-m>
+      <y-m>         -1.493 </y-m>
+      <z-m>         -1.895 </z-m>
+      <heading-deg>  9.500 </heading-deg>
+      <pitch-deg>   -7.000 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Right-Taxi-Light</name>
+    <path>Aircraft/Carreidas/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>         -3.519 </x-m>
+      <y-m>          1.493 </y-m>
+      <z-m>         -1.895 </z-m>
+      <heading-deg> -9.500 </heading-deg>
+      <pitch-deg>   -7.000 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <name>All-Taxi-Light</name>
+    <object-name>Left-Taxi-Light</object-name>
+    <object-name>Right-Taxi-Light</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>All-Taxi-Light</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
 
   <!-- Géométrie variable des ailes -->
   <animation>
@@ -1051,9 +1147,9 @@
       <z-m> -1.908935 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1068,9 +1164,9 @@
       <z-m> -1.908935 </z-m>
     </center>
     <axis>
-      <x> -1.000 </x>
-      <y>  0.000 </y>
-      <z>  0.000 </z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -1085,9 +1181,9 @@
       <z-m> -1.908935 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y> -1.000 </y>
-      <z>  0.000 </z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
@@ -1102,9 +1198,9 @@
       <z-m> -1.908935 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1112,8 +1208,8 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>-11</factor>
+    <property>/surface-positions/elevator-pos-norm</property>
+    <factor> -11 </factor>
     <axis>
       <x1-m> 11.331 </x1-m>
       <y1-m> -0.282 </y1-m>
@@ -1127,8 +1223,8 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>/controls/flight/elevator</property>
-    <factor>-11</factor>
+    <property>/surface-positions/elevator-pos-norm</property>
+    <factor> -11 </factor>
     <axis>
       <x1-m> 14.364 </x1-m>
       <y1-m>  3.110 </y1-m>
@@ -1143,8 +1239,8 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>/controls/flight/rudder</property>
-    <factor>20</factor>
+    <property>/surface-positions/rudder-pos-norm</property>
+    <factor> -20 </factor>
     <axis>
       <x1-m>  9.146 </x1-m>
       <y1-m>  0.000 </y1-m>

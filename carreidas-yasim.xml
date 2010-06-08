@@ -4,11 +4,11 @@
 
   <approach speed="150" aoa="2" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[2]/throttle" value="0.2"/>
     <control-setting axis="/controls/engines/engine[0]/condition" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/condition" value="1"/>
-    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
     <control-setting axis="/controls/engines/engine[2]/condition" value="1"/>
-    <control-setting axis="/controls/engines/engine[2]/throttle" value="0.2"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/flight/slats" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
@@ -16,11 +16,11 @@
 
   <cruise speed="1120" alt="10000" fuel="0.8">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[2]/throttle" value="1"/>
     <control-setting axis="/controls/engines/engine[0]/condition" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/condition" value="1"/>
-    <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
     <control-setting axis="/controls/engines/engine[2]/condition" value="1"/>
-    <control-setting axis="/controls/engines/engine[2]/throttle" value="1"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
@@ -91,17 +91,21 @@
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
   </vstab>
 
-<!-- 3x Pratt and Whitney JT8D-219 -->
-
+  <!-- 3x Pratt and Whitney JT8D-219 -->
   <!-- left -->
   <jet x="-6.191" y="1.718" z="-0.529"
-mass="4500" thrust="25000" afterburner="32000" tsfc="0.519"
-       epr="2.8" spool-time="5">
+       mass="4500"
+       thrust="25000"
+       afterburner="32000"
+       tsfc="0.519"
+       epr="2.8"
+       spool-time="5">
        <actionpt x="-8.122" y="1.718" z="-0.529"/>
-<control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE"/>
-<control-input axis="/controls/engines/engine[0]/augmentation" control="REHEAT"/>
-<control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
-<control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
+
+       <control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[0]/augmentation" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
+
        <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
 
        <control-speed control="REHEAT" transition-time="8.0"/>
@@ -110,35 +114,58 @@ mass="4500" thrust="25000" afterburner="32000" tsfc="0.519"
 
   <!-- right -->
   <jet x="-6.191" y="-1.718" z="-0.529"
-mass="4500" thrust="25000" afterburner="32000" tsfc="0.519"
-       epr="2.8" spool-time="5">
+       mass="4500"
+       thrust="25000"
+       afterburner="32000"
+       tsfc="0.519"
+       epr="2.8"
+       spool-time="5">
        <actionpt x="-8.122" y="-1.718" z="-0.529"/>
-<control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE"/>
-<control-input axis="/controls/engines/engine[1]/augmentation" control="REHEAT"/>
-<control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
-<control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
+
+       <control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[1]/augmentation" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
+
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
 
        <control-speed control="REHEAT" transition-time="8.0"/>
        <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
   </jet>
 
   <!-- center -->
-<jet x="-9.126" y="0.0" z="-0.648" mass="4500" thrust="25000" afterburner="32000" tsfc="0.519" epr="2.8" spool-time="5">
-<actionpt x="-11.057" y="0" z="-0.648"/>
-<control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
-<control-input axis="/controls/engines/engine[2]/augmentation" control="REHEAT"/>
-<control-input axis="/controls/engines/engine[2]/reverser" control="REVERSE_THRUST"/>
+  <jet x="-9.126" y="0.0" z="-0.648"
+       mass="4500"
+       thrust="25000"
+       afterburner="32000"
+       tsfc="0.519"
+       epr="2.8"
+       spool-time="5">
+       <actionpt x="-11.057" y="0" z="-0.648"/>
 
-<control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[2]"/>
+       <control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[2]/augmentation" control="REHEAT"/>
+       <control-input axis="/controls/engines/engine[2]/reverser" control="REVERSE_THRUST"/>
+
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[2]"/>
 
        <control-speed control="REHEAT" transition-time="8.0"/>
        <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
   </jet>
 
   <!-- APU, sort of. Turbomeca Astazou IIA -->
-<jet x="-9.126" y="0.0" z="1.4" mass="324" thrust="523" tsfc="0.623" epr="2.8" exhaust-speed="250" n1-idle="63" n2-idle="62">
-<actionpt x="-11.057" y="0" z="1.4"/>
-<control-input axis="/controls/APU/throttle" control="THROTTLE"/>
+  <jet x="-9.126"
+       y="0.0"
+       z="1.4"
+       mass="324"
+       thrust="523"
+       tsfc="0.623"
+       epr="2.8"
+       exhaust-speed="250"
+       n1-idle="63"
+       n2-idle="62">
+       <actionpt x="-11.057" y="0" z="1.4"/>
+
+       <control-input axis="/controls/APU/throttle" control="THROTTLE"/>
 
        <control-speed control="THROTTLE" transition-time="3.0"/>
   </jet>
