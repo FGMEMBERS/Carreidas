@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Carreidas/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -198,17 +212,6 @@
     <path>Aircraft/Carreidas/Models/shadow.xml</path>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
-
   <!-- Immatriculation -->
   <model>
     <path>Aircraft/Carreidas/Models/Immat/immat.xml</path>
@@ -221,7 +224,16 @@
 
   <!-- Trainée Gauche -->
   <model>
-    <path>Aircraft/Carreidas/Models/Effects/flammes/trailL.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/smoke/smokeG.xml</path>
+    <offsets>
+      <x-m>  8.122 </x-m>
+      <y-m> -1.718 </y-m>
+      <z-m> -0.529 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/trail/trailG.xml</path>
     <offsets>
       <x-m>  8.122 </x-m>
       <y-m> -1.718 </y-m>
@@ -231,7 +243,16 @@
 
   <!-- Trainée Central -->
   <model>
-    <path>Aircraft/Carreidas/Models/Effects/flammes/trailC.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/smoke/smokeC.xml</path>
+    <offsets>
+      <x-m> 11.057 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.648 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/trail/trailC.xml</path>
     <offsets>
       <x-m> 11.057 </x-m>
       <y-m>  0.000 </y-m>
@@ -241,7 +262,16 @@
 
   <!-- Trainée Droite -->
   <model>
-    <path>Aircraft/Carreidas/Models/Effects/flammes/trailR.xml</path>
+    <path>Aircraft/Carreidas/Models/Effects/smoke/smokeD.xml</path>
+    <offsets>
+      <x-m>  8.122 </x-m>
+      <y-m>  1.718 </y-m>
+      <z-m> -0.529 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/trail/trailD.xml</path>
     <offsets>
       <x-m>  8.122 </x-m>
       <y-m>  1.718 </y-m>
@@ -358,17 +388,17 @@
   <animation>
     <type>rotate</type>
     <object-name>TrainAvant</object-name>
-    <property>/controls/flight/rudder</property>
-    <factor> 30.0 </factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 30 </factor>
     <center>
       <x-m> -8.958 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -3.089 </z-m>
     </center>
     <axis>
-      <x>  0.000 </x>
-      <y>  0.000 </y>
-      <z> -1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -686,7 +716,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
-    <property>/gear/gear[0]/rollspeed-ms</property>
+    <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m> -8.958 </x-m>
@@ -703,7 +733,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueG1</object-name>
-    <property>/gear/gear[1]/rollspeed-ms</property>
+    <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  1.140 </x-m>
@@ -720,7 +750,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueG2</object-name>
-    <property>/gear/gear[3]/rollspeed-ms</property>
+    <property>gear/gear[3]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  2.364 </x-m>
@@ -737,7 +767,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueD1</object-name>
-    <property>/gear/gear[2]/rollspeed-ms</property>
+    <property>gear/gear[2]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  1.140 </x-m>
@@ -754,7 +784,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueD2</object-name>
-    <property>/gear/gear[4]/rollspeed-ms</property>
+    <property>gear/gear[4]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  2.364 </x-m>
@@ -772,7 +802,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porte</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>instrumentation/doors/crew/position-norm</property>
     <factor>130</factor>
     <center>
       <x-m> -7.042 </x-m>
@@ -792,7 +822,7 @@
     <object-name>bruleG</object-name>
     <condition>
       <greater-than>
-        <property>/controls/engines/engine[0]/throttle</property>
+        <property>controls/engines/engine[0]/throttle</property>
         <value>0.4</value>
       </greater-than>
     </condition>
@@ -803,7 +833,7 @@
     <object-name>bruleD</object-name>
     <condition>
       <greater-than>
-        <property>/controls/engines/engine[1]/throttle</property>
+        <property>controls/engines/engine[1]/throttle</property>
         <value>0.4</value>
       </greater-than>
     </condition>
@@ -814,7 +844,7 @@
     <object-name>bruleC</object-name>
     <condition>
       <greater-than>
-        <property>/controls/engines/engine[3]/throttle</property>
+        <property>controls/engines/engine[3]/throttle</property>
         <value>0.4</value>
       </greater-than>
     </condition>
@@ -831,16 +861,6 @@
     </offsets>
   </model>
 
-  <!-- Droite -->
-  <model>
-    <path>Aircraft/Carreidas/Models/Effects/flammes/flammesD.xml</path>
-    <offsets>
-      <x-m>  8.359 </x-m>
-      <y-m>  1.796 </y-m>
-      <z-m> -0.546 </z-m>
-    </offsets>
-  </model>
-
   <!-- Centre -->
   <model>
     <path>Aircraft/Carreidas/Models/Effects/flammes/flammesC.xml</path>
@@ -848,6 +868,16 @@
       <x-m> 10.711 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.692 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Effects/flammes/flammesD.xml</path>
+    <offsets>
+      <x-m>  8.359 </x-m>
+      <y-m>  1.796 </y-m>
+      <z-m> -0.546 </z-m>
     </offsets>
   </model>
 
@@ -961,11 +991,12 @@
     <object-name>All-Taxi-Light</object-name>
     <condition>
       <equals>
-        <property>gear/gear[0]/position-norm</property>
+        <property>controls/switches/landing-light</property>
         <value> 1 </value>
       </equals>
     </condition>
   </animation>
+
 
   <!-- Géométrie variable des ailes -->
   <animation>
@@ -1208,7 +1239,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>/surface-positions/elevator-pos-norm</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor> -11 </factor>
     <axis>
       <x1-m> 11.331 </x1-m>
@@ -1223,7 +1254,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>/surface-positions/elevator-pos-norm</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor> -11 </factor>
     <axis>
       <x1-m> 14.364 </x1-m>
@@ -1239,7 +1270,7 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>/surface-positions/rudder-pos-norm</property>
+    <property>surface-positions/rudder-pos-norm</property>
     <factor> -20 </factor>
     <axis>
       <x1-m>  9.146 </x1-m>

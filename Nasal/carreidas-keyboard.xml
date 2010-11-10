@@ -7,7 +7,7 @@
     <desc>Passenger door</desc>
     <binding>
       <command>nasal</command>
-      <script>carreidas.doorsystem.passengerexport();</script>
+      <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -16,7 +16,7 @@
     <desc>Crew door</desc>
     <binding>
       <command>nasal</command>
-      <script>carreidas.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 
@@ -33,13 +33,14 @@
     </binding>
   </key>
 
-            <key n="267">
-                <name>F11</name>
-                <desc>Pop up autopilot dialog</desc>
-                <binding>
-                    <command>nasal</command>
-                    <script>citation.ap_settings.toggle()</script>
-                </binding>
-            </key>
+  <key n="267">
+    <name>F11</name>
+    <desc>Pop up autopilot dialog</desc>
+    <binding>
+      <command>nasal</command>
+      <script>citation.ap_settings.toggle()</script>
+    </binding>
+  </key>
 
 </PropertyList>
+
