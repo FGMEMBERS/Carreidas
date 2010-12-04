@@ -165,8 +165,20 @@
       <heading-marker type="bool" archive="y">true</heading-marker>
       <limit-deg type="int">360</limit-deg>
     </radar>
-    <mk-viii n="0">
-      <serviceable type="bool" archive="y">true</serviceable>
+    <mk-viii>                            <!-- http://wiki.flightgear.org/index.php/GPWS -->
+      <serviceable>true</serviceable>    <!-- EGPWS_ENABLE -->
+      <configuration-module>
+         <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+         <category-8>                    <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+            3 <!-- YASim --> 
+         </category-8>
+      </configuration-module>
+      <inputs>                           <!-- Module I/O -->
+         <arinc429>
+          <decision-height-ncd> false </decision-height-ncd>
+          <decision-height> 200 </decision-height>
+         </arinc429>
+      </inputs>
     </mk-viii>
     <groundradar>
       <range type="double">1.2</range>
