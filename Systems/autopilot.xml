@@ -445,7 +445,8 @@
       <honor-passive>true</honor-passive>
     </enable>
     <input>
-      <prop>orientation/side-slip-deg</prop>
+        <prop>orientation/side-slip-deg</prop>
+        <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
     </input>
     <reference>
       <value>0</value>
