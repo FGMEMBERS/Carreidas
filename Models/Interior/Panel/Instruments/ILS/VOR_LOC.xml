@@ -1,22 +1,23 @@
-<?xml version = '1.0' encoding = 'UTF-8' ?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList>
+  
   <params>
-    <selected-radial>instrumentation/nav[1]/radials/selected-deg</selected-radial>
-    <signal-quality>instrumentation/nav[1]/signal-quality-norm</signal-quality>
-    <to-flag>instrumentation/nav[1]/to-flag</to-flag>
-    <from-flag>instrumentation/nav[1]/from-flag</from-flag>
-    <tofrom-serviceable>instrumentation/nav[1]/to-from/serviceable</tofrom-serviceable>
-    <gs-needle-deflection>instrumentation/nav[1]/gs-needle-deflection</gs-needle-deflection>
-    <heading-needle-deflection>instrumentation/nav[1]/heading-needle-deflection</heading-needle-deflection>
-    <has-gs>instrumentation/nav[1]/has-gs</has-gs>
-    <gs-serviceable>instrumentation/nav[1]/gs/serviceable</gs-serviceable>
+    <selected-radial>instrumentation/nav[0]/radials/selected-deg</selected-radial>
+    <signal-quality>instrumentation/nav[0]/signal-quality-norm</signal-quality>
+    <to-flag>instrumentation/nav[0]/to-flag</to-flag>
+    <from-flag>instrumentation/nav[0]/from-flag</from-flag>
+    <tofrom-serviceable>instrumentation/nav[0]/to-from/serviceable</tofrom-serviceable>
+    <gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection</gs-needle-deflection>
+    <heading-needle-deflection>instrumentation/nav[0]/heading-needle-deflection</heading-needle-deflection>
+    <has-gs>instrumentation/nav[0]/has-gs</has-gs>
+    <gs-serviceable>instrumentation/nav[0]/gs/serviceable</gs-serviceable>
   </params>
 
   <path>VOR_LOC.ac</path>
 
   <animation>
-    <type>material</type>
-    <object-name>Face</object-name>
+    <object-name>face</object-name>
     <object-name>FROM</object-name>
     <object-name>GS</object-name>
     <object-name>NAV</object-name>
@@ -27,7 +28,54 @@
     <object-name>Course10</object-name>
     <object-name>Course100</object-name>
     <object-name>OBS</object-name>
-    <emission include="InstrumentLightEmissionInclude.xml"/>
+    <object-name>OBSSelector</object-name>
+    <object-name>Light</object-name>
+
+    <object-name>OBSSelectorPick.L</object-name>
+    <object-name>OBSSelectorPick.R</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>FROM</object-name>
+    <object-name>GS</object-name>
+    <object-name>NAV</object-name>
+    <object-name>TO</object-name>
+    <object-name>GSNeedle</object-name>
+    <object-name>LOCNeedle</object-name>
+    <object-name>Course1</object-name>
+    <object-name>Course10</object-name>
+    <object-name>Course100</object-name>
+    <object-name>OBS</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
   </animation>
 
   <animation>
@@ -36,14 +84,14 @@
     <property alias="/params/gs-needle-deflection"/>
     <factor>1</factor>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
     <center>
-      <x-m>0</x-m>
-      <y-m>-0.0238677</y-m>
-      <z-m>0</z-m>
+      <x-m>  0.0000000 </x-m>
+      <y-m> -0.0238677 </y-m>
+      <z-m>  0.0000000 </z-m>
     </center>
   </animation>
 
@@ -53,14 +101,14 @@
     <property alias="/params/heading-needle-deflection"/>
     <factor>1</factor>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
     <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0.0255278</z-m>
+      <x-m> 0.0000000 </x-m>
+      <y-m> 0.0000000 </y-m>
+      <z-m> 0.0255278 </z-m>
     </center>
   </animation>
 
@@ -110,9 +158,9 @@
     <property alias="/params/selected-radial"/>
     <factor>-0.1</factor>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -123,9 +171,9 @@
     <factor>-0.01</factor>
     <step>10</step>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -136,9 +184,9 @@
     <factor>-0.001</factor>
     <step>100</step>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

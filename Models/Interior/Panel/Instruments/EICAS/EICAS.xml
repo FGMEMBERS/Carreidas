@@ -1,32 +1,45 @@
-<?xml version="1.0"?>
-<!--
-Author : Syd Adams
-Primus 2000 EICAS
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams Primus 2000 EICAS
+     Update by Helijah 2013               -->
 <PropertyList>
 
-<path>eicas.ac</path>
+  <path>eicas.ac</path>
+  
+  <animation>
+    <object-name>EICAS.norm</object-name>
+    <object-name>Flapneedle</object-name>
+    <object-name>STABneedle</object-name>
+    <object-name>LH-N1</object-name>
+    <object-name>RH-N1</object-name>
+    <object-name>LH-ITT</object-name>
+    <object-name>RH-ITT</object-name>
+    <object-name>oiltemp.001</object-name>
+    <object-name>oiltemp.002</object-name>
+    <object-name>oilpsi.001</object-name>
+    <object-name>oilpsi.002</object-name>
+  </animation>
 
-   <panel>
-        <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EICAS/EICAS-panel.xml</path>
-        <bottom-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.076</y-m>
-            <z-m>-0.077</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>0.003</x-m>
-            <y-m>0.076</y-m>
-            <z-m>-0.077</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.076</y-m>
-            <z-m>0.106</z-m>
-        </top-left>
-    </panel>
+  <panel>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EICAS/EICAS-panel.xml</path>
+    <bottom-left>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.076 </y-m>
+      <z-m> -0.077 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.003 </x-m>
+      <y-m>  0.076 </y-m>
+      <z-m> -0.077 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.076 </y-m>
+      <z-m>  0.106 </z-m>
+    </top-left>
+  </panel>
 
-<animation>
+  <animation>
     <type>select</type>
     <object-name>EICAS.norm</object-name>
     <object-name>Flapneedle</object-name>
@@ -39,51 +52,50 @@ Primus 2000 EICAS
     <object-name>oiltemp.002</object-name>
     <object-name>oilpsi.001</object-name>
     <object-name>oilpsi.002</object-name>
-            <condition>
-                <and>
-                    <property>instrumentation/primus1000/eicas/serviceable</property>
-                    <greater-than>
-                        <property>systems/electrical/outputs/efis</property>
-                        <value>15</value>
-                    </greater-than>
-                </and>
-            </condition>
-</animation>
+    <condition>
+      <and>
+        <property>instrumentation/primus1000/eicas/serviceable</property>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
 
-
-<animation>
+  <animation>
     <type>select</type>
     <object-name>gear0.annun</object-name>
     <condition>
-        <and>
-            <equals>
-            <property>gear/gear[0]/position-norm</property>
-            <value>1.0</value>
-            </equals>
-            <greater-than>
-                <property>systems/electrical/outputs/efis</property>
-                <value>15</value>
-            </greater-than>
-        </and>
+      <and>
+        <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value>1.0</value>
+        </equals>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </and>
     </condition>
-</animation>
+  </animation>
 
-<animation>
+  <animation>
     <type>select</type>
     <object-name>gear1.annun</object-name>
     <condition>
-        <and>
-            <equals>
-                <property>gear/gear[1]/position-norm</property>
-                <value>1.0</value>
-            </equals>
-            <greater-than>
-                <property>systems/electrical/outputs/efis</property>
-                <value>15</value>
-            </greater-than>
-        </and>
+      <and>
+        <equals>
+          <property>gear/gear[1]/position-norm</property>
+          <value>1.0</value>
+        </equals>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </and>
     </condition>
-</animation>
+  </animation>
 
 <animation>
     <type>select</type>
@@ -302,110 +314,74 @@ Primus 2000 EICAS
     </axis>
 </animation>
 
-<animation>
+  <animation>
     <type>textranslate</type>
     <object-name>LH-N1</object-name>
     <property>engines/engine[0]/fan</property>
     <interpolation>
-        <entry>
-            <ind>0.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>30.0</ind><dep>-0.0031</dep>
-        </entry>
-        <entry>
-            <ind>50.0</ind><dep>-0.0547</dep>
-        </entry>
-        <entry>
-            <ind>90.0</ind><dep>-0.1550</dep>
-        </entry>
-        <entry>
-            <ind>110.0</ind><dep>-0.2537</dep>
-        </entry>
+      <entry><ind>   0 </ind><dep>  0.0000 </dep></entry>
+      <entry><ind>  30 </ind><dep> -0.0031 </dep></entry>
+      <entry><ind>  50 </ind><dep> -0.0547 </dep></entry>
+      <entry><ind>  90 </ind><dep> -0.1550 </dep></entry>
+      <entry><ind> 110 </ind><dep> -0.2537 </dep></entry>
     </interpolation>
     <axis>
-        <x>0.0</x>
-        <y>1.0</y>
-        <z>0.0</z>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
     </axis>
-</animation>
+  </animation>
 
-<animation>
+  <animation>
     <type>textranslate</type>
     <object-name>RH-N1</object-name>
     <property>engines/engine[1]/fan</property>
     <interpolation>
-        <entry>
-            <ind>0.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>30.0</ind><dep>-0.0031</dep>
-        </entry>
-        <entry>
-            <ind>50.0</ind><dep>-0.0547</dep>
-        </entry>
-        <entry>
-            <ind>90.0</ind><dep>-0.1550</dep>
-        </entry>
-        <entry>
-            <ind>110.0</ind><dep>-0.2537</dep>
-        </entry>
+      <entry><ind>   0 </ind><dep>  0.0000 </dep></entry>
+      <entry><ind>  30 </ind><dep> -0.0031 </dep></entry>
+      <entry><ind>  50 </ind><dep> -0.0547 </dep></entry>
+      <entry><ind>  90 </ind><dep> -0.1550 </dep></entry>
+      <entry><ind> 110 </ind><dep> -0.2537 </dep></entry>
     </interpolation>
     <axis>
-        <x>0.0</x>
-        <y>1.0</y>
-        <z>0.0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
-</animation>
+  </animation>
 
-<animation>
+  <animation>
     <type>textranslate</type>
     <object-name>RH-ITT</object-name>
     <property>engines/engine[1]/itt-celcius</property>
     <interpolation>
-        <entry>
-            <ind>0.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>100.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>800.0</ind><dep>0.1362</dep>
-        </entry>
-        <entry>
-            <ind>925</ind><dep>0.2350</dep>
-        </entry>
+      <entry><ind>   0 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 100 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 800 </ind><dep> 0.1362 </dep></entry>
+      <entry><ind> 925 </ind><dep> 0.2350 </dep></entry>
     </interpolation>
     <axis>
-        <x>0.0</x>
-        <y>-1.0</y>
-        <z>0.0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
-</animation>
+  </animation>
 
-<animation>
+  <animation>
     <type>textranslate</type>
     <object-name>LH-ITT</object-name>
     <property>engines/engine[0]/itt-celcius</property>
     <interpolation>
-        <entry>
-            <ind>0.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>100.0</ind><dep>0.0</dep>
-        </entry>
-        <entry>
-            <ind>800.0</ind><dep>0.1362</dep>
-        </entry>
-        <entry>
-            <ind>925</ind><dep>0.2350</dep>
-        </entry>
+      <entry><ind>   0 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 100 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 800 </ind><dep> 0.1362 </dep></entry>
+      <entry><ind> 925 </ind><dep> 0.2350 </dep></entry>
     </interpolation>
     <axis>
-        <x>0.0</x>
-        <y>-1.0</y>
-        <z>0.0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
-</animation>
+  </animation>
 
 </PropertyList>

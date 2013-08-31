@@ -30,7 +30,3 @@ beacon.interval = 0;
 
 var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1] );
 strobe.interval = 0;
-
-setprop( "/instrumentation/nav[0]/ident", 0 );
-setprop( "/instrumentation/nav[1]/ident", 0 );
-

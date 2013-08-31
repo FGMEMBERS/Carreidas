@@ -53,9 +53,9 @@
       <z-m> 0.411 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -63,16 +63,16 @@
     <type>rotate</type>
     <object-name>AnimeTete</object-name>
     <property>controls/flight/rudder</property>
-    <factor>-25</factor>
+    <factor> -25 </factor>
     <center>
       <x-m> 0.366 </x-m>
       <y-m> 0.005 </y-m>
       <z-m> 0.411 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -80,18 +80,17 @@
     <type>rotate</type>
     <object-name>AnimeTete</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
-    <factor> -10.0</factor>
+    <factor> -10 </factor>
     <center>
       <x-m> 0.366 </x-m>
       <y-m> 0.005 </y-m>
       <z-m> 0.411 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation> 
 
 </PropertyList>
-

@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <sim  include="Nasal/views.xml">
 
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <description>Carreidas 160 (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM), Victhor FOSTER (Panel/FDM)</author>
     <status>development</status>
   
-    <fuel-fraction>1.0</fuel-fraction>
+    <fuel-fraction> 1 </fuel-fraction>
   
     <sound>
       <audible>true</audible>
@@ -49,16 +50,28 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int">0</int>  <!-- 0 immat -->
-        <int type="int">0</int>  <!-- 1 immat -->
-        <int type="int">0</int>  <!-- 2 immat -->
-        <int type="int">0</int>  <!-- 3 immat -->
-        <int type="int">0</int>  <!-- 4 immat -->
-        <int type="int">0</int>  <!-- 5 immat -->
-        <int type="bool">0</int> <!-- 6 smoke -->
-        <int type="int">0</int>  <!-- 7 color -->
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="8"> 0 </int>                                            <!--  8 Noze type -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="6" alias="/engines/engine[0]/n2" />
+        <float n="7" alias="/engines/engine[1]/n2" />
+        <float n="8" alias="/controls/engines/engine[0]/throttle" />
+        <float n="9" alias="/controls/engines/engine[1]/throttle" />
+        <float n="10" alias="/engines/engine[2]/n2" />
+        <float n="11" alias="/controls/engines/engine[2]/throttle" />
+        <string n="0" type="string" />
+        <string n="9" type="string" />                                        <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
@@ -85,7 +98,7 @@
 
     <systems>
       <autopilot>
-        <path>Aircraft/Carreidas/Systems/Bravo-autopilot.xml</path>
+        <path>Aircraft/Carreidas/Systems/autopilot.xml</path>
       </autopilot>
       <path>Aircraft/Carreidas/Systems/systems.xml</path>
     </systems>
@@ -204,31 +217,28 @@
   </engines>
 
   <nasal>
+    <doors>
+      <file>Aircraft/Carreidas/Nasal/doors.nas</file>
+    </doors>
     <carreidas>
       <file>Aircraft/Carreidas/Nasal/light.nas</file>
       <file>Aircraft/Carreidas/Nasal/liveries.nas</file>
       <file>Aircraft/Carreidas/Nasal/immat.nas</file>
+      <file>Aircraft/Carreidas/Nasal/pilot-g.nas</file>
     </carreidas>
-    <doors>
-      <file>Aircraft/Carreidas/Nasal/doors.nas</file>
-    </doors>
     <efis>
       <file>Aircraft/Instruments-3d/primus-1000/P1000.nas</file>
     </efis>
-    <citation>
+    <systems>
       <file>Aircraft/Carreidas/Nasal/Bravo.nas</file>
       <file>Aircraft/Carreidas/Nasal/Electrical.nas</file>
       <file>Aircraft/Carreidas/Nasal/flightdirector.nas</file>
-    </citation>
-    <systems>
-      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/KLN90B/kln90b.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/KLN90B/kln90b.nas</file>
     </systems>
-    <zkv500>
-      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/zkv500/ZKV500-gps1.nas</file>
-    </zkv500>
     <radar>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/RDR-160/RDR160.nas</file>
     </radar>
+    <!--
     <kr87>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87.nas</file>
       <script><![CDATA[
@@ -236,16 +246,32 @@
         kr87.new("/instrumentation/adf[1]");
       ]]></script>
     </kr87>
+    -->
     <ki266>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dme/ki266.nas</file>
       <script><![CDATA[
         ki266.new(0);
       ]]></script>
-     </ki266>
+    </ki266>
     <m877>
-        <file>Aircraft/Instruments-3d/clock/M877/M877.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/M877/M877.nas</file>
     </m877>
+    <!--
+    <engines>
+      <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+      <script>
+        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        var engine2 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        var engine3 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        setlistener("sim/signals/fdm-initialized", func
+        {
+          engine1.init();
+          engine2.init();
+          engine3.init();
+        }, 0, 0);
+      </script>
+    </engines>
+    -->
   </nasal>
 
 </PropertyList>
-

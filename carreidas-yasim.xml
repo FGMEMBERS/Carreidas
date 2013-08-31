@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <airplane mass="24800">
 
@@ -45,19 +45,19 @@
         <flap0 start="0.33" end="0.66" lift="1.5" drag="1.8"/>
         <flap1 start="0.66" end="0.96" lift="1.3" drag="1.1"/>
         <slat start="0.2" end="0.8" aoa="20" drag="2"/>
-        <spoiler start="0.02" end="0.3" lift="1" drag="6"/>
+        <spoiler start="0.3" end="0.7" lift="1" drag="6"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
         <control-input axis="/controls/flight/flaps" control="SLAT"/>
-        <control-input axis="/controls/flight/speedbrake" control="SPOILER"/>
+        <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
 
-        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
         <control-output control="SLAT" prop="/surface-positions/slat-pos-norm"/>
-        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
 
         <control-speed control="FLAP0" transition-time="5"/>
         <control-speed control="SPOILER" transition-time="1"/>
@@ -235,11 +235,11 @@
   </gear>
 
   <!--    Total fuel = 64000 lbs   -->
-  <tank x="-1" y="2" z="-2" jet="true" capacity="25000"/>
-  <tank x="0" y="0" z="-2" jet="true" capacity="14000"/>
+  <tank x="-1" y=" 2" z="-2" jet="true" capacity="25000"/>
+  <tank x=" 0" y=" 0" z="-2" jet="true" capacity="14000"/>
   <tank x="-1" y="-2" z="-2" jet="true" capacity="25000"/>
   
   <ballast  x="-9.126" y="0" z="0" mass="-14000"/>
-  <ballast  x="4" y="0" z="0" mass="3500"/>
+  <ballast  x=" 4.000" y="0" z="0" mass="  3500"/>
 
 </airplane>

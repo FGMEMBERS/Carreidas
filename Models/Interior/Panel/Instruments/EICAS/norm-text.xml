@@ -1,19 +1,17 @@
-<!--
-Syd Adams
-Primus 2000 EICAS
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- Syd Adams Primus 2000 EICAS 
+     Updated by Helijah 2013     -->
 <PropertyList>
 
-    <name>EICAS norm text</name>
-     <w-base>200</w-base>
-    <h-base>240</h-base>
+  <name>EICAS norm text</name>
+   <w-base>200</w-base>
+  <h-base>240</h-base>
 
-    <layers>
+  <layers>
 
-<!-- Fuel -->
-
-            <layer>
+    <!-- Fuel -->
+    <layer>
                 <name>LH fflow</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -40,7 +38,7 @@ Primus 2000 EICAS
                         <offset>34</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
             <layer>
                 <name>RH fflow</name>
@@ -187,10 +185,8 @@ Primus 2000 EICAS
                 </transformations>
             </layer>
 
-<!-- Electricl-->
-
-
-            <layer>
+    <!-- Electricl-->
+    <layer>
                 <name>DC volts</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -268,9 +264,8 @@ Primus 2000 EICAS
                 </transformations>
             </layer>
 
-<!-- Engines-->
-
-            <layer>
+    <!-- Engines-->
+    <layer>
                 <name>Fan1</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -396,9 +391,8 @@ Primus 2000 EICAS
                 </transformations>
             </layer>
 
-<!-- TEMP -->
-
-            <layer>
+    <!-- TEMP -->
+    <layer>
                 <name>RAT celcius</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -425,20 +419,21 @@ Primus 2000 EICAS
                         <offset>1</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-    </layers>
+  </layers>
 
-    <actions>
-
-        <!--action>
-            <name>bezel outline</name>
-            <button>0</button>
-            <x>-128</x>
-            <y>-128</y>
-            <w>256</w>
-            <h>256</h>
-        </action-->
-    </actions>
+  <actions>
+    <!--
+    <action>
+      <name>bezel outline</name>
+      <button>0</button>
+      <x>-128</x>
+      <y>-128</y>
+      <w>256</w>
+      <h>256</h>
+    </action>
+    -->
+  </actions>
 
 </PropertyList>

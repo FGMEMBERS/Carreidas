@@ -1,5 +1,7 @@
-<?xml version = '1.0' encoding = 'UTF-8' ?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList>
+  
   <params>
     <needle1source>instrumentation/rmi[0]/needle1-switch-position</needle1source>
     <needle2source>instrumentation/rmi[0]/needle2-switch-position</needle2source>
@@ -14,12 +16,52 @@
   <path>RMI.ac</path>
 
   <animation>
+    <object-name>Chassis</object-name>
+    <object-name>CompassRose</object-name>
+    <object-name>Two</object-name>
+    <object-name>One</object-name>
+    <object-name>Marker</object-name>
+    <object-name>Label</object-name>
+    <object-name>Light</object-name>
+    <object-name>Needle1Source</object-name>
+    <object-name>Needle2Source</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
     <type>material</type>
     <object-name>CompassRose</object-name>
     <object-name>Two</object-name>
     <object-name>One</object-name>
     <object-name>Marker</object-name>
-    <emission include="InstrumentLightEmissionInclude.xml"/>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
   </animation>
 
   <animation>

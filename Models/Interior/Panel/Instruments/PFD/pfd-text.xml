@@ -1,83 +1,81 @@
-<!--
-Syd Adams
-Primus 1000 PFD  messages
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- Syd Adams Primus 1000 PFD  messages 
+     Updated by Helijah                  -->
 <PropertyList>
 
-    <name>PFD text</name>
-    <w-base>400</w-base>
-    <h-base>500</h-base>
-    <w>400</w>
-    <h>500</h>
+  <name>PFD text</name>
+  <w-base>400</w-base>
+  <h-base>500</h-base>
+  <w>400</w>
+  <h>500</h>
 
-    <layers>
-
-    <layer>
-        <condition>
-            <greater-than>
-                <property>autopilot/settings/target-speed-kt</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-            <name>AP speed</name>
-            <type>text</type>
-            <font>arial_black</font>
-            <point-size>14</point-size>
-            <color>
-                <red>0.4</red>
-                <green>0.7</green>
-                <blue>0.8</blue>
-            </color>
-            <chunks>
-                <chunk>
-                    <type>text-value</type>
-                    <property>autopilot/settings/target-speed-kt</property>
-                </chunk>
-            </chunks>
-            <transformations>
-                <transformation>
-                    <type>x-shift</type>
-                    <offset>-175</offset>
-                </transformation>
-                <transformation>
-                    <type>y-shift</type>
-                    <offset>222</offset>
-                </transformation>
-            </transformations>
-        </layer>
+  <layers>
 
     <layer>
-            <name>AP altitude</name>
-            <type>text</type>
-            <font>arial_black</font>
-            <point-size>14</point-size>
-            <color>
-                <red>0.4</red>
-                <green>0.7</green>
-                <blue>0.8</blue>
-            </color>
-            <chunks>
-                <chunk>
-                    <type>text-value</type>
-                    <property>autopilot/settings/target-altitude-ft</property>
-                </chunk>
-            </chunks>
-            <transformations>
-                <transformation>
-                    <type>x-shift</type>
-                    <offset>122</offset>
-                </transformation>
-                <transformation>
-                    <type>y-shift</type>
-                    <offset>222</offset>
-                </transformation>
-            </transformations>
-        </layer>
+      <condition>
+        <greater-than>
+          <property>autopilot/settings/target-speed-kt</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <name>AP speed</name>
+      <type>text</type>
+      <font>arial_black</font>
+      <point-size>14</point-size>
+      <color>
+        <red>   0.4 </red>
+        <green> 0.7 </green>
+        <blue>  0.8 </blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>text-value</type>
+          <property>autopilot/settings/target-speed-kt</property>
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-175</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>222</offset>
+        </transformation>
+      </transformations>
+    </layer>
 
-<!-- AP Annunciators-->
+    <layer>
+      <name>AP altitude</name>
+      <type>text</type>
+      <font>arial_black</font>
+      <point-size>14</point-size>
+      <color>
+        <red>   0.4 </red>
+        <green> 0.7 </green>
+        <blue>  0.8 </blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>text-value</type>
+          <property>autopilot/settings/target-altitude-ft</property>
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>122</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>222</offset>
+        </transformation>
+      </transformations>
+    </layer>
 
-        <layer>
+    <!-- AP Annunciators-->
+    <layer>
             <name>LAT mode</name>
             <type>text</type>
             <font>arial_black</font>
@@ -222,8 +220,6 @@ Primus 1000 PFD  messages
             </transformations>
         </layer>
 
-
-
     <layer>
             <name>VNV/FMS</name>
             <type>text</type>
@@ -252,8 +248,7 @@ Primus 1000 PFD  messages
             </transformations>
         </layer>
 
-<!-- FMS display-->
-
+  <!-- FMS display-->
             <layer>
             <condition>
                 <property>instrumentation/primus1000/control/fms</property>
@@ -317,8 +312,7 @@ Primus 1000 PFD  messages
                 </transformations>
             </layer>
 
-<!-- VOR1 display-->
-
+  <!-- VOR1 display-->
             <layer>
             <condition>
                 <and>
@@ -398,8 +392,7 @@ Primus 1000 PFD  messages
                 </transformations>
             </layer>
 
-<!-- VOR2 display-->
-
+  <!-- VOR2 display-->
             <layer>
             <condition>
                 <and>
@@ -746,8 +739,7 @@ Primus 1000 PFD  messages
             </transformations>
         </layer>
 
-<!--    FD MODE ANNUNCIATORS-->
-
+  <!--    FD MODE ANNUNCIATORS-->
         <layer>
             <name>MINIMUMS</name>
             <condition>
@@ -1038,36 +1030,35 @@ Primus 1000 PFD  messages
             </transformations>
         </layer>
 
-        <layer>
-            <name>ALT value</name>
-            <type>text</type>
-            <font>arial_black</font>
-            <point-size>12</point-size>
-            <color>
-                <red>0.2</red>
-                <green>0.8</green>
-                <blue>0.3</blue>
-            </color>
-            <chunks>
-                <chunk>
-                    <type>number-value</type>
-                    <property>instrumentation/altimeter/indicated-altitude-ft</property>
-                    <format>%05.0f</format>
-                </chunk>
-               </chunks>
-            <transformations>
-                <transformation>
-                    <type>x-shift</type>
-                    <offset>128</offset>
-                </transformation>
-                <transformation>
-                    <type>y-shift</type>
-                    <offset>90</offset>
-                </transformation>
-            </transformations>
-        </layer>
+    <layer>
+      <name>ALT value</name>
+      <type>text</type>
+      <font>arial_black</font>
+      <point-size>12</point-size>
+      <color>
+        <red>   0.2 </red>
+        <green> 0.8 </green>
+        <blue>  0.3 </blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>number-value</type>
+          <property>instrumentation/altimeter/indicated-altitude-ft</property>
+          <format>%05.0f</format>
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>128</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>90</offset>
+        </transformation>
+      </transformations>
+    </layer>
 
-
-    </layers>
+  </layers>
 
 </PropertyList>

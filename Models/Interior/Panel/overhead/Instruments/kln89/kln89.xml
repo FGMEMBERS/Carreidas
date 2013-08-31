@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>kln89.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>msg</object-name>
+    <object-name>obs</object-name>
+    <object-name>alt</object-name>
+    <object-name>nrst</object-name>
+    <object-name>dto</object-name>
+    <object-name>clr</object-name>
+    <object-name>ent</object-name>
+    <object-name>crsr</object-name>
+    <object-name>led</object-name>
+    <object-name>button0</object-name>
+    <object-name>button1</object-name>
+  </animation>
+
+  <panel>
+    <name>GPS screen</name>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/kln89/kln89_panel.xml</path>
+    <bottom-left>
+      <x-m>  0.008 </x-m>
+      <y-m> -0.062 </y-m>
+      <z-m> -0.008 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.008 </x-m>
+      <y-m>  0.059 </y-m>
+      <z-m> -0.008 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.008 </x-m>
+      <y-m> -0.062 </y-m>
+      <z-m>  0.022 </z-m>
+    </top-left>
+  </panel>
+
+  <!--  hotspots  -->
+  <animation>
+    <type>pick</type>
+    <object-name>msg</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>kln89_msg_pressed</command>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

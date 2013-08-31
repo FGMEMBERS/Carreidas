@@ -1,29 +1,35 @@
-<?xml version="1.0"?>
-<!--
-Author : Syd Adams
-GNX-XLS Flight Computer
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams GNX-XLS Flight Computer 
+     updated by Helijah 2013                    -->
 <PropertyList>
 
-<path>gnx.ac</path>
+  <path>gnx.ac</path>
 
-    <panel>
-        <path>Aircraft/Citation-Bravo/Models/Instruments/CDU/GNX-panel.xml</path>
-        <bottom-left>
-            <x-m>0.002</x-m>
-            <y-m>-0.040</y-m>
-            <z-m>-0.018</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>0.002</x-m>
-            <y-m>0.022</y-m>
-            <z-m>-0.018</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>0.002</x-m>
-            <y-m>-0.039</y-m>
-            <z-m>0.043</z-m>
-        </top-left>
-    </panel>
+  <animation>
+    <object-name>GNX-XLS</object-name>
+    <object-name>GNX.btns</object-name>
+    <object-name>GNS.power</object-name>
+    <object-name>GNX.screen</object-name>
+  </animation>
+        
+  <panel>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/CDU/GNX-panel.xml</path>
+    <bottom-left>
+      <x-m>  0.002 </x-m>
+      <y-m> -0.040 </y-m>
+      <z-m> -0.018 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.002 </x-m>
+      <y-m>  0.022 </y-m>
+      <z-m> -0.018 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.002 </x-m>
+      <y-m> -0.039 </y-m>
+      <z-m>  0.043 </z-m>
+    </top-left>
+  </panel>
 
 </PropertyList>

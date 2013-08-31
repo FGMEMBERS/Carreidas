@@ -1,63 +1,98 @@
-<!--
-Syd Adams
-777-200 Navigation display
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- Syd Adams 777-200 Navigation display
+     Updated by Helijah 2013              -->
 <PropertyList>
 
- <path>EFB.ac</path>
+  <path>EFB.ac</path>
 
-    <panel>
-        <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EFB/chart.xml</path>
-        <bottom-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.078</y-m>
-            <z-m>-0.104</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>0.003</x-m>
-            <y-m>0.078</y-m>
-            <z-m>-0.104</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.078</y-m>
-            <z-m>0.104</z-m>
-        </top-left>
-    </panel>
+  <animation>
+    <object-name>EFB</object-name>
+    <object-name>background</object-name>
+    <object-name>Btn.UP</object-name>
+    <object-name>Btn.UP.001</object-name>
+    <object-name>BtnLH</object-name>
+    <object-name>BtnLH.001</object-name>
+    <object-name>BtnLH.002</object-name>
+    <object-name>BtnLH.003</object-name>
+    <object-name>BtnLH.004</object-name>
+    <object-name>BtnLH.005</object-name>
+    <object-name>BtnLH.006</object-name>
+    <object-name>BtnLH.007</object-name>
+    <object-name>Btn.zoomin</object-name>
+    <object-name>Btn.zoomout</object-name>
+    <object-name>Btn.crsr-up</object-name>
+    <object-name>Btn.crsr-dn</object-name>
+    <object-name>Btn.crsr-lh</object-name>
+    <object-name>Btn.crsr-rh</object-name>
+    <object-name>BtnRH</object-name>
+    <object-name>BtnRH.001</object-name>
+    <object-name>BtnRH.002</object-name>
+    <object-name>BtnRH.003</object-name>
+    <object-name>BtnRH.004</object-name>
+    <object-name>BtnRH.005</object-name>
+    <object-name>BtnRH.006</object-name>
+    <object-name>BtnRH.007</object-name>
+    <object-name>Btn.menu</object-name>
+    <object-name>Btn.pgback</object-name>
+    <object-name>Btn.pgup</object-name>
+    <object-name>Btn.pgdn</object-name>
+    <object-name>Btn.xfr</object-name>
+    <object-name>Btn.enter</object-name>
+    <object-name>Circle</object-name>
+  </animation>
+        
+  <panel>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/EFB/chart.xml</path>
+    <bottom-left>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.078 </y-m>
+      <z-m> -0.104 </z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>  0.003 </x-m>
+      <y-m>  0.078 </y-m>
+      <z-m> -0.104 </z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.078 </y-m>
+      <z-m>  0.104 </z-m>
+    </top-left>
+  </panel>
 
-    <animation>
-        <type>pick</type>
-        <object-name>Btn.zoomin</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/groundradar/range</property>
-            <step>-0.1</step>
-            <min>0.1</min>
-            <max>10</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>Btn.zoomin</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/groundradar/range</property>
+        <step>-0.1</step>
+        <min>0.1</min>
+        <max>10</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>Btn.zoomout</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/groundradar/range</property>
-            <step>0.1</step>
-            <min>0.1</min>
-            <max>10</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>Btn.zoomout</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/groundradar/range</property>
+        <step>0.1</step>
+        <min>0.1</min>
+        <max>10</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
 
 </PropertyList>

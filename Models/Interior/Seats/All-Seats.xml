@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+  <!-- Cockpit -->
+  <!-- Seats -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -9.77821 </x-m>
+      <y-m> -0.47670 </y-m>
+      <z-m> -0.92385 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -9.77821 </x-m>
+      <y-m>  0.47670 </y-m>
+      <z-m> -0.92385 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Cabine -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -5.61310 </x-m>
+      <y-m>  0.56458 </y-m>
+      <z-m> -1.15121 </z-m>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -3.16483 </x-m>
+      <y-m>  0.56463 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.83119 </x-m>
+      <y-m>  0.56463 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.83119 </x-m>
+      <y-m> -0.62285 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.51582 </x-m>
+      <y-m>  0.56463 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.51582 </x-m>
+      <y-m> -0.62285 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.89089 </x-m>
+      <y-m>  0.56463 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.89089 </x-m>
+      <y-m> -0.62285 </y-m>
+      <z-m> -1.15121 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/table.xml</path>
+    <offsets>
+      <x-m> -4.40869 </x-m>
+      <y-m>  0.58198 </y-m>
+      <z-m> -1.30570 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

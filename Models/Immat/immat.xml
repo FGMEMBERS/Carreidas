@@ -361,34 +361,13 @@
     <object-name>SurAile</object-name>
     <property>velocities/mach</property>
     <interpolation>
-      <entry>
-        <ind> 0.0 </ind>
-        <dep> 0.0 </dep>
-      </entry>
-      <entry>
-        <ind> 0.5 </ind>
-        <dep> 0.0 </dep>
-      </entry>
-      <entry>
-        <ind>   0.6 </ind>
-        <dep> -10.0 </dep>
-      </entry>
-      <entry>
-        <ind>   0.7 </ind>
-        <dep> -20.0 </dep>
-      </entry>
-      <entry>
-        <ind>   0.8 </ind>
-        <dep> -30.0 </dep>
-      </entry>
-      <entry>
-        <ind>   0.9 </ind>
-        <dep> -43.0 </dep>
-      </entry>
-      <entry>
-        <ind>   2.5 </ind>
-        <dep> -43.0 </dep>
-      </entry>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.6 </ind><dep> -10 </dep></entry>
+      <entry><ind> 0.7 </ind><dep> -20 </dep></entry>
+      <entry><ind> 0.8 </ind><dep> -30 </dep></entry>
+      <entry><ind> 0.9 </ind><dep> -43 </dep></entry>
+      <entry><ind> 2.5 </ind><dep> -43 </dep></entry>
     </interpolation>
     <center>
       <x-m>  0.552 </x-m>
@@ -396,9 +375,9 @@
       <z-m> -1.909 </z-m>
     </center>
     <axis>
-      <x>  0.00 </x>
-      <y>  0.00 </y>
-      <z>  1.00 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -417,34 +396,13 @@
     <object-name>SousAile</object-name>
     <property>velocities/mach</property>
     <interpolation>
-      <entry>
-        <ind> 0.0 </ind>
-        <dep> 0.0 </dep>
-      </entry>
-      <entry>
-        <ind> 0.5 </ind>
-        <dep> 0.0 </dep>
-      </entry>
-      <entry>
-        <ind>  0.6 </ind>
-        <dep> 10.0 </dep>
-      </entry>
-      <entry>
-        <ind>  0.7 </ind>
-        <dep> 20.0 </dep>
-      </entry>
-      <entry>
-        <ind>  0.8 </ind>
-        <dep> 30.0 </dep>
-      </entry>
-      <entry>
-        <ind>  0.9 </ind>
-        <dep> 43.0 </dep>
-      </entry>
-      <entry>
-        <ind>   2.5 </ind>
-        <dep>  43.0 </dep>
-      </entry>
+      <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.6 </ind><dep> 10 </dep></entry>
+      <entry><ind> 0.7 </ind><dep> 20 </dep></entry>
+      <entry><ind> 0.8 </ind><dep> 30 </dep></entry>
+      <entry><ind> 0.9 </ind><dep> 43 </dep></entry>
+      <entry><ind> 2.5 </ind><dep> 43 </dep></entry>
     </interpolation>
     <center>
       <x-m>  0.552 </x-m>
@@ -452,11 +410,10 @@
       <z-m> -1.909 </z-m>
     </center>
     <axis>
-      <x>  0.00 </x>
-      <y>  0.00 </y>
-      <z>  1.00 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
 </PropertyList>
-

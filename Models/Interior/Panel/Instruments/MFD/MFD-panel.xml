@@ -1,54 +1,56 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList>
 
-    <name>MFD 2d Panel</name>
-    <background>Aircraft/Instruments-3d/primus-1000/MFD/transparent.png</background>
-    <w>418</w>
-    <h>512</h>
+  <name>MFD 2d Panel</name>
+  <background>Aircraft/Carreidas/Models/Interior/Panel/Instruments/MFD/transparent.png</background>
+  <w>418</w>
+  <h>512</h>
 
-    <instruments>
+  <instruments>
 
-        <instrument include="mfd-hsi.xml">
-            <name>HSI</name>
-            <condition>
-                <greater-than>
-                    <property>systems/electrical/outputs/efis</property>
-                    <value>15</value>
-                </greater-than>
-            </condition>
-            <x>209</x>
-            <y>287.5</y>
-            <w>400</w>
-            <h>400</h>
-        </instrument>
+    <instrument include="mfd-hsi.xml">
+      <name>HSI</name>
+      <condition>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </condition>
+      <x>209</x>
+      <y>287.5</y>
+      <w>400</w>
+      <h>400</h>
+    </instrument>
 
-        <instrument include="mask.xml">
-            <name>Mask</name>
-            <condition>
-                <greater-than>
-                    <property>systems/electrical/outputs/efis</property>
-                    <value>15</value>
-                </greater-than>
-            </condition>
-            <x>209</x>
-            <y>256</y>
-            <w>418</w>
-            <h>512</h>
-        </instrument>
+    <instrument include="mask.xml">
+      <name>Mask</name>
+      <condition>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </condition>
+      <x>209</x>
+      <y>256</y>
+      <w>418</w>
+      <h>512</h>
+    </instrument>
 
-        <instrument include="radar.xml">
-            <name>radar</name>
-            <condition>
-                <greater-than>
-                        <property>systems/electrical/outputs/efis</property>
-                        <value>15</value>
-                </greater-than>
-            </condition>
-                <x>209</x>
-                <y>287.5</y>
-                <w>400</w>
-                <h>400</h>
-        </instrument>
+    <instrument include="radar.xml">
+      <name>radar</name>
+      <condition>
+        <greater-than>
+          <property>systems/electrical/outputs/efis</property>
+          <value>15</value>
+        </greater-than>
+      </condition>
+      <x>209</x>
+      <y>287.5</y>
+      <w>400</w>
+      <h>400</h>
+    </instrument>
 
-    </instruments>
+  </instruments>
+    
 </PropertyList>

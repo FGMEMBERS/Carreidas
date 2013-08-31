@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <path>switch.ac</path>
 
   <animation>
+    <object-name>SwitchNut</object-name>
+    <object-name>Switch</object-name>
+  </animation>
+        
+  <animation>
     <type>material</type>
     <object-name>Switch</object-name>
-    <object-name>Circle</object-name>
     <object-name>SwitchNut</object-name>
-    <object-name>SwitchRot</object-name>
     <emission>
       <red>   0.50 </red>
       <green> 0.25 </green>

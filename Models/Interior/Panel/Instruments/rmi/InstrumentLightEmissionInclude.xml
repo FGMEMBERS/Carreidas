@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8' ?>
-<PropertyList>
-  <red>0.488</red>
-  <green>0.803</green>
-  <blue>1.000</blue>
-  <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
-</PropertyList>
-

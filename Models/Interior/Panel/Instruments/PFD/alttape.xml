@@ -1,19 +1,19 @@
-<?xml version="1.0"?>
-
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-    <name>Alt tape</name>
-    <w-base>68</w-base>
-    <h-base>232</h-base>
+  
+  <name>Alt tape</name>
+  <w-base>68</w-base>
+  <h-base>232</h-base>
 
-    <layers>
+  <layers>
 
     <layer>
         <name>alt1</name>
         <w>73</w>
         <h>1445</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.896</x1>
             <y1>0.009</y1>
             <x2>0.960</x2>
@@ -38,7 +38,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.797</x1>
             <y1>0.046</y1>
             <x2>0.861</x2>
@@ -63,7 +63,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.697</x1>
             <y1>0.046</y1>
             <x2>0.761</x2>
@@ -88,7 +88,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.597</x1>
             <y1>0.046</y1>
             <x2>0.662</x2>
@@ -113,7 +113,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.498</x1>
             <y1>0.046</y1>
             <x2>0.562</x2>
@@ -138,7 +138,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.398</x1>
             <y1>0.046</y1>
             <x2>0.462</x2>
@@ -163,7 +163,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.298</x1>
             <y1>0.046</y1>
             <x2>0.362</x2>
@@ -188,7 +188,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.197</x1>
             <y1>0.046</y1>
             <x2>0.261</x2>
@@ -213,7 +213,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>0.097</x1>
             <y1>0.046</y1>
             <x2>0.161</x2>
@@ -238,7 +238,7 @@
         <w>73</w>
         <h>1390</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/alttape.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/alttape.png</path>
             <x1>-0.001</x1>
             <y1>0.046</y1>
             <x2>0.063</x2>
@@ -263,7 +263,7 @@
         <w>70</w>
         <h>140</h>
         <texture>
-            <path>Aircraft/Instruments-3d/primus-1000/PFD/pfd-1.png</path>
+          <path>Aircraft/Carreidas/Models/Interior/Panel/Instruments/PFD/pfd-1.png</path>
             <x1>0.330</x1>
             <y1>0.350</y1>
             <x2>0.370</x2>
@@ -283,6 +283,6 @@
         <emissive>true</emissive>
     </layer>
 
-    </layers>
+  </layers>
 
 </PropertyList>

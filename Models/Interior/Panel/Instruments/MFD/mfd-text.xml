@@ -1,50 +1,47 @@
-<!--
-Syd Adams
-Primus 1000 MFD  hotspots
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- Syd Adams Primus 1000 MFD  hotspots
+     Updated by Helijah 2013             -->
 <PropertyList>
 
-    <name>MFD text</name>
-    <w-base>400</w-base>
-    <h-base>500</h-base>
+  <name>MFD text</name>
+  <w-base>400</w-base>
+  <h-base>500</h-base>
 
-    <layers>
+  <layers>
 
-        <layer>
-            <name>HDG</name>
-            <type>text</type>
-            <font>arial_black</font>
-            <point-size>13</point-size>
-            <color>
-                <red>0.2</red>
-                <green>0.8</green>
-                <blue>0.3</blue>
-            </color>
-            <chunks>
-                <chunk>
-                    <type>number-value</type>
-                    <property>instrumentation/master-reference-gyro/indicated-hdg-deg</property>
-                    <format>%03.0f</format>
-                </chunk>
-            </chunks>
-            <transformations>
-                <transformation>
-                    <type>x-shift</type>
-                    <offset>-16</offset>
-                </transformation>
-                <transformation>
-                    <type>y-shift</type>
-                    <offset>229</offset>
-                </transformation>
-            </transformations>
-        </layer>
+    <layer>
+       <name>HDG</name>
+       <type>text</type>
+       <font>arial_black</font>
+       <point-size>13</point-size>
+       <color>
+         <red>0.2</red>
+         <green>0.8</green>
+         <blue>0.3</blue>
+       </color>
+       <chunks>
+         <chunk>
+           <type>number-value</type>
+           <property>instrumentation/master-reference-gyro/indicated-hdg-deg</property>
+           <format>%03.0f</format>
+         </chunk>
+       </chunks>
+       <transformations>
+         <transformation>
+           <type>x-shift</type>
+           <offset>-16</offset>
+         </transformation>
+         <transformation>
+           <type>y-shift</type>
+           <offset>229</offset>
+         </transformation>
+       </transformations>
+    </layer>
 
-<!-- NAV INFO-->
-
-<!-- Radar Range -->
-
-       <layer>
+    <!-- NAV INFO-->
+    <!-- Radar Range -->
+    <layer>
             <name>Rng1</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -72,9 +69,9 @@ Primus 1000 MFD  hotspots
                         <offset>24</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-       <layer>
+    <layer>
             <name>Rng2</name>
                 <type>text</type>
                 <font>arial_black</font>
@@ -102,10 +99,9 @@ Primus 1000 MFD  hotspots
                         <offset>24</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-
-       <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -134,9 +130,9 @@ Primus 1000 MFD  hotspots
                         <offset>230</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-            <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -166,9 +162,9 @@ Primus 1000 MFD  hotspots
                         <offset>210</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-            <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -197,10 +193,9 @@ Primus 1000 MFD  hotspots
                         <offset>210</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-
-            <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -229,9 +224,9 @@ Primus 1000 MFD  hotspots
                         <offset>190</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-            <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -260,9 +255,9 @@ Primus 1000 MFD  hotspots
                         <offset>170</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-            <layer>
+    <layer>
                 <condition>
                     <property>instrumentation/primus1000/control/fms</property>
                 </condition>
@@ -291,12 +286,10 @@ Primus 1000 MFD  hotspots
                         <offset>170</offset>
                     </transformation>
                 </transformations>
-            </layer>
+    </layer>
 
-<!-- FLIGHT INFO-->
-
-
-        <layer>
+    <!-- FLIGHT INFO-->
+    <layer>
             <name>LAT</name>
             <type>text</type>
             <font>arial_black</font>
@@ -322,9 +315,9 @@ Primus 1000 MFD  hotspots
                     <offset>-155</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>LON</name>
             <type>text</type>
             <font>arial_black</font>
@@ -350,10 +343,10 @@ Primus 1000 MFD  hotspots
                     <offset>-175</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-<!--Speed Display-->
-        <layer>
+    <!--Speed Display-->
+    <layer>
             <name>TASlabel</name>
             <type>text</type>
             <font>arial_black</font>
@@ -379,9 +372,9 @@ Primus 1000 MFD  hotspots
                     <offset>-130</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>TAS</name>
             <type>text</type>
             <font>arial_black</font>
@@ -409,9 +402,9 @@ Primus 1000 MFD  hotspots
                     <offset>-150</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>GSPlabel</name>
             <type>text</type>
             <font>arial_black</font>
@@ -437,9 +430,9 @@ Primus 1000 MFD  hotspots
                     <offset>-165</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>GSP</name>
             <type>text</type>
             <font>arial_black</font>
@@ -466,9 +459,9 @@ Primus 1000 MFD  hotspots
                     <offset>-185</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>ALT</name>
             <type>text</type>
             <font>arial_black</font>
@@ -494,9 +487,9 @@ Primus 1000 MFD  hotspots
                     <offset>-210</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>ALTselect</name>
             <type>text</type>
             <font>arial_black</font>
@@ -523,11 +516,10 @@ Primus 1000 MFD  hotspots
                     <offset>-230</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-
-<!--Radar Annun-->
-        <layer>
+    <!--Radar Annun-->
+    <layer>
             <condition>
                 <property>instrumentation/primus1000/control/tcas</property>
             </condition>
@@ -556,9 +548,9 @@ Primus 1000 MFD  hotspots
                     <offset>0</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <condition>
                 <property>instrumentation/primus1000/control/tcas</property>
             </condition>
@@ -587,9 +579,9 @@ Primus 1000 MFD  hotspots
                     <offset>-20</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>HDG</name>
             <type>text</type>
             <font>arial_black</font>
@@ -615,9 +607,9 @@ Primus 1000 MFD  hotspots
                     <offset>-40</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>HDGbug</name>
             <type>text</type>
             <font>arial_black</font>
@@ -644,9 +636,9 @@ Primus 1000 MFD  hotspots
                     <offset>-60</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>WX</name>
             <type>text</type>
             <font>arial_black</font>
@@ -672,9 +664,9 @@ Primus 1000 MFD  hotspots
                     <offset>-8</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>TGT</name>
             <type>text</type>
             <font>arial_black</font>
@@ -700,9 +692,9 @@ Primus 1000 MFD  hotspots
                     <offset>-8</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>TILT</name>
             <type>text</type>
             <font>arial_black</font>
@@ -727,12 +719,11 @@ Primus 1000 MFD  hotspots
                     <type>y-shift</type>
                     <offset>-8</offset>
                 </transformation>
-            </transformations>
-        </layer>
+           </transformations>
+    </layer>
 
-<!--Menus-->
-
-        <layer>
+    <!--Menus-->
+    <layer>
             <name>Menu1</name>
             <type>text</type>
             <font>arial_black</font>
@@ -758,9 +749,9 @@ Primus 1000 MFD  hotspots
                     <offset>-210</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>Menu-item1</name>
             <type>text</type>
             <font>arial_black</font>
@@ -786,9 +777,9 @@ Primus 1000 MFD  hotspots
                     <offset>-230</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>Menu-item2</name>
             <type>text</type>
             <font>arial_black</font>
@@ -814,9 +805,9 @@ Primus 1000 MFD  hotspots
                     <offset>-230</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-        <layer>
+    <layer>
             <name>Menu-item3</name>
             <type>text</type>
             <font>arial_black</font>
@@ -842,9 +833,9 @@ Primus 1000 MFD  hotspots
                     <offset>-230</offset>
                 </transformation>
             </transformations>
-        </layer>
-
-        <layer>
+    </layer>
+        
+    <layer>
             <name>Menu-item4</name>
             <type>text</type>
             <font>arial_black</font>
@@ -870,9 +861,8 @@ Primus 1000 MFD  hotspots
                     <offset>-230</offset>
                 </transformation>
             </transformations>
-        </layer>
+    </layer>
 
-    </layers>
-
+  </layers>
 
 </PropertyList>

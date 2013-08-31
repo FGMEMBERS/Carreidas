@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- <PropertyList include="carreidas-jsbsim-cnf.xml"> -->
 <PropertyList include="carreidas-yasim-cnf.xml">
 
   <sim>
-    <description>Carreidas 160</description>
+    
+    <description>Carreidas 160 (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM), Victhor FOSTER (Panel/FDM)</author>
+    
+    <rating>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 3 </systems>
+      <cockpit type="int"> 3 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
   </sim>
 
 </PropertyList>

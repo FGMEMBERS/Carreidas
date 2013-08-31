@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -9,17 +9,7 @@
     <object-name>interior</object-name>
     <object-name>planchet</object-name>
     <object-name>cloison</object-name>
-    <object-name>fauteuil1</object-name>
-    <object-name>fauteuil2</object-name>
-    <object-name>fauteuil3</object-name>
-    <object-name>fauteuil4</object-name>
-    <object-name>fauteuil5</object-name>
-    <object-name>fauteuil6</object-name>
-    <object-name>fauteuil7</object-name>
-    <object-name>fauteuil8</object-name>
-    <object-name>fauteuil9</object-name>
-    <object-name>fauteuil10</object-name>
-    <object-name>table</object-name>
+    <object-name>stair</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
@@ -36,6 +26,20 @@
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitres</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+  </effect>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Seats/All-Seats.xml</path>
+  </model>
 
   <!-- Pilote -->
   <model>
@@ -68,6 +72,38 @@
       <z-m>  -1.07 </z-m>
     </offsets>
   </model> -->
+
+  <!-- Porte -->
+  <animation>
+    <type>pick</type>
+    <object-name>stair</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>stair</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> 130 </factor>
+    <center>
+      <x-m> -7.042 </x-m>
+      <y-m> -0.884 </y-m>
+      <z-m> -1.842 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 
 </PropertyList>
 

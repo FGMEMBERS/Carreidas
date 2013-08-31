@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -20,7 +20,6 @@
     <object-name>shadowR</object-name>
   </animation>
 
-  <!-- Une ombre pour OSG en attendant mieux ;) basé sur l'ombre du DC 3-->
   <animation>
     <name>ShadowTotal</name>
     <object-name>shadow</object-name>
@@ -28,17 +27,24 @@
     <object-name>shadowR</object-name>
   </animation>
 
+  <animation>
+    <type>select</type>
+    <object-name>ShadowTotal</object-name>
+    <condition>
+      <and>
+        <not><property>sim/freeze/replay-state</property></not>
+        <not><property>sim/rendering/shadows/enabled</property></not>
+      </and>
+    </condition>
+  </animation>
+
+  <!-- Une ombre pour OSG en attendant mieux ;) basé sur l'ombre du DC 3-->
   <!-- pitch -->
   <animation>
     <type>rotate</type>
     <object-name>ShadowTotal</object-name>
-    <property>orientation/pitch-deg</property>
+    <property>/orientation/pitch-deg</property>
     <factor> -1 </factor>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -50,13 +56,8 @@
   <animation>
     <type>rotate</type>
     <object-name>ShadowTotal</object-name>
-    <property>orientation/roll-deg</property>
+    <property>/orientation/roll-deg</property>
     <factor> 1 </factor>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
@@ -66,21 +67,16 @@
 
   <!-- Translate to ground level -->
   <animation>
-    <type>translate</type>
-    <object-name>ShadowTotal</object-name>
-    <property>position/gear-agl-ft</property>
-    <factor> -0.3 </factor>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
+   <type>translate</type>
+   <object-name>ShadowTotal</object-name>
+   <property>sim/multiplay/generic/float[2]</property>
+   <factor> -1 </factor>
+   <axis>
+     <x> 0 </x>
+     <y> 0 </y>
+     <z> 1 </z>
+   </axis>
+ </animation>
 
   <animation>
     <type>rotate</type>
@@ -144,4 +140,3 @@
   </animation>
 
 </PropertyList>
-

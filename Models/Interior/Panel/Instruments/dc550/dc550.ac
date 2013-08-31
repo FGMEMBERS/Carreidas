@@ -1,12 +1,15 @@
 AC3Db
-MATERIAL "gloss" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.504136 0.504136 0.504136 shi 32 trans 0
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
 kids 11
 OBJECT poly
 name "DC-550"
+loc 0 0 -0
+data 6
+DC-550
 texture "dc-550.png"
-texrep 1 1
-crease 45.000000
+texrep 1.000000 1.000000
+crease 45.000001
 numvert 8
 0.002067 0.030497 -0.076876
 0.002067 -0.030497 -0.076876
@@ -20,10 +23,10 @@ numsurf 5
 SURF 0x10
 mat 0
 refs 4
-0 1.0 0.999999940395
-3 0.000786257907748 0.999999940395
-2 0.000785989686847 0.606269955635
-1 1.0 0.606269955635
+0 1 0.999999940395
+3 0.000786257908 0.999999940395
+2 0.000785989687 0.606269955635
+1 1 0.606269955635
 SURF 0x10
 mat 0
 refs 4
@@ -55,9 +58,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DC550.et"
+loc 0 0 -0
+data 8
+DC550.et
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 -0.01176
 0.002289 0.010413 -0.01176
@@ -68,15 +74,18 @@ SURF 0x00
 mat 0
 refs 4
 3 0.174445688725 0.334841698408
-0 0.0554378032684 0.334841698408
-1 0.0554377436638 0.215833753347
+0 0.055437803268 0.334841698408
+1 0.055437743664 0.215833753347
 2 0.174445688725 0.215833753347
 kids 0
 OBJECT poly
 name "DC550.fms"
+loc 0 0 -0
+data 9
+DC550.fms
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 -0.059823
 0.002289 0.010413 -0.059823
@@ -93,9 +102,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DC550.gspd-ttg"
+loc 0 0 -0
+data 14
+DC550.gspd-ttg
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 0.006261
 0.002289 0.010413 0.006261
@@ -112,9 +124,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DC550.hsi"
+loc 0 0 -0
+data 9
+DC550.hsi
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 0.059759
 0.002289 0.010413 0.059759
@@ -125,15 +140,18 @@ SURF 0x00
 mat 0
 refs 4
 3 0.172568261623 0.538762152195
-0 0.0535603500903 0.538762152195
-1 0.0535603202879 0.419754207134
+0 0.05356035009 0.538762152195
+1 0.053560320288 0.419754207134
 2 0.172568261623 0.419754207134
 kids 0
 OBJECT poly
 name "DC550.in-hpa"
+loc 0 0 -0
+data 12
+DC550.in-hpa
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 0.024112
 0.002289 0.010413 0.024112
@@ -150,9 +168,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DC550.nav"
+loc 0 0 -0
+data 9
+DC550.nav
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 -0.029893
 0.002289 0.010413 -0.029893
@@ -169,9 +190,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DC550.sc-cp"
+loc 0 0 -0
+data 11
+DC550.sc-cp
 texture "dc-550.png"
-texrep 1 1
-crease 30.000000
+texrep 1.000000 1.000000
+crease 30.000001
 numvert 4
 0.002289 0.022547 0.041907
 0.002289 0.010413 0.041907
@@ -188,9 +212,12 @@ refs 4
 kids 0
 OBJECT poly
 name "DH.knob"
+loc 0 0 -0
+data 7
+DH.knob
 texture "dc-550.png"
-texrep 1 1
-crease 45.000000
+texrep 1.000000 1.000000
+crease 45.000001
 numvert 24
 0.012822 -0.002517 0.017221
 0.012822 -0.002517 0.021098
@@ -339,9 +366,12 @@ refs 4
 kids 0
 OBJECT poly
 name "nav1.knob"
+loc 0 0 -0
+data 9
+nav1.knob
 texture "dc-550.png"
-texrep 1 1
-crease 45.000000
+texrep 1.000000 1.000000
+crease 45.000001
 numvert 24
 0.00226 -0.014254 0.04749
 0.00226 -0.016536 0.049405
@@ -490,9 +520,12 @@ refs 4
 kids 0
 OBJECT poly
 name "nav2.knob"
+loc 0 0 -0
+data 9
+nav2.knob
 texture "dc-550.png"
-texrep 1 1
-crease 45.000000
+texrep 1.000000 1.000000
+crease 45.000001
 numvert 24
 0.010398 -0.017131 -0.048983
 0.010398 -0.017648 -0.051917
