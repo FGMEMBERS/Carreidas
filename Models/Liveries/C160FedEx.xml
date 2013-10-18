@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <name type="string">Federal Express</name>
+        <texture>Liveries/2048x2048/C160FedEx.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>

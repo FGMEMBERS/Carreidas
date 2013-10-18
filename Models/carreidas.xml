@@ -59,6 +59,7 @@
     <object-name>porteG2</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
+    <object-name>antenne</object-name>
 
     <object-name>trous</object-name>
     <object-name>trouaileG</object-name>
@@ -115,6 +116,7 @@
     <object-name>porteG2</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
+    <object-name>antenne</object-name>
 
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
@@ -180,6 +182,7 @@
     <object-name>porteG2</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
+    <object-name>antenne</object-name>
   </effect>
 
   <effect>
@@ -217,6 +220,7 @@
     <object-name>porteG2</object-name>
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
+    <object-name>antenne</object-name>
   </effect>
 
   <animation>
@@ -1000,24 +1004,7 @@
       <pitch-deg>   -7.000 </pitch-deg>
     </offsets>
   </model>
-<!--
-  <animation>
-    <name>All-Taxi-Light</name>
-    <object-name>Left-Taxi-Light</object-name>
-    <object-name>Right-Taxi-Light</object-name>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>All-Taxi-Light</object-name>
-    <condition>
-      <equals>
-        <property>controls/switches/landing-light</property>
-        <value> 1 </value>
-      </equals>
-    </condition>
-  </animation>
--->
+  
   <!-- Géométrie variable des ailes -->
   <animation>
     <name>AileGTotale</name>
@@ -1030,19 +1017,6 @@
     <object-name>slatG</object-name>
     <object-name>trouaileG</object-name>
     <object-name>spoilerG</object-name>
-  </animation>
-
-  <animation>
-    <name>AileDTotale</name>
-    <object-name>aileD</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletD</object-name>
-    <object-name>lampeD</object-name>
-    <object-name>RightLight</object-name>
-    <object-name>RightLightW</object-name>
-    <object-name>slatD</object-name>
-    <object-name>trouaileD</object-name>
-    <object-name>spoilerD</object-name>
   </animation>
 
   <animation>
@@ -1068,6 +1042,19 @@
       <y> 0 </y>
       <z> 1 </z>
     </axis>
+  </animation>
+
+  <animation>
+    <name>AileDTotale</name>
+    <object-name>aileD</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletD</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>RightLight</object-name>
+    <object-name>RightLightW</object-name>
+    <object-name>slatD</object-name>
+    <object-name>trouaileD</object-name>
+    <object-name>spoilerD</object-name>
   </animation>
 
   <animation>

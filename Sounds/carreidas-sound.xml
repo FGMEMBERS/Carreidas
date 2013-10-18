@@ -1,469 +1,408 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <fx>
 
     <!-- Engines 1 -->
-    <engine-jet>
-      <name>engine-jet</name>
-      <path>Sounds/jet.wav</path>
+    <engine>
+      <name>engine-start-inside</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/turbine_start_in.wav</path>
+      <condition>
+        <and>
+          <property>/controls/engines/engine[0]/starter</property>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.03 </min>
+        <max> 0.07 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+   
+    <engine>
+      <name>whine-int</name>
+      <path>Aircraft/Carreidas/Sounds/engine-int.wav</path>
       <mode>looped</mode>
       <condition>
+        <property>/engines/engine[0]/running</property>
         <not>
-          <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
+          <property>/sim/current-view/external</property>
+          <property>/engines/engine/out-of-fuel</property>
         </not>
       </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
+      <volume>
+        <property>/engines/engine[0]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
       <pitch>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine-start-outside0</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/spey-startup.wav</path>
+      <condition>
+        <and>
+          <greater-than>  
+            <property>/engines/engine[0]/rpm</property>
+            <value>0.5</value>
+          </greater-than>
+          <less-than>
+            <property>velocities/groundspeed-kt</property>
+            <value>1</value>
+          </less-than>
+          <not>
+            <property>/sim/current-view/internal</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+   <engine>
+      <name>whine0</name>
+      <path>Aircraft/Carreidas/Sounds/spey-engine.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[0]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>/engines/engine[0]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine</name>
+      <path>Aircraft/Carreidas/Sounds/jet-blast.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>engines/engine[0]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>engines/engine[0]/prop-thrust</property>
+        <factor type="double">0.00013</factor>
+      </volume>
+       <pitch>
         <property>engines/engine[0]/n1</property>
-        <offset>0.1</offset>
-        <factor>.001</factor>
+        <factor>0.2</factor>
       </pitch>
-      <volume>
-        <property>engines/engine[0]/thrust-lbs</property>
-        <factor>0.000025</factor>
-        <min>0.2</min>
-        <max>0.75</max>
-      </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </engine-jet>
-
-    <engine-rumble>
-      <name>engine-rumble</name>
-      <path>Sounds/rumble.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
-      </condition>
-      <property>engines/engine[0]/afterburner</property>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[0]/afterburner</property>
-        <factor>1</factor>
-        <offset>0.3</offset>
-      </pitch>
-      <volume>
-        <property>engines/engine[0]/afterburner</property>
-        <factor>1.2</factor>
-        <offset>0.15</offset>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-rumble>
-
-    <engine-whine-external>
-      <name>external-whine</name>
-      <path>Sounds/turbojet_fan.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-         <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
-      </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>1</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.5</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[0]/n1</property>
-        <ofset>0.7</ofset>
-        <factor>.003</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine/n1</property>
-        <offset>1.0</offset>
-        <factor>-0.008</factor>
-        <max>0.6</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-external>
-
-    <engine-whine-internal>
-      <name>internal-whine</name>
-      <path>Sounds/whine.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[0]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[0]/thrust-lbs</property>
-        <factor>0.000012</factor>
-        <min>0.2</min>
-        <max>0.7</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-internal>
-
-    <engine-jet-internal>
-      <name>internal-jet</name>
-      <path>Sounds/jet.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[0]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[0]/thrust-lbs</property>
-        <factor>0.00005</factor>
-        <min>0.1</min>
-        <max>0.9</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-jet-internal>
-
+    </engine>
+  
     <!-- Engines 2 -->
-    <engine-jet>
-      <name>engine-jet</name>
-      <path>Sounds/jet.wav</path>
+    <engine>
+      <name>engine-start-inside</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/turbine_start_in.wav</path>
+      <condition>
+        <and>
+          <property>/controls/engines/engine[1]/starter</property>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.03 </min>
+        <max> 0.07 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+   
+    <engine>
+      <name>whine-int</name>
+      <path>Aircraft/Carreidas/Sounds/engine-int.wav</path>
       <mode>looped</mode>
       <condition>
+        <property>/engines/engine[1]/running</property>
         <not>
-          <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
+          <property>/sim/current-view/external</property>
+          <property>/engines/engine/out-of-fuel</property>
         </not>
       </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
+      <volume>
+        <property>/engines/engine[1]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
       <pitch>
+        <property>/engines/engine[1]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine-start-outside0</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/spey-startup.wav</path>
+      <condition>
+        <and>
+          <greater-than>  
+            <property>/engines/engine[1]/rpm</property>
+            <value>0.5</value>
+          </greater-than>
+          <less-than>
+            <property>velocities/groundspeed-kt</property>
+            <value>1</value>
+          </less-than>
+          <not>
+            <property>/sim/current-view/internal</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+   <engine>
+      <name>whine0</name>
+      <path>Aircraft/Carreidas/Sounds/spey-engine.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[1]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>/engines/engine[1]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine</name>
+      <path>Aircraft/Carreidas/Sounds/jet-blast.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>engines/engine[1]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>engines/engine[1]/prop-thrust</property>
+        <factor type="double">0.00013</factor>
+      </volume>
+       <pitch>
         <property>engines/engine[1]/n1</property>
-        <offset>0.1</offset>
-        <factor>.001</factor>
+        <factor>0.2</factor>
       </pitch>
-      <volume>
-        <property>engines/engine[1]/thrust-lbs</property>
-        <factor>0.000025</factor>
-        <min>0.2</min>
-        <max>0.75</max>
-      </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </engine-jet>
-
-    <engine-rumble>
-      <name>engine-rumble</name>
-      <path>Sounds/rumble.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
-      </condition>
-      <property>engines/engine[1]/afterburner</property>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[1]/afterburner</property>
-        <factor>1</factor>
-        <offset>0.3</offset>
-      </pitch>
-      <volume>
-        <property>engines/engine[1]/afterburner</property>
-        <factor>1.2</factor>
-        <offset>0.15</offset>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-rumble>
-
-    <engine-whine-external>
-      <name>external-whine</name>
-      <path>Sounds/turbojet_fan.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-         <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
-      </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>1</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.5</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[1]/n1</property>
-        <ofset>0.7</ofset>
-        <factor>.003</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine/n1</property>
-        <offset>1.0</offset>
-        <factor>-0.008</factor>
-        <max>0.6</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-external>
-
-    <engine-whine-internal>
-      <name>internal-whine</name>
-      <path>Sounds/whine.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[1]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[1]/thrust-lbs</property>
-        <factor>0.000012</factor>
-        <min>0.2</min>
-        <max>0.7</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-internal>
-
-    <engine-jet-internal>
-      <name>internal-jet</name>
-      <path>Sounds/jet.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[1]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[1]/thrust-lbs</property>
-        <factor>0.00005</factor>
-        <min>0.1</min>
-        <max>0.9</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-jet-internal>
-
-
+    </engine>
+  
     <!-- Engines 3 -->
-    <engine-jet>
-      <name>engine-jet</name>
-      <path>Sounds/jet.wav</path>
+    <engine>
+      <name>engine-start-inside</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/turbine_start_in.wav</path>
+      <condition>
+        <and>
+          <property>/controls/engines/engine[2]/starter</property>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[2]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.03 </min>
+        <max> 0.07 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[2]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+   
+    <engine>
+      <name>whine-int</name>
+      <path>Aircraft/Carreidas/Sounds/engine-int.wav</path>
       <mode>looped</mode>
       <condition>
+        <property>/engines/engine[2]/running</property>
         <not>
-          <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[2]/out-of-fuel</property>
+          <property>/sim/current-view/external</property>
+          <property>/engines/engine/out-of-fuel</property>
         </not>
       </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
+      <volume>
+        <property>/engines/engine[2]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
       <pitch>
+        <property>/engines/engine[2]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine-start-outside0</name>
+      <mode>once</mode>
+      <path>Aircraft/Carreidas/Sounds/spey-startup.wav</path>
+      <condition>
+        <and>
+          <greater-than>  
+            <property>/engines/engine[2]/rpm</property>
+            <value>0.5</value>
+          </greater-than>
+          <less-than>
+            <property>velocities/groundspeed-kt</property>
+            <value>1</value>
+          </less-than>
+          <not>
+            <property>/sim/current-view/internal</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine[2]/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[2]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+   <engine>
+      <name>whine0</name>
+      <path>Aircraft/Carreidas/Sounds/spey-engine.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[2]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>/engines/engine[2]/n2</property>
+        <factor type="double">0.0025</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[2]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>engine</name>
+      <path>Aircraft/Carreidas/Sounds/jet-blast.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>engines/engine[2]/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+          <property>/engines/engine/out-of-fuel</property>
+        </not>
+      </condition>
+      <volume>
+        <property>engines/engine[2]/prop-thrust</property>
+        <factor type="double">0.00013</factor>
+      </volume>
+       <pitch>
         <property>engines/engine[2]/n1</property>
-        <offset>0.1</offset>
-        <factor>.001</factor>
+        <factor>0.2</factor>
       </pitch>
-      <volume>
-        <property>engines/engine[2]/thrust-lbs</property>
-        <factor>0.000025</factor>
-        <min>0.2</min>
-        <max>0.75</max>
-      </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </engine-jet>
-
-    <engine-rumble>
-      <name>engine-rumble</name>
-      <path>Sounds/rumble.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-          <property>engines/engine[2]/out-of-fuel</property>
-        </not>
-      </condition>
-      <property>engines/engine[2]/afterburner</property>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>-180.0</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.2</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[2]/afterburner</property>
-        <factor>1</factor>
-        <offset>0.3</offset>
-      </pitch>
-      <volume>
-        <property>engines/engine[2]/afterburner</property>
-        <factor>1.2</factor>
-        <offset>0.15</offset>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-rumble>
-
-    <engine-whine-external>
-      <name>external-whine</name>
-      <path>Sounds/turbojet_fan.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <not>
-         <property>sim/current-view/internal</property>
-        </not>
-        <not>
-          <property>engines/engine[2]/out-of-fuel</property>
-        </not>
-      </condition>
-      <orientation>
-        <x>0.0</x>
-        <y>0.0</y>
-        <z>1</z>
-        <inner-angle>180.0</inner-angle>
-        <outer-angle>360.0</outer-angle>
-        <outer-gain>0.5</outer-gain>
-      </orientation>
-      <pitch>
-        <property>engines/engine[2]/n1</property>
-        <ofset>0.7</ofset>
-        <factor>.003</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine/n1</property>
-        <offset>1.0</offset>
-        <factor>-0.008</factor>
-        <max>0.6</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-external>
-
-    <engine-whine-internal>
-      <name>internal-whine</name>
-      <path>Sounds/whine.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[2]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[2]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[2]/thrust-lbs</property>
-        <factor>0.000012</factor>
-        <min>0.2</min>
-        <max>0.7</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-whine-internal>
-
-    <engine-jet-internal>
-      <name>internal-jet</name>
-      <path>Sounds/jet.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>sim/current-view/internal</property>
-        <not>
-          <property>engines/engine[2]/out-of-fuel</property>
-        </not>
-      </condition>
-      <pitch>
-        <property>engines/engine[2]/n1</property>
-        <ofset>0.1</ofset>
-        <factor>.0016</factor>
-      </pitch>
-      <volume>
-        <property>engines/engine[2]/thrust-lbs</property>
-        <factor>0.00005</factor>
-        <min>0.1</min>
-        <max>0.9</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine-jet-internal>
-
+    </engine>
+  
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>

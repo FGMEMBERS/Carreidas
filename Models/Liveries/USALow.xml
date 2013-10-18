@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <name type="string">United State of America (Low)</name>
+        <texture>Liveries/1024x1024/USA.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>

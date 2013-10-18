@@ -15,6 +15,10 @@
       <path>Aircraft/Carreidas/Sounds/carreidas-sound.xml</path>
     </sound>
 
+    <startup>
+      <splash-texture>Aircraft/Carreidas/carreidas-splash.png</splash-texture>
+    </startup>
+
     <model>
      <path>Aircraft/Carreidas/Models/carreidas.xml</path>
       <livery>
@@ -25,26 +29,19 @@
         <us type="bool">true</us>
       </carreidas>
       <autostart type="bool">0</autostart>
-      <Bravo>
-        <n1 n="0" type="double">0</n1>
-        <n1 n="1" type="double">0</n1>
-        <n1 n="2" type="double">0</n1>
-        <n1 n="3" type="double">0</n1>
-        <n2 n="0" type="double">0</n2>
-        <n2 n="1" type="double">0</n2>
-        <n2 n="2" type="double">0</n2>
-        <n2 n="3" type="double">0</n2>
-        <start-cycle n="0" type="bool">0</start-cycle>
-        <start-cycle n="1" type="bool">0</start-cycle>
-        <start-cycle n="2" type="bool">0</start-cycle>
-        <start-cycle n="3" type="bool">0</start-cycle>
-      </Bravo>
     </model>
 
-    <startup>
-      <splash-texture>Aircraft/Carreidas/carreidas-splash.png</splash-texture>
-    </startup>
+    <systems>
+      <autopilot>
+        <path>Aircraft/Carreidas/Systems/autopilot.xml</path>
+      </autopilot>
+      <path>Aircraft/Carreidas/Systems/systems.xml</path>
+    </systems>
 
+    <instrumentation>
+      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
+    </instrumentation>
+    
     <virtual-cockpit archive="y">true</virtual-cockpit>
 
     <multiplay>
@@ -62,22 +59,26 @@
         <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
-        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
-        <float n="3" alias="/position/altitude-ft">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                     <!--  2 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                    <!--  3 altitude for MP shadow -->
         <float n="6" alias="/engines/engine[0]/n2" />
         <float n="7" alias="/engines/engine[1]/n2" />
+        <float n="10" alias="/engines/engine[2]/n2" />
         <float n="8" alias="/controls/engines/engine[0]/throttle" />
         <float n="9" alias="/controls/engines/engine[1]/throttle" />
-        <float n="10" alias="/engines/engine[2]/n2" />
         <float n="11" alias="/controls/engines/engine[2]/throttle" />
         <string n="0" type="string" />
-        <string n="9" type="string" />                                        <!-- string[9] reserved for bombable mode -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
     <help>
       <title>Carreidas 160</title>
       <line>______________________________________________</line>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew doors</desc>
+      </key>
       <key>
         <name>d</name>
         <desc>Open/Close crew doors</desc>
@@ -96,39 +97,14 @@
       <setting>1.00</setting> <!-- FULL -->
     </flaps>
 
-    <systems>
-      <autopilot>
-        <path>Aircraft/Carreidas/Systems/autopilot.xml</path>
-      </autopilot>
-      <path>Aircraft/Carreidas/Systems/systems.xml</path>
-    </systems>
-
-    <instrumentation>
-      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
-    </instrumentation>
-
     <menubar include="Dialogs/carreidas-menu.xml"/>
 
   </sim>
-
-  <consumables>
-   <fuel>
-    <tank n="0">
-     <level-gal_us archive="y">150</level-gal_us>
-    </tank>
-    <tank n="1">
-     <level-gal_us archive="y">50</level-gal_us>
-    </tank>
-    <tank n="3">
-     <level-gal_us archive="y">50</level-gal_us>
-    </tank>
-   </fuel>
-  </consumables>
-
+  
   <input>
     <keyboard include="Nasal/carreidas-keyboard.xml"/>
   </input>
- 
+
   <systems>
     <electrical>
       <ac-volts>0</ac-volts>
@@ -181,16 +157,14 @@
     <mk-viii>                            <!-- http://wiki.flightgear.org/index.php/GPWS -->
       <serviceable>true</serviceable>    <!-- EGPWS_ENABLE -->
       <configuration-module>
-         <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
-         <category-8>                    <!-- RADIO_ALTITUDE_INPUT_SELECT -->
-            3 <!-- YASim --> 
-         </category-8>
+        <category-1> 255 </category-1>   <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+        <category-8>   3 </category-8>   <!-- RADIO_ALTITUDE_INPUT_SELECT - YASIM -->
       </configuration-module>
       <inputs>                           <!-- Module I/O -->
-         <arinc429>
+        <arinc429>
           <decision-height-ncd> false </decision-height-ncd>
           <decision-height> 200 </decision-height>
-         </arinc429>
+        </arinc429>
       </inputs>
     </mk-viii>
     <groundradar>
@@ -201,28 +175,13 @@
     </master-reference-gyro>
   </instrumentation>
 
-  <engines>
-    <engine n="0">
-      <running type="bool">false</running>
-    </engine>
-    <engine n="1">
-      <running type="bool">false</running>
-    </engine>
-    <engine n="2">
-      <running type="bool">false</running>
-    </engine>
-    <engine n="3">
-      <running type="bool">false</running>
-    </engine>
-  </engines>
-
   <nasal>
     <doors>
       <file>Aircraft/Carreidas/Nasal/doors.nas</file>
     </doors>
     <carreidas>
-      <file>Aircraft/Carreidas/Nasal/light.nas</file>
       <file>Aircraft/Carreidas/Nasal/liveries.nas</file>
+      <file>Aircraft/Carreidas/Nasal/light.nas</file>
       <file>Aircraft/Carreidas/Nasal/immat.nas</file>
       <file>Aircraft/Carreidas/Nasal/pilot-g.nas</file>
     </carreidas>
@@ -230,7 +189,7 @@
       <file>Aircraft/Instruments-3d/primus-1000/P1000.nas</file>
     </efis>
     <systems>
-      <file>Aircraft/Carreidas/Nasal/Bravo.nas</file>
+      <file>Aircraft/Carreidas/Nasal/System.nas</file>
       <file>Aircraft/Carreidas/Nasal/Electrical.nas</file>
       <file>Aircraft/Carreidas/Nasal/flightdirector.nas</file>
       <file>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/KLN90B/kln90b.nas</file>
@@ -238,7 +197,7 @@
     <radar>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/RDR-160/RDR160.nas</file>
     </radar>
-    <!--
+<!--
     <kr87>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87.nas</file>
       <script><![CDATA[
@@ -246,7 +205,7 @@
         kr87.new("/instrumentation/adf[1]");
       ]]></script>
     </kr87>
-    -->
+-->
     <ki266>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dme/ki266.nas</file>
       <script><![CDATA[
@@ -256,22 +215,10 @@
     <m877>
       <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/M877/M877.nas</file>
     </m877>
-    <!--
     <engines>
       <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
-      <script>
-        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
-        var engine2 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
-        var engine3 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
-        setlistener("sim/signals/fdm-initialized", func
-        {
-          engine1.init();
-          engine2.init();
-          engine3.init();
-        }, 0, 0);
-      </script>
+      <file>Aircraft/Carreidas/Nasal/engines-yasim.nas</file>
     </engines>
-    -->
   </nasal>
 
 </PropertyList>

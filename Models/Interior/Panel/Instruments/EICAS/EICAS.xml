@@ -18,6 +18,10 @@
     <object-name>oiltemp.002</object-name>
     <object-name>oilpsi.001</object-name>
     <object-name>oilpsi.002</object-name>
+    <!--
+    <object-name>knob.up</object-name>
+    <object-name>knob.dn</object-name>
+    -->
   </animation>
 
   <panel>

@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
-kids 25
+kids 23
 OBJECT poly
 name "RDR160"
 loc 0 0 -0
@@ -2503,44 +2503,4 @@ refs 4
 3 0.999999940395 0
 2 0.999999940395 1
 1 0 1
-kids 0
-OBJECT poly
-name "tilt.dwn"
-loc 0 0 -0
-data 8
-tilt.dwn
-crease 30.000001
-numvert 4
-0.004326 -0.05632 -0.06591
-0.004326 -0.030153 -0.06591
-0.004326 -0.05632 -0.052832
-0.004326 -0.030153 -0.052832
-numsurf 1
-SURF 0x00
-mat 0
-refs 4
-2 0 0
-0 1 0
-1 1 1
-3 0 1
-kids 0
-OBJECT poly
-name "tilt.up"
-loc 0 0 -0
-data 7
-tilt.up
-crease 30.000001
-numvert 4
-0.004326 -0.05632 -0.078989
-0.004326 -0.030153 -0.078989
-0.004326 -0.030153 -0.06591
-0.004326 -0.05632 -0.06591
-numsurf 1
-SURF 0x00
-mat 0
-refs 4
-3 0 0
-0 1 0
-1 1 1
-2 0 1
 kids 0

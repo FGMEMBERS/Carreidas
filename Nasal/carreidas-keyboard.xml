@@ -29,23 +29,24 @@
     </binding>
   </key>
 
+  <key n="123">
+    <name>{</name>
+    <desc>Engine Autostop</desc>
+    <binding>
+      <command>nasal</command>
+      <script>engines.autostop();</script>
+    </binding>
+  </key>
+  
   <key n="125">
     <name>}</name>
     <desc>Engine Autostart</desc>
     <binding>
       <command>nasal</command>
-      <script>engines.engine1.autostart();</script>
-    </binding>
-    <binding>
-      <command>nasal</command>
-      <script>engines.engine2.autostart();</script>
-    </binding>
-    <binding>
-      <command>nasal</command>
-      <script>engines.engine3.autostart();</script>
+      <script>engines.autostart();</script>
     </binding>
   </key>
-  
+   
   <key n="127">
     <name>Delete</name>
     <desc>Toggle Reversers</desc>

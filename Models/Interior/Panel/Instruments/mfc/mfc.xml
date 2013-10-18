@@ -13,27 +13,30 @@
     <object-name>MFC.map</object-name>
     <object-name>MFC.tcas</object-name>
     <object-name>MFC.wx</object-name>
+    <object-name>MFC.rdr-up</object-name>
+    <object-name>MFC.rdr-dn</object-name>
+    <object-name>MFC.apt</object-name>
+    <object-name>MFC.dat</object-name>
+    <!--
     <object-name>MFC.jsL</object-name>
     <object-name>MFC.jsU</object-name>
     <object-name>MFC.jsR</object-name>
     <object-name>MFC.jsD</object-name>
+    <object-name>MFC.vor</object-name>    
     <object-name>MFC.norm</object-name>
     <object-name>MFC.emer</object-name>
-    <object-name>MFC.rdr-up</object-name>
-    <object-name>MFC.rdr-dn</object-name>
-    <object-name>MFC.apt</object-name>
-    <object-name>MFC.vor</object-name>
-    <object-name>MFC.dat</object-name>
     <object-name>MFC.rcl</object-name>
     <object-name>MFC.pag</object-name>
     <object-name>MFC.skp</object-name>
     <object-name>MFC.ent</object-name>
+    -->    
   </animation>
 
   <!-- hotspots-->
   <animation>
     <type>pick</type>
     <object-name>MFC.map</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -47,6 +50,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.tcas</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -60,6 +64,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.wx</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -73,6 +78,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.apt</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -86,6 +92,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.dat</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -99,6 +106,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.rdr-up</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -112,6 +120,7 @@
   <animation>
     <type>pick</type>
     <object-name>MFC.rdr-dn</object-name>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>

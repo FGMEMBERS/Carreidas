@@ -27,13 +27,13 @@
 
   <cockpit x="9.878" y="0.463" z="-0.375"/>
 
-  <fuselage ax="14.958" ay="0" az="-1.512" bx="-10.801" by="0" bz="-0.696" width="2.700" taper="0.2" midpoint="0.45"/>
+  <fuselage ax="14.958" ay=" 0.000" az="-1.512" bx="-10.801" by=" 0.000" bz="-0.696" width="2.700" taper="0.2" midpoint="0.45"/>
 
-  <fuselage ax="-4.817" ay="1.718" az="-0.529" bx="-8.656" by="1.718" bz="-0.529" width="1.12" taper="0.7" midpoint="0.1"/>
+  <fuselage ax="-4.817" ay=" 1.718" az="-0.529" bx=" -8.656" by=" 1.718" bz="-0.529" width="1.120" taper="0.7" midpoint="0.10"/>
 
-  <fuselage ax="-7.198" ay="0" az="-0.629" bx="-11.037" by="0" bz="-0.629" width="1.12" taper="0.7" midpoint="0.1"/>
+  <fuselage ax="-7.198" ay=" 0.000" az="-0.629" bx="-11.037" by=" 0.000" bz="-0.629" width="1.120" taper="0.7" midpoint="0.10"/>
 
-  <fuselage ax="-4.817" ay="-1.718" az="-0.529" bx="-8.656" by="-1.718" bz="-0.529" width="1.12" taper="0.7" midpoint="0.1"/>
+  <fuselage ax="-4.817" ay="-1.718" az="-0.529" bx=" -8.656" by="-1.718" bz="-0.529" width="1.120" taper="0.7" midpoint="0.10"/>
 
   <wing x="-1.468" y="1.290" z="-1.911"
         chord="4.229"

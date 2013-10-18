@@ -31,52 +31,52 @@ aircraft.light.new("controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 #var battery = Battery.new(switch-prop,volts,amps,amp_hours,charge_percent,charge_amps);
 var Battery = {
-    new : func(swtch,vlt,amp,hr,chp,cha){
-    m = { parents : [Battery] };
-            m.switch = props.globals.getNode(swtch,1);
-            m.switch.setBoolValue(0);
-            m.ideal_volts = vlt;
-            m.ideal_amps = amp;
-            m.amp_hours = hr;
-            m.charge_percent = chp;
-            m.charge_amps = cha;
+  new : func(swtch,vlt,amp,hr,chp,cha){
+  m = { parents : [Battery] };
+    m.switch = props.globals.getNode(swtch,1);
+    m.switch.setBoolValue(0);
+    m.ideal_volts = vlt;
+    m.ideal_amps = amp;
+    m.amp_hours = hr;
+    m.charge_percent = chp;
+    m.charge_amps = cha;
     return m;
-    },
+  },
 
-    apply_load : func(load,dt) {
-        if(me.switch.getValue()){
-        var amphrs_used = load * dt / 3600.0;
-        var percent_used = amphrs_used / me.amp_hours;
-        me.charge_percent -= percent_used;
-        if ( me.charge_percent < 0.0 ) {
-            me.charge_percent = 0.0;
-        } elsif ( me.charge_percent > 1.0 ) {
+  apply_load : func(load,dt) {
+    if(me.switch.getValue()){
+      var amphrs_used = load * dt / 3600.0;
+      var percent_used = amphrs_used / me.amp_hours;
+      me.charge_percent -= percent_used;
+      if ( me.charge_percent < 0.0 ) {
+          me.charge_percent = 0.0;
+      } elsif ( me.charge_percent > 1.0 ) {
         me.charge_percent = 1.0;
-        }
-        var output =me.amp_hours * me.charge_percent;
-        return output;
-        }else return 0;
-    },
+      }
+      var output =me.amp_hours * me.charge_percent;
+     return output;
+    }else return 0;
+  },
 
-    get_output_volts : func {
-        if(me.switch.getValue()){
-        var x = 1.0 - me.charge_percent;
-        var tmp = -(3.0 * x - 1.0);
-        var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
-        var output =me.ideal_volts * factor;
-        return output;
-        }else return 0;
-    },
+  get_output_volts : func {
+    if(me.switch.getValue()){
+      var x = 1.0 - me.charge_percent;
+      var tmp = -(3.0 * x - 1.0);
+      var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+      var output =me.ideal_volts * factor;
+      return output;
+    }else return 0;
+  },
 
-    get_output_amps : func {
-        if(me.switch.getValue()){
-        var x = 1.0 - me.charge_percent;
-        var tmp = -(3.0 * x - 1.0);
-        var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
-        var output =me.ideal_amps * factor;
-        return output;
-        }else return 0;
-    }
+  get_output_amps : func {
+    if(me.switch.getValue()){
+      var x = 1.0 - me.charge_percent;
+      var tmp = -(3.0 * x - 1.0);
+      var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+      var output =me.ideal_amps * factor;
+      return output;
+    }else return 0;
+  }
 };
 
 # var alternator = Alternator.new(num,switch,rpm_source,rpm_threshold,volts,amps);
@@ -292,109 +292,106 @@ update_virtual_bus = func( dt ) {
         load += rh_bus(rbus_volts);
         alternator2.apply_load(load);
     }
-    if(count!=0 and getprop("controls/electric/engine[2]/generator")==1){
-        lbus_volts = battery_volts;
-        power_source = "battery";
-        var alternator3_volts = alternator3.get_output_volts();
-        if (alternator3_volts > lbus_volts) {
-            lbus_volts = alternator3_volts;
-            power_source = "alternator3";
-        }
-        lbus_volts *=PWR;
-         Lbus.setValue(lbus_volts);
-        load += lh_bus(lbus_volts);
-        alternator3.apply_load(load);
-        rbus_volts = battery_volts;
-        var alternator3_volts = alternator3.get_output_volts();
-        if (alternator3_volts > rbus_volts) {
-            rbus_volts = alternator3_volts;
-            power_source = "alternator3";
-        }
-        rbus_volts *=PWR;
-        Rbus.setValue(rbus_volts);
-        load += rh_bus(rbus_volts);
-        alternator3.apply_load(load);
+  if(count!=0 and getprop("controls/electric/engine[2]/generator")==1){
+    lbus_volts = battery_volts;
+    power_source = "battery";
+    var alternator3_volts = alternator3.get_output_volts();
+    if (alternator3_volts > lbus_volts) {
+      lbus_volts = alternator3_volts;
+      power_source = "alternator3";
     }
-    count=1-count;
-    if(rbus_volts > 5 and  lbus_volts>5) xtie=1;
-    XTie.setValue(xtie);
-    if(rbus_volts > 5 or  lbus_volts>5) load += lighting(24);
-    else lighting(0);
+    lbus_volts *=PWR;
+    Lbus.setValue(lbus_volts);
+    load += lh_bus(lbus_volts);
+    alternator3.apply_load(load);
+    rbus_volts = battery_volts;
+    var alternator3_volts = alternator3.get_output_volts();
+    if (alternator3_volts > rbus_volts) {
+      rbus_volts = alternator3_volts;
+      power_source = "alternator3";
+    }
+    rbus_volts *=PWR;
+    Rbus.setValue(rbus_volts);
+    load += rh_bus(rbus_volts);
+    alternator3.apply_load(load);
+  }
+  count=1-count;
+  if(rbus_volts > 5 and  lbus_volts>5) xtie=1;
+  XTie.setValue(xtie);
+  if(rbus_volts > 5 or  lbus_volts>5) load += lighting(24);
+  else lighting(0);
 
-    ammeter = 0.0;
-#    if ( bus_volts > 1.0 )load += 15.0;
+  ammeter = 0.0;
+#  if ( bus_volts > 1.0 )load += 15.0;
 
-#    if ( power_source == "battery" ) {
-#        ammeter = -load;
-#        } else {
-#        ammeter = battery.charge_amps;
-#    }
+#  if ( power_source == "battery" ) {
+#    ammeter = -load;
+#  } else {
+#    ammeter = battery.charge_amps;
+#  }
 
-#    if ( power_source == "battery" ) {
-#        battery.apply_load( load, dt );
-#        } elsif ( bus_volts > battery_volts ) {
-#        battery.apply_load( -battery.charge_amps, dt );
-#        }
+#  if ( power_source == "battery" ) {
+#    battery.apply_load( load, dt );
+#  } elsif ( bus_volts > battery_volts ) {
+#    battery.apply_load( -battery.charge_amps, dt );
+#  }
 
-#    ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
+#  ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
 
-
-return load;
+  return load;
 }
 
 rh_bus = func(bv) {
-    var load = 0.0;
-    var srvc = 0.0;
-    ACbus.setValue(bv * 4.1);
-    for(var i=0; i<size(rbus_input); i+=1) {
-        var srvc = rbus_input[i].getValue();
-        load += rbus_load[i] * srvc;
-        rbus_output[i].setValue(bv * srvc);
-    }
-    return load;
+  var load = 0.0;
+  var srvc = 0.0;
+  ACbus.setValue(bv * 4.1);
+  for(var i=0; i<size(rbus_input); i+=1) {
+    var srvc = rbus_input[i].getValue();
+    load += rbus_load[i] * srvc;
+    rbus_output[i].setValue(bv * srvc);
+  }
+  return load;
 }
 
 lh_bus = func(bv) {
-    var load = 0.0;
-    var srvc = 0.0;
-    ACbus.setValue(bv * 4.1);
+  var load = 0.0;
+  var srvc = 0.0;
+  ACbus.setValue(bv * 4.1);
     
-    for(var i=0; i<size(lbus_input); i+=1) {
-        var srvc = lbus_input[i].getValue();
-        load += lbus_load[i] * srvc;
-        lbus_output[i].setValue(bv * srvc);
-    }
+  for(var i=0; i<size(lbus_input); i+=1) {
+    var srvc = lbus_input[i].getValue();
+    load += lbus_load[i] * srvc;
+    lbus_output[i].setValue(bv * srvc);
+  }
 
-    setprop("systems/electrical/outputs/flaps",bv);
-    return load;
+  setprop("systems/electrical/outputs/flaps",bv);
+  return load;
 }
 
 lighting = func(bv) {
-    var load = 0.0;
-    var srvc = 0.0;
-    var bus_volts = bv;
+  var load = 0.0;
+  var srvc = 0.0;
+  var bus_volts = bv;
 
-INSTR_DIMMER = getprop("controls/lighting/instruments-norm");
-#EFIS_DIMMER = getprop("controls/lighting/efis-norm");
-#ENG_DIMMER = getprop("controls/lighting/engines-norm");
-#PANEL_DIMMER = getprop("controls/lighting/panel-norm");
-setprop("systems/electrical/outputs/instrument-lights",(bus_volts * INSTR_DIMMER));
-setprop("/systems/electrical/outputs/instrument-lights-norm",(0.0357 * (bus_volts * INSTR_DIMMER)));
-#setprop(outPut~"eng-lights",(bus_volts * ENG_DIMMER));
-#setprop(outPut~"panel-lights",(bus_volts * PANEL_DIMMER));
+  INSTR_DIMMER = getprop("controls/lighting/instruments-norm");
+  #EFIS_DIMMER = getprop("controls/lighting/efis-norm");
+  #ENG_DIMMER = getprop("controls/lighting/engines-norm");
+  #PANEL_DIMMER = getprop("controls/lighting/panel-norm");
+  setprop("systems/electrical/outputs/instrument-lights",(bus_volts * INSTR_DIMMER));
+  setprop("/systems/electrical/outputs/instrument-lights-norm",(0.0357 * (bus_volts * INSTR_DIMMER)));
+  #setprop(outPut~"eng-lights",(bus_volts * ENG_DIMMER));
+  #setprop(outPut~"panel-lights",(bus_volts * PANEL_DIMMER));
 
-    for(var i=0; i<size(lights_input); i+=1) {
-        var srvc = lights_input[i].getValue();
-        load += lights_load[i] * srvc;
-        lights_output[i].setValue(bv * srvc);
-    }
-
-return load;
-
+  for(var i=0; i<size(lights_input); i+=1) {
+    var srvc = lights_input[i].getValue();
+    load += lights_load[i] * srvc;
+    lights_output[i].setValue(bv * srvc);
+  }
+  return load;
 }
 
 update_electrical = func {
-    var scnd = getprop("sim/time/delta-sec");
-    update_virtual_bus( scnd );
-settimer(update_electrical, 0);
+  var scnd = getprop("sim/time/delta-sec");
+  update_virtual_bus( scnd );
+  settimer(update_electrical, 0);
 }

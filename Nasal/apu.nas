@@ -47,108 +47,106 @@ APU_Rpm.setValue(0);
 
 
 var update_loop = func {
-	var fuel_cons    = 0;
-	var apu_rpm       = APU_Rpm.getValue();
-	var apu_temp      = APU_Temp.getValue();
-	var over_temp     = APU_OverTemp.getBoolValue();
-	var apu_start_sys = APU_StartSys.getValue();
-	var apu_gen_volts = APU_GenV.getValue();
-	var out_of_fuel   = APU_OutofFuel.getBoolValue();
-	var start_sw      = APU_Start_Sw.getBoolValue();
-	var state         = StartState.getValue(); # Start/stop time counter.
-	var running       = Running.getBoolValue();
-	var wow           = WoW.getBoolValue();
-	var serviceable   = APU_Serv.getBoolValue();
+var fuel_cons    = 0;
+var apu_rpm       = APU_Rpm.getValue();
+var apu_temp      = APU_Temp.getValue();
+var over_temp     = APU_OverTemp.getBoolValue();
+var apu_start_sys = APU_StartSys.getValue();
+var apu_gen_volts = APU_GenV.getValue();
+var out_of_fuel   = APU_OutofFuel.getBoolValue();
+var start_sw      = APU_Start_Sw.getBoolValue();
+var state         = StartState.getValue(); # Start/stop time counter.
+var running       = Running.getBoolValue();
+var wow           = WoW.getBoolValue();
+var serviceable   = APU_Serv.getBoolValue();
 
-	var ext_temp      = Deg_C.getValue();
-	var p_inhg        = Press_InHg.getValue();
+var ext_temp      = Deg_C.getValue();
+var p_inhg        = Press_InHg.getValue();
 
-	airpress_coef = (( p_inhg - 20 ) * 22.5 / p_inhg ) - 3.3;
+airpress_coef = (( p_inhg - 20 ) * 22.5 / p_inhg ) - 3.3;
 
-	if ( ! out_of_fuel and apu_start_sys >= 23 and running and ! over_temp and serviceable ) {
-		if ( state < 1 ) {
-			if ( p_inhg > 13.7 ) {
-				# RPM increase during +/- 60 sec up to 100%
-				# Temp stabilizes at 600°C 30 sec after start.
-				apu_rpm_goal = ((math.sin((state * 3) + 4.7) + 1) * 48) + (0.046 * apu_rpm);
-				if ( state < 0.72 ) {
-					var ts = state - 0.2;
-					apu_temp_goal = (((atan(( ts * 85.5)-9)+(math.sin( ts * 9)*0.39))/4.2)+0.35) * 950;
-					if ( apu_temp_goal < 0 ) { apu_temp_goal = 0 }
-				}
-				StartState.setValue( state + 0.004 );
-			} else {
-				running = 0;
-				return;
-			}
-		}
-		if ( p_inhg == 0 ) { p_inhg = 0.0001 } # Aliens might take us outside atmosphere.
-		apu_rpm = apu_rpm_goal + airpress_coef;
-		apu_temp = ((apu_temp_goal / 100) * (100 + airpress_coef)) + ext_temp;
-		if ( apu_rpm > 10 ) {
-			fuel_cons = APU_FuelCons.getValue();
-			fuel_cons += apu_rpm * 0.00057222222 * A10.UPDATE_PERIOD;
-		}
-		if ( apu_temp > 760 and wow and apu_rpm >= 60) {
-			APU_OverTemp.setBoolValue(1);
-			running = 0;
-		}
-		if ( apu_temp > 850 and apu_rpm >= 75) {
-			APU_Serv.setBoolValue(0);
-			running = 0;
-		}
-		if ( p_inhg < 10 ) {
-			running = 0;
-		}
-	} else {
-		if ( apu_rpm >= 0.3 ) {
-			apu_rpm -= 0.3;
-		}
-		var min_temp = ext_temp + 5;
-		if ( apu_temp > min_temp ) {
-			apu_temp -= 0.5 + ( apu_rpm / 50 );
-		}
-		if ( StartState.getValue() >= 0.004 ) {
-			StartState.setValue( state - 0.004 );
-		}
-	}
+if ( ! out_of_fuel and apu_start_sys >= 23 and running and ! over_temp and serviceable ) {
+  if ( state < 1 ) {
+    if ( p_inhg > 13.7 ) {
+      # RPM increase during +/- 60 sec up to 100%
+      # Temp stabilizes at 600°C 30 sec after start.
+      apu_rpm_goal = ((math.sin((state * 3) + 4.7) + 1) * 48) + (0.046 * apu_rpm);
+      if ( state < 0.72 ) {
+          var ts = state - 0.2;
+          apu_temp_goal = (((atan(( ts * 85.5)-9)+(math.sin( ts * 9)*0.39))/4.2)+0.35) * 950;
+          if ( apu_temp_goal < 0 ) { apu_temp_goal = 0 }
+        }
+        StartState.setValue( state + 0.004 );
+      } else {
+        running = 0;
+        return;
+      }
+    }
+    if ( p_inhg == 0 ) { p_inhg = 0.0001 } # Aliens might take us outside atmosphere.
+    apu_rpm = apu_rpm_goal + airpress_coef;
+    apu_temp = ((apu_temp_goal / 100) * (100 + airpress_coef)) + ext_temp;
+    if ( apu_rpm > 10 ) {
+      fuel_cons = APU_FuelCons.getValue();
+      fuel_cons += apu_rpm * 0.00057222222 * A10.UPDATE_PERIOD;
+    }
+    if ( apu_temp > 760 and wow and apu_rpm >= 60) {
+      APU_OverTemp.setBoolValue(1);
+      running = 0;
+    }
+    if ( apu_temp > 850 and apu_rpm >= 75) {
+      APU_Serv.setBoolValue(0);
+      running = 0;
+    }
+    if ( p_inhg < 10 ) {
+      running = 0;
+    }
+  } else {
+    if ( apu_rpm >= 0.3 ) {
+      apu_rpm -= 0.3;
+    }
+    var min_temp = ext_temp + 5;
+    if ( apu_temp > min_temp ) {
+      apu_temp -= 0.5 + ( apu_rpm / 50 );
+    }
+    if ( StartState.getValue() >= 0.004 ) {
+      StartState.setValue( state - 0.004 );
+    }
+  }
+        
+  if ( APU_OverTemp.getBoolValue() and ! start_sw and apu_rpm < 10 ) {
+    APU_OverTemp.setBoolValue(0)
+  }
+  
+  APU_Rpm.setValue(apu_rpm);
+  APU_Temp.setValue(apu_temp);
+  APU_FuelCons.setValue(fuel_cons);
+  Running.setBoolValue(running);
 
-	if ( APU_OverTemp.getBoolValue() and ! start_sw and apu_rpm < 10 ) {
-		APU_OverTemp.setBoolValue(0)
-	}
-
-	APU_Rpm.setValue(apu_rpm);
-	APU_Temp.setValue(apu_temp);
-	APU_FuelCons.setValue(fuel_cons);
-	Running.setBoolValue(running);
-
-	var apu_light = 0;
-	if ( ! start_sw and APU_Gen_Sw.getBoolValue() ) { apu_light = 1 }
-	l_gen_sw = L_Gen_Sw.getBoolValue();
-	r_gen_sw = R_Gen_Sw.getBoolValue();
-	if ( apu_gen_volts > 23 and ( l_gen_sw or r_gen_sw ) ) { apu_light = 1 }
-	APU_Light.setBoolValue(apu_light);
+  var apu_light = 0;
+  if ( ! start_sw and APU_Gen_Sw.getBoolValue() ) { apu_light = 1 }
+  l_gen_sw = L_Gen_Sw.getBoolValue();
+  r_gen_sw = R_Gen_Sw.getBoolValue();
+  if ( apu_gen_volts > 23 and ( l_gen_sw or r_gen_sw ) ) { apu_light = 1 }
+  APU_Light.setBoolValue(apu_light);
 }
-
 
 # Controls ################
 var toggle_off_start_switch = func {
-	var sw = APU_Start_Sw.getBoolValue();
-	if ( ! sw ) {
-		APU_Start_Sw.setBoolValue(1);
-		if ( APU_Serv.getBoolValue() and ! APU_OverTemp.getBoolValue() ) {
-			APU_StartSys.setValue(electrical.DC_ESSEN_bus_volts);
-			Running.setBoolValue(1);
-		}
-	} else {
-		APU_Start_Sw.setBoolValue(0);
-		APU_StartSys.setValue(0);
-		Running.setBoolValue(0);
-	}
+  var sw = APU_Start_Sw.getBoolValue();
+  if ( ! sw ) {
+    APU_Start_Sw.setBoolValue(1);
+    if ( APU_Serv.getBoolValue() and ! APU_OverTemp.getBoolValue() ) {
+      APU_StartSys.setValue(electrical.DC_ESSEN_bus_volts);
+      Running.setBoolValue(1);
+    }
+  } else {
+    APU_Start_Sw.setBoolValue(0);
+    APU_StartSys.setValue(0);
+    Running.setBoolValue(0);
+  }
 }
 
 # Utils ###################
 var atan = func {
   return math.atan2(arg[0], 1);
 }
-

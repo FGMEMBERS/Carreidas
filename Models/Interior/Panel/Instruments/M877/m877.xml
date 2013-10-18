@@ -119,7 +119,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>HR.001</object-name>
+    <object-name>HR1</object-name>
     <condition>
       <property>instrumentation/clock/m877/digit[3]</property>
     </condition>
@@ -127,7 +127,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>HR.002</object-name>
+    <object-name>HR2</object-name>
     <condition>
       <property>instrumentation/clock/m877/digit[2]</property>
     </condition>
@@ -135,7 +135,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>MN.001</object-name>
+    <object-name>MN1</object-name>
     <condition>
       <property>instrumentation/clock/m877/digit[1]</property>
     </condition>
@@ -143,7 +143,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>MN.002</object-name>
+    <object-name>MN2</object-name>
     <condition>
       <property>instrumentation/clock/m877/digit[0]</property>
     </condition>
@@ -151,7 +151,7 @@
 
   <animation>
     <type>textranslate</type>
-    <object-name>HR.001</object-name>
+    <object-name>HR1</object-name>
     <property>instrumentation/clock/m877/indicated-hour</property>
     <factor>0.01</factor>
     <step>10</step>
@@ -164,7 +164,7 @@
 
   <animation>
     <type>textranslate</type>
-    <object-name>HR.002</object-name>
+    <object-name>HR2</object-name>
     <property>instrumentation/clock/m877/indicated-hour</property>
     <factor>0.1</factor>
     <step>1</step>
@@ -177,7 +177,7 @@
 
   <animation>
     <type>textranslate</type>
-    <object-name>MN.001</object-name>
+    <object-name>MN1</object-name>
     <property>instrumentation/clock/m877/indicated-min</property>
     <factor>0.01</factor>
     <step>10</step>
@@ -190,7 +190,7 @@
 
   <animation>
     <type>textranslate</type>
-    <object-name>MN.002</object-name>
+    <object-name>MN2</object-name>
     <property>instrumentation/clock/m877/indicated-min</property>
     <factor>0.1</factor>
     <step>1</step>

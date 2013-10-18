@@ -31,8 +31,10 @@
     <object-name>gain.up</object-name>
     <object-name>pwr.off</object-name>
     <object-name>pwr.on</object-name>
+    <!--
     <object-name>tilt.dwn</object-name>
     <object-name>tilt.up</object-name>
+    -->
   </animation>
 
   <panel>
