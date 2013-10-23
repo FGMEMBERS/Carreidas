@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-	<texture>Liveries/2048x2048/flight714.png</texture>
+        <name type="string">Bunny (Low)</name>
+        <texture>Liveries/1024x1024/bunny.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
