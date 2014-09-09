@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams Flight Mode Control
+     Update by Helijah 2013
+
+     HDG  : Heading Bug hold - Low Bank can be selected
+
+     NAV  : Arm & Capture VOR , LOC or FMS
+
+     APR  : (ILS approach)
+            Arm & Capture VOR APR , LOC or BC
+            Also arm and capture GS
+
+     BC   : Arm & capture localizer backcourse
+            Nav also illuminates
+
+     VNAV : Arm and capture VOR/DME or FMS vertical profile
+            profile entered in MFD VNAV menu
+
+     ALT  : Hold current Altitude or PFD preset altitude
+
+     VS   : Hold current vertical speed ...
+            adjustable with pitch wheel
+
+     SPD  : Hold current speed
+            adjustable with pitch wheel
+-->
+<PropertyList>
+
+  <path>fmc.ac</path>
+
+  <animation>
+    <object-name>FD.controller</object-name>
+    <object-name>FD.hdg</object-name>
+    <object-name>FD.nav</object-name>
+    <object-name>FD.nav.led</object-name>
+    <object-name>FD.apr</object-name>
+    <object-name>FD.apr.led</object-name>
+    <object-name>FD.bc</object-name>
+    <object-name>FD.bc.led</object-name>
+    <object-name>FD.vnav</object-name>
+    <object-name>FD.vnav.let</object-name>
+    <object-name>FD.alt</object-name>
+    <object-name>FD.alt.led</object-name>
+    <object-name>FD.vs</object-name>
+    <object-name>FD.vs.led</object-name>
+    <object-name>FD.spd</object-name>
+    <object-name>FD.spd-led</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.hdg-led</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/flightdirector/lnav</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.nav-led</object-name>
+    <condition>
+      <greater-than>
+        <property>instrumentation/flightdirector/lnav</property>
+        <value>1</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.apr-led</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>instrumentation/flightdirector/lnav</property>
+          <value>4</value>
+        </equals>
+        <equals>
+          <property>instrumentation/flightdirector/lnav</property>
+          <value>5</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.bc-led</object-name>
+    <condition>
+      <property>instrumentation/nav/back-course-btn</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.vnav-led</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/flightdirector/vnav</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.alt-led</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/flightdirector/vnav</property>
+        <value>2</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.vs-led</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/flightdirector/vnav</property>
+        <value>3</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>FD.spd-led</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/flightdirector/spd</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!--    OSG hotspots    -->
+  <animation>
+    <type>pick</type>
+    <object-name>FD.hdg</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("hdg");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.nav</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("nav");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.apr</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("apr");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.bc</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("bc");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.vnav</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("vnav");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.alt</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("alt");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.vs</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("vs");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>FD.spd</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_mode("ias");</script>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

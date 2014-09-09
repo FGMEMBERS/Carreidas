@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams STBY HSI
+     Updated by Helijah 2013     -->
+<PropertyList>
+
+  <path>hsi.ac</path>
+
+  <animation>
+    <object-name>HSI</object-name>
+    <object-name>HSI.knob</object-name>
+    <object-name>HSI.face</object-name>
+    <object-name>ADF.needle</object-name>
+    <object-name>HSI.gsneedle</object-name>
+    <object-name>CRSneedle</object-name>
+    <object-name>CRSneedle2</object-name>
+    <object-name>hdgring</object-name>
+    <object-name>gs</object-name>
+    <object-name>off</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>HSI.face</object-name>
+    <object-name>ADF.needle</object-name>
+    <object-name>HSI.gsneedle</object-name>
+    <object-name>CRSneedle</object-name>
+    <object-name>CRSneedle2</object-name>
+    <object-name>hdgring</object-name>
+    <object-name>gs</object-name>
+    <object-name>off</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hdgring</object-name>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CRSneedle</object-name>
+    <object-name>CRSneedle2</object-name>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CRSneedle2</object-name>
+    <property>instrumentation/nav/radials/selected-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>CRSneedle2</object-name>
+    <property>instrumentation/nav/heading-needle-deflection</property>
+    <interpolation>
+      <entry><ind> -10 </ind><dep> -0.013 </dep></entry>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  10 </ind><dep>  0.013 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>HSI.gsneedle</object-name>
+    <property>instrumentation/nav/gs-needle-deflection</property>
+    <interpolation>
+      <entry><ind> -10 </ind><dep> -0.01 </dep></entry>
+      <entry><ind>   0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind>  10 </ind><dep>  0.01 </dep></entry>
+    </interpolation>
+    <axis>
+        <x> 0 </x>
+        <y> 0 </y>
+        <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ADF.needle</object-name>
+    <property>instrumentation/adf/indicated-bearing-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

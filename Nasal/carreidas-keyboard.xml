@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.passenger.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.crew.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="267">
+    <name>F11</name>
+    <desc>Pop up autopilot dialog</desc>
+    <binding>
+      <command>nasal</command>
+      <script>carreidas.ap_settings.toggle()</script>
+    </binding>
+  </key>
+
+  <key n="123">
+    <name>{</name>
+    <desc>Engine Autostop</desc>
+    <binding>
+      <command>nasal</command>
+      <script>engines.autostop();</script>
+    </binding>
+  </key>
+  
+  <key n="125">
+    <name>}</name>
+    <desc>Engine Autostart</desc>
+    <binding>
+      <command>nasal</command>
+      <script>engines.autostart();</script>
+    </binding>
+  </key>
+   
+  <key n="127">
+    <name>Delete</name>
+    <desc>Toggle Reversers</desc>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/engines/engine[0]/reverser</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/engines/engine[1]/reverser</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/engines/engine[2]/reverser</property>
+    </binding>
+  </key>
+
+</PropertyList>

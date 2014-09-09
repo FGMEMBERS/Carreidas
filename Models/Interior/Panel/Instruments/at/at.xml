@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams Primus 1000 Autopilot Controller
+     updated by Helijah 2013                             -->
+<PropertyList>
+  
+  <path>at.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>back</object-name>
+    <object-name>mode</object-name>
+    <object-name>adj</object-name>
+    <object-name>adjM</object-name>
+    <object-name>dot</object-name>
+    <object-name>100M</object-name>
+    <object-name>10M</object-name>
+    <object-name>1M</object-name>
+    <object-name>100</object-name>
+    <object-name>10</object-name>
+    <object-name>1</object-name>
+  </animation>
+
+  <animation>
+    <name>NavUse</name>
+    <object-name>dot</object-name>
+    <object-name>100M</object-name>
+    <object-name>10M</object-name>
+    <object-name>1M</object-name>
+    <object-name>100</object-name>
+    <object-name>10</object-name>
+    <object-name>1</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>mode</object-name>
+    <object-name>adj</object-name>
+    <object-name>adjM</object-name>
+    <object-name>dot</object-name>
+    <object-name>100M</object-name>
+    <object-name>10M</object-name>
+    <object-name>1M</object-name>
+    <object-name>100</object-name>
+    <object-name>10</object-name>
+    <object-name>1</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>100</object-name>
+    <object-name>10</object-name>
+    <object-name>1</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>systems/electrical/right-bus</property>
+          <value>12</value>
+        </greater-than>
+        <equals>
+          <property>/autopilot/locks/speed</property>
+          <value>IAS</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>dot</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>systems/electrical/right-bus</property>
+          <value>12</value>
+        </greater-than>
+        <equals>
+          <property>/autopilot/locks/speed</property>
+          <value>MACH</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>100M</object-name>
+    <object-name>10M</object-name>
+    <object-name>1M</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>systems/electrical/right-bus</property>
+          <value>12</value>
+        </greater-than>
+        <equals>
+          <property>/autopilot/locks/speed</property>
+          <value>MACH</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <!-- hotspots-->
+  <animation>
+    <type>select</type>
+    <object-name>adj</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>/autopilot/locks/speed</property>
+          <value>IAS</value>
+        </equals>
+        <equals>
+          <property>/autopilot/locks/speed</property>
+          <value></value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>adjM</object-name>
+    <condition>
+      <equals>
+        <property>/autopilot/locks/speed</property>
+        <value>MACH</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>mode</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/autopilot/settings/speed-knob</property>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+            <property>/autopilot/settings/speed-knob</property>
+            <value>1</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property>/autopilot/locks/speed</property>
+        <value>MACH</value>
+      </binding>
+      <binding>
+        <condition>
+          <or>
+            <equals>
+              <property>/autopilot/settings/speed-knob</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>/autopilot/settings/speed-knob</property>
+              <value></value>
+            </equals>
+          </or>
+        </condition>
+        <command>property-assign</command>
+        <property>/autopilot/locks/speed</property>
+        <value>IAS</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>mode</object-name>
+    <property>/autopilot/settings/speed-knob</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.006 </x-m>
+      <y-m> -0.030 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adj</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <step>1</step>
+        <min>100</min>
+        <max>601</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <step>-1</step>
+        <min>100</min>
+        <max>601</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adjM</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/target-mach</property>
+        <step>0.01</step>
+        <min>0.7</min>
+        <max>2.6</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/target-mach</property>
+        <step>-0.01</step>
+        <min>0.7</min>
+        <max>2.6</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>1</object-name>
+    <property>/autopilot/settings/target-speed-kt</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>10</object-name>
+    <property>/autopilot/settings/target-speed-kt</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>100</object-name>
+    <property>/autopilot/settings/target-speed-kt</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>1M</object-name>
+    <property>/autopilot/settings/target-mach</property>
+    <factor>10</factor>
+    <step>0.01</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>10M</object-name>
+    <property>/autopilot/settings/target-mach</property>
+    <factor>1</factor>
+    <step>0.1</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>100M</object-name>
+    <property>/autopilot/settings/target-mach</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

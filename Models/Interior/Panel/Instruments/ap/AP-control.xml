@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams Primus 1000 Autopilot Controller 
+     updated bt Helijah 2013                             -->
+<PropertyList>
+  
+  <path>AP-control.ac</path>
+
+  <animation>
+    <object-name>APcontrol</object-name>
+    <object-name>Pitch.wheel</object-name>
+    <object-name>Roll.trim</object-name>
+    <object-name>Lowbank.btn</object-name>
+    <object-name>AP-on.btn</object-name>
+    <object-name>YD-on.btn</object-name>
+    <object-name>Low-on</object-name>
+    <object-name>AP-on</object-name>
+    <object-name>YD-on</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>APcontrol</object-name>
+    <object-name>Pitch.wheel</object-name>
+    <object-name>Roll.trim</object-name>
+    <object-name>Lowbank.btn</object-name>
+    <object-name>AP-on.btn</object-name>
+    <object-name>YD-on.btn</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Low-on</object-name>
+    <object-name>AP-on</object-name>
+    <object-name>YD-on</object-name>
+    <emission>
+      <red>   0 </red>
+      <green> 2 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AP-on</object-name>
+    <condition>
+      <not>
+        <property>autopilot/locks/passive-mode</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>YD-on</object-name>
+    <condition>
+      <property>autopilot/locks/yaw-damper</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Low-on</object-name>
+    <condition>
+      <property>instrumentation/flightdirector/bank-limit-switch</property>
+    </condition>
+  </animation>
+  
+  <!-- hotspots-->
+  <animation>
+    <type>pick</type>
+    <object-name>AP-on.btn</object-name>
+    <object-name>AP-on</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.toggle_autopilot("ap");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>YD-on.btn</object-name>
+    <object-name>YD-on</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.toggle_autopilot("yd");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Lowbank.btn</object-name>
+    <object-name>Low-on</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.toggle_autopilot("bank");</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Pitch.wheel</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.pitch_wheel(1);</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Pitch.wheel</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.pitch_wheel(-1);</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Roll.trim</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.roll_knob(-1);</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Roll.trim</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>citation.FlDr.roll_knob(1);</script>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

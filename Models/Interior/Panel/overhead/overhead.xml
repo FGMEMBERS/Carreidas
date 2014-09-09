@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>overhead.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>overhead</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/kln89/kln89.xml</path>
+    <offsets>
+      <x-m>  0.05863 </x-m>
+      <y-m>  0.09800 </y-m>
+      <z-m> -0.15042 </z-m>
+      <pitch-deg> -32.59 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/KLN90B/kln90b.xml</path>
+    <offsets>
+      <x-m>  0.05957 </x-m>
+      <y-m> -0.09800 </y-m>
+      <z-m> -0.15077 </z-m>
+      <pitch-deg> -32.59 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
+

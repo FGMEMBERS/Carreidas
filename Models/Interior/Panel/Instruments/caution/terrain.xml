@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>terrain.ac</path>
+  
+  <animation>
+    <object-name>off</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>off</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  0.0 </blue>
+      <factor-prop>/instrumentation/mk-viii/outputs/discretes/gpws-warning</factor-prop>
+    </emission>
+  </animation>
+  
+</PropertyList>

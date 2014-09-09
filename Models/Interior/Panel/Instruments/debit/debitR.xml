@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>debit.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>roue1</object-name>
+    <object-name>roue10</object-name>
+    <object-name>roue100</object-name>
+    <object-name>roue1000</object-name>
+    <object-name>roue10000</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>roue1</object-name>
+    <object-name>roue10</object-name>
+    <object-name>roue100</object-name>
+    <object-name>roue1000</object-name>
+    <object-name>roue10000</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/engines/engine[1]/fuel-flow_pph</property>
+    <interpolation>
+      <entry><ind>     0 </ind><dep>   0 </dep></entry> <!--     0 pph -->
+      <entry><ind>  2000 </ind><dep>  51 </dep></entry> <!--  2000 pph -->
+      <entry><ind>  4000 </ind><dep>  99 </dep></entry> <!--  4000 pph -->
+      <entry><ind>  6000 </ind><dep> 148 </dep></entry> <!--  6000 pph -->
+      <entry><ind>  8000 </ind><dep> 200 </dep></entry> <!--  8000 pph -->
+      <entry><ind> 10000 </ind><dep> 249 </dep></entry> <!-- 10000 pph -->
+      <entry><ind> 12000 </ind><dep> 297 </dep></entry> <!-- 12000 pph -->
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue1</object-name>
+    <property>/engines/engine[1]/fuel-flow-pph/unit1</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m>  0.012 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue10</object-name>
+    <property>/engines/engine[1]/fuel-flow-pph/unit10</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m>  0.006 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue100</object-name>
+    <property>/engines/engine[1]/fuel-flow-pph/unit100</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.001 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue1000</object-name>
+    <property>/engines/engine[1]/fuel-flow-pph/unit1000</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.007 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue10000</object-name>
+    <property>/engines/engine[1]/fuel-flow-pph/unit10000</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.015 </x-m>
+      <y-m> -0.014 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

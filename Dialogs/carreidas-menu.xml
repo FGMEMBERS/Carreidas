@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Carreidas 160 Jet</label>
+      <enabled type="bool">true</enabled>
+      <item n="0">
+        <label>Autostart</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/autostart</property>
+        </binding>
+      </item>
+      <item>
+        <label>Autopilot Settings</label>
+        <binding>
+          <command>nasal</command>
+          <script>systems.ap_settings.open()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>carreidas.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>EFB</label>
+        <binding>
+          <command>nasal</command>
+          <script>systems.EFB.toggle();</script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>
+

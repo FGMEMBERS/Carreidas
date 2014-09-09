@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim  include="Nasal/views.xml">
+
+    <description>Carreidas 160 (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM), Victhor FOSTER (Panel/FDM)</author>
+    <status>development</status>
+  
+    <fuel-fraction> 1 </fuel-fraction>
+  
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/Carreidas/Sounds/carreidas-sound.xml</path>
+    </sound>
+
+    <startup>
+      <splash-texture>Aircraft/Carreidas/carreidas-splash.png</splash-texture>
+    </startup>
+
+    <model>
+     <path>Aircraft/Carreidas/Models/carreidas.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <carreidas>
+        <klu type="bool">false</klu>
+        <us type="bool">true</us>
+      </carreidas>
+      <autostart type="bool">0</autostart>
+    </model>
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/Carreidas/Systems/autopilot.xml</path>
+      </autopilot>
+      <path>Aircraft/Carreidas/Systems/systems.xml</path>
+    </systems>
+
+    <instrumentation>
+      <path>Aircraft/Carreidas/Systems/instrumentation.xml</path>
+    </instrumentation>
+    
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="8"> 0 </int>                                            <!--  8 Noze type -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                     <!--  2 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                    <!--  3 altitude for MP shadow -->
+        <float n="6" alias="/engines/engine[0]/n2" />
+        <float n="7" alias="/engines/engine[1]/n2" />
+        <float n="10" alias="/engines/engine[2]/n2" />
+        <float n="8" alias="/controls/engines/engine[0]/throttle" />
+        <float n="9" alias="/controls/engines/engine[1]/throttle" />
+        <float n="11" alias="/controls/engines/engine[2]/throttle" />
+        <string n="0" type="string" />
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Carreidas 160</title>
+      <line>______________________________________________</line>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew doors</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew doors</desc>
+      </key>
+      <key>
+        <name>Delete</name>
+        <desc>Toggle Reversers</desc>
+      </key>
+    </help>
+
+    <flaps>
+      <setting>0.00</setting> <!-- UP -->
+      <setting>0.25</setting> <!-- 10 -->
+      <setting>0.50</setting> <!-- 20 -->
+      <setting>0.75</setting> <!-- 30 -->
+      <setting>1.00</setting> <!-- FULL -->
+    </flaps>
+
+    <menubar include="Dialogs/carreidas-menu.xml"/>
+
+  </sim>
+  
+  <input>
+    <keyboard include="Nasal/carreidas-keyboard.xml"/>
+  </input>
+
+  <systems>
+    <electrical>
+      <ac-volts>0</ac-volts>
+    </electrical>
+  </systems>
+
+  <instrumentation>
+    <adf n="1">
+      <serviceable type="bool" archive="y">true</serviceable>
+    </adf>
+    <transponder n="0">
+      <serviceable type="bool" archive="y">true</serviceable>
+    </transponder>
+    <transponder n="1">
+      <serviceable type="bool" archive="y">true</serviceable>
+    </transponder>
+    <radar n="0">
+      <switch type="string" archive="y">on</switch>
+      <mode-control type="int" archive="y">1</mode-control>
+      <display-controls>
+        <WX type="bool" archive="y">false</WX>
+        <pos type="bool" archive="y">true</pos>
+        <data type="bool" archive="y">true</data>
+        <symbol type="bool" archive="y">true</symbol>
+        <rotate type="bool" archive="y">true</rotate>
+      </display-controls>
+      <serviceable type="bool">true</serviceable>
+      <range type="int" archive="y">5</range>
+      <reference-range-nm type="double" archive="y">640</reference-range-nm>
+      <mode type="string" archive="y">WX</mode>
+      <font>
+        <name type="string">typewriter.txf</name>
+        <size type="float">6</size>
+        <line-spacing type="float">0.4</line-spacing>
+        <color>
+          <red type="float">0.7</red>
+          <green type="float">0.7</green>
+          <blue type="float">0.7</blue>
+          <alpha type="float">1</alpha>
+        </color>
+      </font>
+      <lightning type="bool" archive="y">true</lightning>
+      <display-mode type="string" archive="y">plan</display-mode>
+      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/od_wxradar.png</radar-texture-path>
+      <echo-texture-path type="string" archive="y">Aircraft/Instruments-3d/primus-1000/MFD/wxecho.png</echo-texture-path>
+      <minimized type="bool" archive="y">false</minimized>
+      <heading-marker type="bool" archive="y">true</heading-marker>
+      <limit-deg type="int">360</limit-deg>
+    </radar>
+    <mk-viii>                            <!-- http://wiki.flightgear.org/index.php/GPWS -->
+      <serviceable>true</serviceable>    <!-- EGPWS_ENABLE -->
+      <configuration-module>
+        <category-1> 255 </category-1>   <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+        <category-8>   3 </category-8>   <!-- RADIO_ALTITUDE_INPUT_SELECT - YASIM -->
+      </configuration-module>
+      <inputs>                           <!-- Module I/O -->
+        <arinc429>
+          <decision-height-ncd> false </decision-height-ncd>
+          <decision-height> 200 </decision-height>
+        </arinc429>
+      </inputs>
+    </mk-viii>
+    <groundradar>
+      <range type="double">1.2</range>
+    </groundradar>
+    <master-reference-gyro n="0">
+      <heading-source type="bool" archive="y">true</heading-source>
+    </master-reference-gyro>
+  </instrumentation>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Carreidas/Nasal/doors.nas</file>
+    </doors>
+    <carreidas>
+      <file>Aircraft/Carreidas/Nasal/liveries.nas</file>
+      <file>Aircraft/Carreidas/Nasal/light.nas</file>
+      <file>Aircraft/Carreidas/Nasal/immat.nas</file>
+      <file>Aircraft/Carreidas/Nasal/pilot-g.nas</file>
+    </carreidas>
+    <efis>
+      <file>Aircraft/Instruments-3d/primus-1000/P1000.nas</file>
+    </efis>
+    <systems>
+      <file>Aircraft/Carreidas/Nasal/System.nas</file>
+      <file>Aircraft/Carreidas/Nasal/Electrical.nas</file>
+      <file>Aircraft/Carreidas/Nasal/flightdirector.nas</file>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/KLN90B/kln90b.nas</file>
+    </systems>
+    <radar>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/RDR-160/RDR160.nas</file>
+    </radar>
+<!--
+    <kr87>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/kr87/kr87.nas</file>
+      <script><![CDATA[
+        kr87.new("/instrumentation/adf[0]");
+        kr87.new("/instrumentation/adf[1]");
+      ]]></script>
+    </kr87>
+-->
+    <ki266>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/dme/ki266.nas</file>
+      <script><![CDATA[
+        ki266.new(0);
+      ]]></script>
+    </ki266>
+    <m877>
+      <file>Aircraft/Carreidas/Models/Interior/Panel/Instruments/M877/M877.nas</file>
+    </m877>
+    <engines>
+      <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+      <file>Aircraft/Carreidas/Nasal/engines-yasim.nas</file>
+    </engines>
+  </nasal>
+
+</PropertyList>

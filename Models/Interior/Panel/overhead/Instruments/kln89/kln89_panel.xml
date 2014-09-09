@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <name>KLN89</name>
+  <background>Aircraft/Carreidas/Models/Interior/Panel/overhead/Instruments/kln89/transparent-bg.png</background>
+  <w>240</w>
+  <h>60</h>
+
+  <instruments>
+
+    <special-instrument>
+      <name>KLN89 GPS</name>
+      <x>34</x>
+      <y>8</y>
+      <w>240</w>
+      <h>60</h>
+    </special-instrument>
+
+  </instruments>
+
+</PropertyList>

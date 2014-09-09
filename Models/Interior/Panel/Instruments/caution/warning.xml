@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>warning.ac</path>
+  
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>button</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>button</object-name>
+    <emission>
+      <red>   0.804 </red>
+      <green> 0.000 </green>
+      <blue>  0.000 </blue>
+      <factor-prop>/instrumentation/annunciators/master-caution</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>button</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/annunciators/master-warning</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/annunciators/master-warning-button-status</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/instrumentation/annunciators/master-warning-button-status</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>/instrumentation/annunciators/master-caution-button-status</property>
+    <factor>-0.0007</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

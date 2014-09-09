@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <params>
+    <needle1source>instrumentation/rmi[0]/needle1-switch-position</needle1source>
+    <needle2source>instrumentation/rmi[0]/needle2-switch-position</needle2source>
+<!--
+    <indicated-heading>instrumentation/heading-indicator/indicated-heading-deg</indicated-heading>
+-->
+    <indicated-heading>orientation/heading-magnetic-deg</indicated-heading>
+    <one>instrumentation/rmi[0]/needle1-rotation-deg</one>
+    <two>instrumentation/rmi[0]/needle2-rotation-deg</two>
+  </params>
+
+  <path>RMI.ac</path>
+
+  <animation>
+    <object-name>Chassis</object-name>
+    <object-name>CompassRose</object-name>
+    <object-name>Two</object-name>
+    <object-name>One</object-name>
+    <object-name>Marker</object-name>
+    <object-name>Label</object-name>
+    <object-name>Light</object-name>
+    <object-name>Needle1Source</object-name>
+    <object-name>Needle2Source</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>CompassRose</object-name>
+    <object-name>Two</object-name>
+    <object-name>One</object-name>
+    <object-name>Marker</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>CompassRose</object-name>
+    <property alias="/params/indicated-heading"/>
+    <factor>1.0</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m>-0.001</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Two</object-name>
+    <property alias="/params/two"/>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>One</object-name>
+    <property alias="/params/one"/>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle1Source</object-name>
+    <property alias="/params/needle1source"/>
+    <factor>30</factor>
+    <offset-deg>-15</offset-deg>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <center>
+      <x-m>-0.00673564</x-m>
+      <y-m>-0.0278851</y-m>
+      <z-m>0</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>Needle1Source</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="/params/needle1source"/>
+        <value>1</value>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+        <property alias="/params/needle1source"/>
+            <value>1</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/rmi[0]/needle1-rotation-deg</property>
+        <property>instrumentation/adf[0]/indicated-bearing-deg</property>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+        <property alias="/params/needle1source"/>
+            <value>0</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/rmi[0]/needle1-rotation-deg</property>
+        <property>instrumentation/primus1000/pfd/nav1ptr-hdg-offset</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle2Source</object-name>
+    <property alias="/params/needle2source"/>
+    <factor>30</factor>
+    <offset-deg>-15</offset-deg>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+    <center>
+      <x-m>-0.00673564</x-m>
+      <y-m>0.0278851</y-m>
+      <z-m>-0.00519287</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <object-name>Needle2Source</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property alias="/params/needle2source"/>
+        <value>1</value>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+        <property alias="/params/needle2source"/>
+            <value type="bool">1</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property alias="/params/two"/>
+        <property>/instrumentation/adf[1]/indicated-bearing-deg</property>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+        <property alias="/params/needle2source"/>
+            <value type="bool">0</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property alias="/params/two"/>
+        <property>instrumentation/primus1000/pfd/nav2ptr-hdg-offset</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

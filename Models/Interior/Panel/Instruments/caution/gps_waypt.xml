@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>gps_waypt.ac</path>
+  
+  <animation>
+    <object-name>on</object-name>
+    <object-name>off</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>on</object-name>
+    <emission>
+      <red>   0.0 </red>
+      <green> 0.5 </green>
+      <blue>  0.1 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>off</object-name>
+    <condition>
+      <or>
+        <greater-than>
+          <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+          <value>5</value>
+        </greater-than>
+        <equals>
+          <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+          <value>0</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>on</object-name>
+    <condition>
+      <and>
+        <less-than>
+          <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+          <value>5</value>
+        </less-than>
+        <greater-than>
+          <property>instrumentation/gps/wp/wp[1]/distance-nm</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+</PropertyList>

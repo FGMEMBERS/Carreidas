@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Author : Syd Adams Remote Instrument Control
+     Updated by Helijah 2013                     -->
+<PropertyList>
+
+  <path>RIC.ac</path>
+
+  <animation>
+    <object-name>RIC</object-name>
+    <object-name>RIC.crs1</object-name>
+    <object-name>RIC.hdg</object-name>
+    <object-name>RIC.crs2</object-name>
+    
+    <object-name>RIC.crs-up</object-name>
+    <object-name>RIC.hdg-up</object-name>
+    <object-name>RIC.crs-dn</object-name>
+    <object-name>RIC.crs-dn</object-name>
+  </animation>
+
+  <!-- hotspots-->
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.crs1</object-name>
+    <object-name>RIC.crs2</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_course(0)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.crs-dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_course(-1)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.crs-dn</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_course(-10)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.crs-up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_course(1)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.crs-up</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>nasal</command>
+        <script>carreidas.FlDr.set_course(10)</script>
+      </binding>
+    </action>
+  </animation>
+
+  <!-- -hdg bug -->
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.hdg</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <property>/orientation/heading-magnetic-deg</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.hdg-dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>359</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.hdg-dn</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>-10</step>
+        <min>0</min>
+        <max>359</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.hdg-up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>1</step>
+        <min>0</min>
+        <max>359</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RIC.hdg-up</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>10</step>
+        <min>0</min>
+        <max>359</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

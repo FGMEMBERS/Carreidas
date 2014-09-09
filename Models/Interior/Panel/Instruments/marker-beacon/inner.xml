@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>ctrlightl.ac</path>
+  
+  <animation>
+    <object-name>Chassis</object-name>
+    <object-name>Light</object-name>
+    
+    <object-name>Glass</object-name>
+  </animation>
+  
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>Glass</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>Light</object-name>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Chassis</object-name>
+    <object-name>Light</object-name>
+    <object-name>Glass</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/marker-beacon/inner-test</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+        <property>/instrumentation/marker-beacon/inner-test</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Light</object-name>
+    <condition>
+      <or>
+        <property>/instrumentation/marker-beacon/inner</property>
+        <property>/instrumentation/marker-beacon/inner-test</property>
+      </or>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>Chassis</object-name>
+    <object-name>Light</object-name>
+    <object-name>Glass</object-name>
+    <property>/instrumentation/marker-beacon/inner-test</property>
+    <factor>-0.002</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>
