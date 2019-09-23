@@ -15,6 +15,19 @@
       <model type="int">   4 </model>
     </rating>
 
+    <tags>
+      <tag>transport</tag>
+      <tag>1960s</tag>
+      <tag>fictional</tag>
+      <tag>ifr</tag>
+      <tag>variable-geometry</tag>
+      <tag>retractable-gear</tag>
+      <tag>supersonic</tag>
+      <tag>jet</tag>
+      <tag>afterburner</tag>
+      <tag>twin-engine</tag>
+    </tags>
+
   </sim>
 
 </PropertyList>
